@@ -4,6 +4,8 @@ using System.Linq;
 using System.Web;
 using System.Web.Services;
 
+using System.IO;//AI System File IO
+
 namespace CsWebService
 {
     /// <summary>
@@ -26,6 +28,33 @@ namespace CsWebService
         public int Add(int a, int b)
         {
             return a + b;
+        }
+        [WebMethod]
+        public void SendImage(string CsImage, string CheckDateTime)
+        {
+            // 获取调用者 (Cs设备) 的IP地址
+            string CsIPAddress = Context.Request.UserHostAddress.ToString();
+
+            // Base64编码图像文件转换为二进制buffer
+            byte[] CsImageBuffer = Convert.FromBase64String(CsImage);
+            
+            string CsImageFileName = "U" + System.DateTime.Now.ToFileTime() + ".jpg";
+            
+            if (CsImage != "")
+                BytesToFile(CsImageBuffer, Server.MapPath("/") + CsImageFileName);
+
+        }
+
+        // 把Base64编码的图像文件保存到本地文件
+        private void BytesToFile(byte[] bytes, string filePath)
+        {
+            using (MemoryStream ms = new MemoryStream(bytes))
+            {
+                using (FileStream fs = new FileStream(filePath, FileMode.Create, FileAccess.Write))
+                {
+                    ms.WriteTo(fs);
+                }
+            }
         }
     }
 }
