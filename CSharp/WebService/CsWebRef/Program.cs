@@ -11,32 +11,60 @@ namespace CsWebRef
         {
             WebRef.WebService1 webService = new WebRef.WebService1();
 
-            if (TestAdd(webService) == 1)
-            {
-                Console.WriteLine("WebRef Test Add Fuction SUCCESS!!");
-            }
-            else
-            {
-                Console.WriteLine("WebRef Test Add Fuction FAILURE!!");
-            }
+            //if (TestAdd(webService) == 1)
+            //{
+            //    Console.WriteLine("WebRef Test Add Fuction SUCCESS!!");
+            //}
+            //else
+            //{
+            //    Console.WriteLine("WebRef Test Add Fuction FAILURE!!");
+            //}
 
             string CheckDateTime = DateTime.Now.ToString();
 
 
-            //string URL = "http://localhost:8000/";
-            string URL = "http://localhost:53640/WebService1.asmx?WSDL";
+            //string URL = "http://localhost:8000//WebService1.asmx?WSDL";
+            //string URL = "http://localhost:53640/WebService1.asmx?WSDL";
+            string URL = "";
+            URL = Console.ReadLine();
+
+            if (  URL.Length < 10)
+            {
+                URL = "http://192.168.3.47:8000/WebService1.asmx?WSDL";
+            }
             string CsImagePath = "C:\\Users\\iwake\\OneDrive - wake\\Desktop\\Dog.jpg";
-            if (CallWebService(URL, CsImagePath, CheckDateTime) == 1)
-            {
-                Console.WriteLine("WebRef Test Image Fuction SUCCESS!!");
-            }
-            else
-            {
-                Console.WriteLine("WebRef Test Image Fuction FAILURE!!");
-            }
+            //if (CallWebService(URL, CsImagePath, CheckDateTime) == 1)
+            //{
+            //    Console.WriteLine("WebRef Test Image Fuction SUCCESS!!");
+            //}
+            //else
+            //{
+            //    Console.WriteLine("WebRef Test Image Fuction FAILURE!!");
+            //}
 
-            Console.ReadKey();
+            for (int i = 0; i < 100; i++)
+            {
+                if (CallWebService(URL, CsImagePath, CheckDateTime) == 1)
+                {
+                    Console.WriteLine("WebRef Test Image Fuction SUCCESS!!");
+                }
+                else
+                {
+                    Console.WriteLine("WebRef Test Image Fuction FAILURE!!");
+                }
 
+                if (TestAdd(webService) == 1)
+                {
+                    Console.WriteLine("WebRef Test Add Fuction SUCCESS!!");
+                }
+                else
+                {
+                    Console.WriteLine("WebRef Test Add Fuction FAILURE!!");
+
+                }
+                Console.ReadKey();
+
+            }
         }
         public static int TestAdd(WebRef.WebService1 webService)
         {
@@ -82,8 +110,8 @@ namespace CsWebRef
                 if (UVSSImagePath != "" && System.IO.File.Exists(UVSSImagePath))
                 {
                     UVSSImage = ImageToBase64String(UVSSImagePath);
-                    Console.WriteLine("Read Image Fuction SUCCESS!!");
-                    Console.WriteLine(UVSSImage);
+                    //Console.WriteLine("Read Image Fuction SUCCESS!!");
+                    //Console.WriteLine(UVSSImage);
                 }
                 
 

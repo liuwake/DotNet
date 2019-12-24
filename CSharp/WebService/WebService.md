@@ -8,6 +8,7 @@
 
 ## Intro
 - [Wiki Web service](https://en.wikipedia.org/wiki/Web_service)
+- [W3C Web Services Architecture](https://www.w3.org/TR/ws-arch/)
 ## Folw
 ### VS + C# + WebService = CsWebService搭建教程
 #### 新建项目
@@ -68,7 +69,19 @@
      -  [Ref: IIS部署 请求的内容似乎是脚本，因而将无法由静态文件处理程序来处理。](https://www.jianshu.com/p/d174fe955526)
 ##### 调试错误:
 - HTTP Error 403.14 - Forbidden
-
+- ```ASMX Webservice - The test form is only available for requests from the local machine```
+  - [ADD WEB.CONFIG](https://stackoverflow.com/questions/16716011/asmx-webservice-the-test-form-is-only-available-for-requests-from-the-local-ma)
+- 
+##### 其他错误
+- 以下为Win10 LTSC会出现的问题(因为LTSC功能默认不预装,需要手动添加)
+  - 开始菜单找不到IIS管理器
+    - 解决:安装IIS[internet信息服务（IIS）管理器 在哪里?](cnblogs.com/woxihuadabai/p/8006258.html)*其实只需要安装IIS控制管理台*
+  - ```请求的内容似乎是脚本，因而将无法由静态文件处理程序来处理。```
+    - 解决:见上
+  - 打开网页一片白
+    - 解决:安装```常见HTTP功能```
+      - Windows 功能 - Internet Infomation Services - 万维网服务 - 常见HTTP功能
+        - 勾选 - HTTP错误 + 静态内容 + 默认文档+ 目录浏览
 
 ### VS + C# + WebService + Rf = CsWebRef 教程
 #### 新建项目
@@ -86,8 +99,30 @@
   Console.WriteLine(a + "+" + b + "=" + webService.Add(a, b));
   Console.ReadKey();
   ```
+
+### Server配置
+- 发布网站
+- 防火墙打开端口 [Ref: 使用IIS服务搭建一个本地的局域网服务器-共享自己发布的网站](https://blog.csdn.net/qq_41485414/article/details/82754252)
+- 此时
+  - ping ```$Server IP$``` success
+  - 网页打开```$Server IP$/xxx.asmx```,```$Server IP$/xxx.asmx?WSDL```成功
+  - 网页打开```$Server IP$```一般是```403Fobidden```
+### 路由器配置
+- 非必须
+- 实测以下不开启也能正常使用
+  - 静态路由
+  - UPnP
+  - DDNS
+  - SMB和DLAN支持
+  - 防火墙
+  - NAT
+  - DMZ
+### Error 服务器错误
+- SendImage成功,Hello和Add不成功
+  - 原因:*网络防火墙规则*,自动防止返回??
+  - 解决:调整Server PC的网络从Public到Private
 ## Ref
 - [C#发布WebService](https://blog.csdn.net/han_better/article/details/81368433)
 - [C# 创建、部署和调用WebService的简单示例](https://www.cnblogs.com/Brambling/p/6815565.html)
 ## TODO
-- [ ] 
+- [ ] ?WSDL
