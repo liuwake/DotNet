@@ -5,6 +5,9 @@
 ----
 
 # WebService
+
+## Intro
+- [Wiki Web service](https://en.wikipedia.org/wiki/Web_service)
 ## Folw
 ### VS + C# + WebService = CsWebService搭建教程
 #### 新建项目
@@ -65,10 +68,26 @@
      -  [Ref: IIS部署 请求的内容似乎是脚本，因而将无法由静态文件处理程序来处理。](https://www.jianshu.com/p/d174fe955526)
 ##### 调试错误:
 - HTTP Error 403.14 - Forbidden
+
+
+### VS + C# + WebService + Rf = CsWebRef 教程
+#### 新建项目
+- 新建.NET Consloe
+#### 添加引用
+- 解决方案资源管理器 - 引用 - 添加服务引用
+- 添加服务引用 - 高级 - 
+- 服务引用设置 - 添加Web引用
+- 添加Web引用 - URL - 输入部署位置(eg. ````http://localhost:8000/````) - 点击->跳转
+#### 代码
+- ```WebRef.WebService1 webService = new WebRef.WebService1();
+  int a = 2;
+  int b = 3;
+  Console.WriteLine(webService.HelloWorld());
+  Console.WriteLine(a + "+" + b + "=" + webService.Add(a, b));
+  Console.ReadKey();
+  ```
 ## Ref
 - [C#发布WebService](https://blog.csdn.net/han_better/article/details/81368433)
-
-
-
+- [C# 创建、部署和调用WebService的简单示例](https://www.cnblogs.com/Brambling/p/6815565.html)
 ## TODO
 - [ ] 
