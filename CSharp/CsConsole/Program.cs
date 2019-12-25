@@ -24,6 +24,7 @@ namespace CsConsole
                 Console.WriteLine("hello");
             }
             Test test = new Test();
+            test.ProcessDelegate(Class1.function);
             test.ProcessDelegate(TestJsonRead);
             test.ProcessDelegate(TestJsonWrite);
             //TestJson();
