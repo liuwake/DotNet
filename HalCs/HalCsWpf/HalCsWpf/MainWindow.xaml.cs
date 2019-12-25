@@ -15,6 +15,7 @@ using System.Windows.Shapes;
 using HalconDotNet;//引入halcon
 using System.Threading;//引入线程
 
+
 namespace HalCsWpf
 {
     /// <summary>
@@ -28,6 +29,11 @@ namespace HalCsWpf
         public MainWindow()
         {
             InitializeComponent();
+            //Init ???
+            HDevelopExport hd = new HDevelopExport();
+            //HDevelopExportApp.
+            
+            
         }
 
         Thread showThread;
@@ -47,8 +53,7 @@ namespace HalCsWpf
         void showFrame()//采集
         {
             HOperatorSet.GenEmptyObj(out ho_Image);
-            //HOperatorSet.OpenFramegrabber("DirectShow", 1, 1, 0, 0, 0, 0, "default", 8, "gray",
-            //    -1, "false", "default", "[0] ", 0, -1, out hv_AcqHandle);
+            
             HOperatorSet.OpenFramegrabber("GigEVision2", 0, 0, 0, 0, 0, 0, "progressive",
         -1, "default", -1, "false", "default", "c42f90f2b7fa_Hikvision_MVCE12010GM",
         0, -1, out hv_AcqHandle);
