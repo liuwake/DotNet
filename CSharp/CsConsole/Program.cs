@@ -12,8 +12,13 @@ namespace CsConsole
 {
     class Program
     {
+        public static string AppDirectory;
+
         static void Main(string[] args)
         {
+
+            AppDirectory = System.Environment.CurrentDirectory;
+
             //for (int i = 0; i < 10330; i++)
             {
                 Console.WriteLine("hello");
@@ -105,7 +110,12 @@ namespace CsConsole
                 writer.WriteEnd();
                 writer.WriteEndObject();
                 //string output = JsonConvert.DeserializeObject(writer);
-                Console.WriteLine(sb.ToString());
+                //Convert to string and save
+                string StringJson = sb.ToString();
+                Console.WriteLine(StringJson);
+                //System.IO.File.WriteAllText(@"D:\path.txt", StringJson);
+                System.IO.File.WriteAllText(AppDirectory + "\\Result.txt", StringJson);
+                Console.WriteLine("save Json at " + AppDirectory + "\\Result.txt");
             }
 
             // {
