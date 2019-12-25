@@ -16,8 +16,15 @@ namespace CsWebService
     [System.ComponentModel.ToolboxItem(false)]
     // 若要允许使用 ASP.NET AJAX 从脚本中调用此 Web 服务，请取消注释以下行。 
     // [System.Web.Script.Services.ScriptService]
+
     public class WebService1 : System.Web.Services.WebService
     {
+        // no support CurrrntDir use server.mappath
+        //public static string AppDirectory;
+        //AppDirectory = System.Environment.CurrentDirectory;
+        //AppDirectory = System.Environment.SpecialFolder;
+
+        
 
         [WebMethod]
         public string HelloWorld()
@@ -30,10 +37,21 @@ namespace CsWebService
             return a + b;
         }
         [WebMethod]
+        //public void SaveString(string String, string CheckDateTime)
+        public void SaveString(string String)
+        {
+            string PathString = "U" + System.DateTime.Now.ToFileTime() + ".txt";
+
+            if (String != "")
+                System.IO.File.WriteAllText(Server.MapPath("/") + "\\" + PathString, String);
+            //Console.WriteLine("save Json at " + AppDirectory + "\\Result.txt");
+            return;
+        }
+        [WebMethod]
         public void SendImage(string CsImage, string CheckDateTime)
         {
             // 获取调用者 (Cs设备) 的IP地址
-            string CsIPAddress = Context.Request.UserHostAddress.ToString();
+            //string CsIPAddress = Context.Request.UserHostAddress.ToString();
 
             // Base64编码图像文件转换为二进制buffer
             byte[] CsImageBuffer = Convert.FromBase64String(CsImage);
