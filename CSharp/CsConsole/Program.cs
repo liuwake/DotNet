@@ -29,18 +29,37 @@ namespace CsConsole
         }
         public  static void TestJsonRead()
         {
-            string json = @"{
-                               'CPU': 'Intel',
-                               'PSU': '500W',
-                               'Drives': [
-                                 'DVD read/writer'
-                                 /*(broken)*/,
-                                 '500 gigabyte hard drive',
-                                 '200 gigabyte hard drive'
-                               ]
-                            }";
+            //string json = @"{
+            //                   'CPU': 'Intel',
+            //                   'PSU': '500W',
+            //                   'Drives': [
+            //                     'DVD read/writer'
+            //                     /*(broken)*/,
+            //                     '500 gigabyte hard drive',
+            //                     '200 gigabyte hard drive'
+            //                   ]
+            //                }";
 
-            JsonTextReader reader = new JsonTextReader(new StringReader(json));
+            string json = @"{
+                              'inhospitalno': '6458290',
+                              'bedno': '51床',
+                              'name': '姜国臣',
+                              'age': '64',
+                              'tagcode': [
+                                '0110111441287'
+                                /*二维码-NG,OCR-OK;*/,
+                                '0110111441288',
+                                '0110111441289',
+                                '0110111441290',
+                                '0110111441291'
+                                /*二维码-NG,OCR-NG,需人工*/,
+                                '0110111441292',
+                                '0110111441293',
+                                '0110111441294'
+                              ]
+                                }";
+
+    JsonTextReader reader = new JsonTextReader(new StringReader(json));
             while (reader.Read())
             {
                 if (reader.Value != null)
@@ -63,16 +82,26 @@ namespace CsConsole
                 writer.Formatting = Formatting.Indented;
 
                 writer.WriteStartObject();
-                writer.WritePropertyName("CPU");
-                writer.WriteValue("Intel");
-                writer.WritePropertyName("PSU");
-                writer.WriteValue("500W");
-                writer.WritePropertyName("Drives");
+                writer.WritePropertyName("inhospitalno");
+                writer.WriteValue("6458290");
+                writer.WritePropertyName("bedno");
+                writer.WriteValue("51床");
+                writer.WritePropertyName("name");
+                writer.WriteValue("姜国臣");
+                writer.WritePropertyName("age");
+                writer.WriteValue("64");
+                writer.WritePropertyName("tagcode");
                 writer.WriteStartArray();
-                writer.WriteValue("DVD read/writer");
-                writer.WriteComment("(broken)");
-                writer.WriteValue("500 gigabyte hard drive");
-                writer.WriteValue("200 gigabyte hard drive");
+                writer.WriteValue("0110111441287");
+                writer.WriteComment("二维码-NG,OCR-OK;");
+                writer.WriteValue("0110111441288");
+                writer.WriteValue("0110111441289");
+                writer.WriteValue("0110111441290");
+                writer.WriteValue("0110111441291");
+                writer.WriteComment("二维码-NG,OCR-NG,需人工");
+                writer.WriteValue("0110111441292");
+                writer.WriteValue("0110111441293");
+                writer.WriteValue("0110111441294");
                 writer.WriteEnd();
                 writer.WriteEndObject();
                 //string output = JsonConvert.DeserializeObject(writer);
