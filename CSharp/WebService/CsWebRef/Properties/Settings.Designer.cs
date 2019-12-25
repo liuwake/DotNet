@@ -26,7 +26,7 @@ namespace CsWebRef.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.WebServiceUrl)]
-        [global::System.Configuration.DefaultSettingValueAttribute("http://localhost:8000/WebService1.asmx")]
+        [global::System.Configuration.DefaultSettingValueAttribute("http://localhost:53640/WebService1.asmx")]
         public string CsWebRef_WebRef_WebService1 {
             get {
                 return ((string)(this["CsWebRef_WebRef_WebService1"]));

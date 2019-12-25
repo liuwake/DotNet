@@ -42,8 +42,11 @@ namespace CsWebRef
             //    Console.WriteLine("WebRef Test Image Fuction FAILURE!!");
             //}
 
+            //TEST
+            Console.WriteLine("----Start Test Loop----");
             for (int i = 0; i < 100; i++)
             {
+                Console.WriteLine("----Running Test Loop----");
                 if (CallWebService(URL, CsImagePath, CheckDateTime) == 1)
                 {
                     Console.WriteLine("WebRef Test Image Fuction SUCCESS!!");
@@ -62,6 +65,16 @@ namespace CsWebRef
                     Console.WriteLine("WebRef Test Add Fuction FAILURE!!");
 
                 }
+                
+                if (TestSendString(webService) == 1)
+                {
+                    Console.WriteLine("WebRef Test SendString Fuction SUCCESS!!");
+                }
+                else
+                {
+                    Console.WriteLine("WebRef Test SendString FAILURE!!");
+
+                }
                 Console.ReadKey();
 
             }
@@ -75,6 +88,38 @@ namespace CsWebRef
                 int b = 3;
                 Console.WriteLine(webService.HelloWorld());
                 Console.WriteLine(a + "+" + b + "=" + webService.Add(a, b));
+                return 1;
+            }
+            catch
+            {
+                return -1; 
+            }          
+
+        }
+        public static int TestSendString(WebRef.WebService1 webService)
+        {
+            try
+            {
+                //WebRef.WebService1 webService = new WebRef.WebService1();
+                string json = @"{
+                              'inhospitalno': '6458290',
+                              'bedno': '51床',
+                              'name': '姜国臣',
+                              'age': '64',
+                              'tagcode': [
+                                '0110111441287'
+                                /*二维码-NG,OCR-OK;*/,
+                                '0110111441288',
+                                '0110111441289',
+                                '0110111441290',
+                                '0110111441291'
+                                /*二维码-NG,OCR-NG,需人工*/,
+                                '0110111441292',
+                                '0110111441293',
+                                '0110111441294'
+                              ]
+                                }";
+                webService.SaveString(json);
                 return 1;
             }
             catch

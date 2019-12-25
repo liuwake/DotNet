@@ -33,6 +33,10 @@ namespace CsWebRef.WebRef {
         
         private System.Threading.SendOrPostCallback AddOperationCompleted;
         
+        private System.Threading.SendOrPostCallback SaveStringOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback SendImageOperationCompleted;
+        
         private bool useDefaultCredentialsSetExplicitly;
         
         /// <remarks/>
@@ -76,6 +80,12 @@ namespace CsWebRef.WebRef {
         
         /// <remarks/>
         public event AddCompletedEventHandler AddCompleted;
+        
+        /// <remarks/>
+        public event SaveStringCompletedEventHandler SaveStringCompleted;
+        
+        /// <remarks/>
+        public event SendImageCompletedEventHandler SendImageCompleted;
         
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/HelloWorld", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
@@ -132,6 +142,64 @@ namespace CsWebRef.WebRef {
             if ((this.AddCompleted != null)) {
                 System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
                 this.AddCompleted(this, new AddCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/SaveString", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public void SaveString(string String) {
+            this.Invoke("SaveString", new object[] {
+                        String});
+        }
+        
+        /// <remarks/>
+        public void SaveStringAsync(string String) {
+            this.SaveStringAsync(String, null);
+        }
+        
+        /// <remarks/>
+        public void SaveStringAsync(string String, object userState) {
+            if ((this.SaveStringOperationCompleted == null)) {
+                this.SaveStringOperationCompleted = new System.Threading.SendOrPostCallback(this.OnSaveStringOperationCompleted);
+            }
+            this.InvokeAsync("SaveString", new object[] {
+                        String}, this.SaveStringOperationCompleted, userState);
+        }
+        
+        private void OnSaveStringOperationCompleted(object arg) {
+            if ((this.SaveStringCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.SaveStringCompleted(this, new System.ComponentModel.AsyncCompletedEventArgs(invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/SendImage", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public void SendImage(string CsImage, string CheckDateTime) {
+            this.Invoke("SendImage", new object[] {
+                        CsImage,
+                        CheckDateTime});
+        }
+        
+        /// <remarks/>
+        public void SendImageAsync(string CsImage, string CheckDateTime) {
+            this.SendImageAsync(CsImage, CheckDateTime, null);
+        }
+        
+        /// <remarks/>
+        public void SendImageAsync(string CsImage, string CheckDateTime, object userState) {
+            if ((this.SendImageOperationCompleted == null)) {
+                this.SendImageOperationCompleted = new System.Threading.SendOrPostCallback(this.OnSendImageOperationCompleted);
+            }
+            this.InvokeAsync("SendImage", new object[] {
+                        CsImage,
+                        CheckDateTime}, this.SendImageOperationCompleted, userState);
+        }
+        
+        private void OnSendImageOperationCompleted(object arg) {
+            if ((this.SendImageCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.SendImageCompleted(this, new System.ComponentModel.AsyncCompletedEventArgs(invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
             }
         }
         
@@ -205,6 +273,14 @@ namespace CsWebRef.WebRef {
             }
         }
     }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3752.0")]
+    public delegate void SaveStringCompletedEventHandler(object sender, System.ComponentModel.AsyncCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3752.0")]
+    public delegate void SendImageCompletedEventHandler(object sender, System.ComponentModel.AsyncCompletedEventArgs e);
 }
 
 #pragma warning restore 1591
