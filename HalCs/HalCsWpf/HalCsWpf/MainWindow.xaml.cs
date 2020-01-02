@@ -26,6 +26,8 @@ namespace HalCsWpf
 
         HObject ho_Image = null;
         HTuple hv_AcqHandle = null;
+        //HTuple hd = null;
+        HDevelopExport hd = new HDevelopExport();
         public MainWindow()
         {
             InitializeComponent();
@@ -67,7 +69,20 @@ namespace HalCsWpf
                 HOperatorSet.DispObj(ho_Image, hWindowControl1.HalconWindow);
             }
         }
+        void showInv()
+        {
+            hd.RunHalcon(hWindowControl1.HalconWindow);
+            //hd.action();
+        }
 
+        public void button3_click(object sender, RoutedEventArgs e)
+        {
+            //HDevelopExport hd = new HDevelopExport();
+            //hd.RunHalcon(hWindowControl1.HalconWindow);
+            //hd.hv_ExpDefaultWinHandle = hWindowControl1.HalconWindow;
+            showThread = new Thread(showInv);
+            showThread.Start();
+        }
     }
 
 }

@@ -6,12 +6,13 @@
         xmlns:local="clr-namespace:HalCsWpf"
         xmlns:HalconDotNet="clr-namespace:HalconDotNet;assembly=halcondotnet" x:Class="HalCsWpf.MainWindow"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
+        Title="MainWindow" Height="900" Width="800">
+    <Grid Margin="0,0,33,58">
 
-        <HalconDotNet:HSmartWindowControlWPF x:Name="hWindowControl1" HorizontalAlignment="Left" Height="300" Margin="10,10,0,0" VerticalAlignment="Top" Width="400" HImagePart="0,0,4000,3000"/>
-        <Button x:Name="button1" Content="Button" HorizontalAlignment="Left" Height="30" Margin="10,341,0,0" VerticalAlignment="Top" Width="89" Click="button1_click"/>
-        <Button x:Name="button2" Content="Button" HorizontalAlignment="Left" Height="30" Margin="321,341,0,0" VerticalAlignment="Top" Width="89" Click="button2_click"/>
+        <HalconDotNet:HSmartWindowControlWPF x:Name="hWindowControl1" HorizontalAlignment="Left" Height="800" Margin="10,41,0,-30" VerticalAlignment="Top" Width="600" HImagePart="0,0,3000,4000"/>
+        <Button x:Name="button1" Content="Button" HorizontalAlignment="Left" Height="30" Margin="642,41,0,0" VerticalAlignment="Top" Width="89" Click="button1_click"/>
+        <Button x:Name="button2" Content="Button" HorizontalAlignment="Left" Height="30" Margin="642,124,0,0" VerticalAlignment="Top" Width="89" Click="button2_click"/>
+        <Button x:Name="button3" Content="Inv" HorizontalAlignment="Left" Height="30" Margin="642,222,0,0" VerticalAlignment="Top" Width="89" Click="button3_click" RenderTransformOrigin="2.277,0.286"/>
 
     </Grid>
 </Window>
