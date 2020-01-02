@@ -18,17 +18,17 @@ using HalconDotNet;
 public partial class HDevelopExport
 {
   public HTuple hv_ExpDefaultWinHandle;
+    HTuple hv_AcqHandle = new HTuple();
+    //public void HDevelopStop()
+    //{
+    //    MessageBox.Show("Press button to continue", "Program stop");
+    //}
 
-  //public void HDevelopStop()
-  //{
-  //  MessageBox.Show("Press button to continue", "Program stop");
-  //}
-
-  // Procedures 
-  // External procedures 
-  // Chapter: Develop
-  // Short Description: Switch dev_update_pc, dev_update_var and dev_update_window to 'off'. 
-  public void dev_update_off ()
+    // Procedures 
+    // External procedures 
+    // Chapter: Develop
+    // Short Description: Switch dev_update_pc, dev_update_var and dev_update_window to 'off'. 
+    public void dev_update_off ()
   {
 
     // Initialize local and output iconic variables 
@@ -733,7 +733,8 @@ public partial class HDevelopExport
     HTuple hv_BarWidth = new HTuple(), hv_BarHeight = new HTuple();
     HTuple hv_BarCodeHandle = new HTuple(), hv_InfoModel = new HTuple();
     HTuple hv_SignModel = new HTuple(), hv_WindowHandle = new HTuple();
-    HTuple hv_AcqHandle = new HTuple(), hv_InfoRow = new HTuple();
+    //HTuple hv_AcqHandle = new HTuple(), hv_InfoRow = new HTuple();
+    HTuple  hv_InfoRow = new HTuple();
     HTuple hv_InfoColumn = new HTuple(), hv_InfoAngle = new HTuple();
     HTuple hv_InfoScore = new HTuple(), hv_DecodedDataStrings = new HTuple();
     HTuple hv_someitem = new HTuple(), hv_SignRow = new HTuple();
@@ -1082,6 +1083,10 @@ public partial class HDevelopExport
         hv_ExpDefaultWinHandle = Window;
         action();
   }
+    public void StopHalcon()
+    {
+        HOperatorSet.CloseFramegrabber(hv_AcqHandle);
+    }
 
 }
 
