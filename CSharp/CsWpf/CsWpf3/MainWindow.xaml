@@ -1,0 +1,17 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CsWpf"
+        xmlns:HalconDotNet="clr-namespace:HalconDotNet;assembly=halcondotnet" x:Class="CsWpf.MainWindow"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Button x:Name="button1" Content="Start&#xD;&#xA;" HorizontalAlignment="Left" Height="73.179" Margin="30.951,328.821,0,0" VerticalAlignment="Top" Width="169.296" Click="Button1_Click"/>
+        <Label Content="Label" HorizontalAlignment="Left" Margin="158.742,244.966,0,0" VerticalAlignment="Top"/>
+        <HalconDotNet:HSmartWindowControlWPF x:Name="hWindowControl1" HorizontalAlignment="Left" Height="300" Margin="30.951,19.966,0,0" VerticalAlignment="Top" Width="400" HImagePart="0,0,4000,3000"/>
+        <Button x:Name="button2" Content="Button" HorizontalAlignment="Left" Height="73.179" Margin="261.655,328.821,0,0" VerticalAlignment="Top" Width="169.296" Click="Button2_Click"/>
+
+    </Grid>
+</Window>
