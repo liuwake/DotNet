@@ -23,30 +23,28 @@ namespace HalCsWpf
     /// </summary>
     public partial class MainWindow : Window
     {
-
+       
         HObject ho_Image = null;
         HTuple hv_AcqHandle = null;
         public MainWindow()
         {
             InitializeComponent();
-            //Init ??? 
-            //没有初始化new HDevelopExport();也能正常运行
-
-            //HDevelopExport hd = new HDevelopExport();
+            //Init ???
+            HDevelopExport hd = new HDevelopExport();
             //HDevelopExportApp.
-
-
+            
+            
         }
 
         Thread showThread;
 
-        private void button1_click(object sender, EventArgs e)//开始
+        private void button1_Click(object sender, EventArgs e)//开始
         {
             showThread = new Thread(showFrame);
             showThread.Start();
         }
 
-        private void button2_click(object sender, EventArgs e)//停止
+        private void button2_Click(object sender, EventArgs e)//停止
         {
             showThread.Abort();
             HOperatorSet.CloseFramegrabber(hv_AcqHandle);
@@ -55,7 +53,7 @@ namespace HalCsWpf
         void showFrame()//采集
         {
             HOperatorSet.GenEmptyObj(out ho_Image);
-
+            
             HOperatorSet.OpenFramegrabber("GigEVision2", 0, 0, 0, 0, 0, 0, "progressive",
         -1, "default", -1, "false", "default", "c42f90f2b7fa_Hikvision_MVCE12010GM",
         0, -1, out hv_AcqHandle);
@@ -68,6 +66,7 @@ namespace HalCsWpf
             }
         }
 
+       
     }
 
 }
