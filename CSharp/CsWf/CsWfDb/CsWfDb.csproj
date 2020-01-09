@@ -45,6 +45,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AccessDemoDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AccessDemoDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DbOperation.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
@@ -66,6 +71,17 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="AccessDemoDataSet.xsc">
+      <DependentUpon>AccessDemoDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="AccessDemoDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>AccessDemoDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="AccessDemoDataSet.xss">
+      <DependentUpon>AccessDemoDataSet.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
