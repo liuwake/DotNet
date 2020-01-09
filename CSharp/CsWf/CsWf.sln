@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.960
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CsWf", "CsWf\CsWf.csproj", "{AFF4763D-F246-40E1-9583-63A396026864}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CsWfDb", "CsWfDb\CsWfDb.csproj", "{A7ABE460-F1E8-473A-A4BA-FDAA447F9208}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AFF4763D-F246-40E1-9583-63A396026864}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AFF4763D-F246-40E1-9583-63A396026864}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AFF4763D-F246-40E1-9583-63A396026864}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AFF4763D-F246-40E1-9583-63A396026864}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A7ABE460-F1E8-473A-A4BA-FDAA447F9208}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A7ABE460-F1E8-473A-A4BA-FDAA447F9208}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A7ABE460-F1E8-473A-A4BA-FDAA447F9208}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A7ABE460-F1E8-473A-A4BA-FDAA447F9208}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {798D75A0-CBBE-488F-A2F1-8321B560F7CC}
+	EndGlobalSection
+EndGlobal
