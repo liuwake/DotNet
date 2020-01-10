@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CsWf", "CsWf\CsWf.csproj", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CsWfDb", "CsWfDb\CsWfDb.csproj", "{A7ABE460-F1E8-473A-A4BA-FDAA447F9208}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CsWfDemo", "CsWfDemo\CsWfDemo.csproj", "{D1A38DEA-9212-4462-82B5-12558AA19F65}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{A7ABE460-F1E8-473A-A4BA-FDAA447F9208}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A7ABE460-F1E8-473A-A4BA-FDAA447F9208}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A7ABE460-F1E8-473A-A4BA-FDAA447F9208}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D1A38DEA-9212-4462-82B5-12558AA19F65}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D1A38DEA-9212-4462-82B5-12558AA19F65}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D1A38DEA-9212-4462-82B5-12558AA19F65}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D1A38DEA-9212-4462-82B5-12558AA19F65}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
