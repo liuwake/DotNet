@@ -73,6 +73,17 @@ namespace CsWfDb
                 {
                     //打开数据库连接
                     conn.Open();
+                    {
+                        //查询语句
+                        string sqlCommandString = "select * from Scan";
+                        //利用 Adapter 转换结果到 datagrid
+                        SQLiteDataAdapter adapter = new SQLiteDataAdapter(sqlCommandString, conn);  
+                        DataSet ds = new DataSet();
+                        adapter.Fill(ds);
+                        DataView dv = ds.Tables[0].DefaultView;
+
+                        dataGridView1.DataSource = dv;
+                    }
                     MessageBox.Show("数据库连接成功！");
                 }
             }
