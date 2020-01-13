@@ -51,24 +51,9 @@
             this.button9 = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.accessDemoDataSet = new CsWfDb.AccessDemoDataSet();
-            this.scanBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.scanTableAdapter = new CsWfDb.AccessDemoDataSetTableAdapters.ScanTableAdapter();
-            this.dbIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.hospitalNoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.bedNoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ageDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tagCodeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.scanDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.signDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.passDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.accessDemoDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.scanBindingSource)).BeginInit();
+
             this.SuspendLayout();
-            // 
+
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(12, 210);
@@ -85,7 +70,7 @@
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(146, 54);
             this.button2.TabIndex = 1;
-            this.button2.Text = "TestConnectionOleRam";
+            this.button2.Text = "TestConnectionSqlite";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
@@ -266,104 +251,14 @@
             this.label8.Size = new System.Drawing.Size(95, 12);
             this.label8.TabIndex = 21;
             this.label8.Text = "select Results:";
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.AutoGenerateColumns = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dbIdDataGridViewTextBoxColumn,
-            this.hospitalNoDataGridViewTextBoxColumn,
-            this.bedNoDataGridViewTextBoxColumn,
-            this.nameDataGridViewTextBoxColumn,
-            this.ageDataGridViewTextBoxColumn,
-            this.tagCodeDataGridViewTextBoxColumn,
-            this.scanDateDataGridViewTextBoxColumn,
-            this.signDataGridViewCheckBoxColumn,
-            this.passDataGridViewCheckBoxColumn});
-            this.dataGridView1.DataSource = this.scanBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(475, 14);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowTemplate.Height = 23;
-            this.dataGridView1.Size = new System.Drawing.Size(604, 430);
-            this.dataGridView1.TabIndex = 22;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            // 
-            // accessDemoDataSet
-            // 
-            this.accessDemoDataSet.DataSetName = "AccessDemoDataSet";
-            this.accessDemoDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // scanBindingSource
-            // 
-            this.scanBindingSource.DataMember = "Scan";
-            this.scanBindingSource.DataSource = this.accessDemoDataSet;
-            this.scanBindingSource.CurrentChanged += new System.EventHandler(this.scanBindingSource_CurrentChanged);
-            // 
-            // scanTableAdapter
-            // 
-            this.scanTableAdapter.ClearBeforeFill = true;
-            // 
-            // dbIdDataGridViewTextBoxColumn
-            // 
-            this.dbIdDataGridViewTextBoxColumn.DataPropertyName = "DbId";
-            this.dbIdDataGridViewTextBoxColumn.HeaderText = "DbId";
-            this.dbIdDataGridViewTextBoxColumn.Name = "dbIdDataGridViewTextBoxColumn";
-            // 
-            // hospitalNoDataGridViewTextBoxColumn
-            // 
-            this.hospitalNoDataGridViewTextBoxColumn.DataPropertyName = "HospitalNo";
-            this.hospitalNoDataGridViewTextBoxColumn.HeaderText = "HospitalNo";
-            this.hospitalNoDataGridViewTextBoxColumn.Name = "hospitalNoDataGridViewTextBoxColumn";
-            // 
-            // bedNoDataGridViewTextBoxColumn
-            // 
-            this.bedNoDataGridViewTextBoxColumn.DataPropertyName = "BedNo";
-            this.bedNoDataGridViewTextBoxColumn.HeaderText = "BedNo";
-            this.bedNoDataGridViewTextBoxColumn.Name = "bedNoDataGridViewTextBoxColumn";
-            // 
-            // nameDataGridViewTextBoxColumn
-            // 
-            this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
-            this.nameDataGridViewTextBoxColumn.HeaderText = "Name";
-            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
-            // 
-            // ageDataGridViewTextBoxColumn
-            // 
-            this.ageDataGridViewTextBoxColumn.DataPropertyName = "Age";
-            this.ageDataGridViewTextBoxColumn.HeaderText = "Age";
-            this.ageDataGridViewTextBoxColumn.Name = "ageDataGridViewTextBoxColumn";
-            // 
-            // tagCodeDataGridViewTextBoxColumn
-            // 
-            this.tagCodeDataGridViewTextBoxColumn.DataPropertyName = "TagCode";
-            this.tagCodeDataGridViewTextBoxColumn.HeaderText = "TagCode";
-            this.tagCodeDataGridViewTextBoxColumn.Name = "tagCodeDataGridViewTextBoxColumn";
-            // 
-            // scanDateDataGridViewTextBoxColumn
-            // 
-            this.scanDateDataGridViewTextBoxColumn.DataPropertyName = "ScanDate";
-            this.scanDateDataGridViewTextBoxColumn.HeaderText = "ScanDate";
-            this.scanDateDataGridViewTextBoxColumn.Name = "scanDateDataGridViewTextBoxColumn";
-            // 
-            // signDataGridViewCheckBoxColumn
-            // 
-            this.signDataGridViewCheckBoxColumn.DataPropertyName = "Sign";
-            this.signDataGridViewCheckBoxColumn.HeaderText = "Sign";
-            this.signDataGridViewCheckBoxColumn.Name = "signDataGridViewCheckBoxColumn";
-            // 
-            // passDataGridViewCheckBoxColumn
-            // 
-            this.passDataGridViewCheckBoxColumn.DataPropertyName = "Pass";
-            this.passDataGridViewCheckBoxColumn.HeaderText = "Pass";
-            this.passDataGridViewCheckBoxColumn.Name = "passDataGridViewCheckBoxColumn";
+;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1091, 461);
-            this.Controls.Add(this.dataGridView1);
+
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.button9);
@@ -388,10 +283,7 @@
             this.Controls.Add(this.button1);
             this.Name = "Form1";
             this.Text = "WfCsDb";
-            this.Load += new System.EventHandler(this.Form1_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.accessDemoDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.scanBindingSource)).EndInit();
+
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -421,19 +313,7 @@
         private System.Windows.Forms.Button button9;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private AccessDemoDataSet accessDemoDataSet;
-        private System.Windows.Forms.BindingSource scanBindingSource;
-        private AccessDemoDataSetTableAdapters.ScanTableAdapter scanTableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dbIdDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn hospitalNoDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn bedNoDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ageDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn tagCodeDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn scanDateDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn signDataGridViewCheckBoxColumn;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn passDataGridViewCheckBoxColumn;
+
     }
 }
 

@@ -12,6 +12,7 @@ using System.Windows.Forms;
 //using System.Data;
 using System.Data.OleDb;
 using System.Data.SqlClient;
+using System.Data.SQLite;
 
 namespace CsWfDb
 {
@@ -55,7 +56,7 @@ namespace CsWfDb
         private void Form1_Load(object sender, EventArgs e)
         {
             // TODO: 这行代码将数据加载到表“accessDemoDataSet.Scan”中。您可以根据需要移动或删除它。
-            this.scanTableAdapter.Fill(this.accessDemoDataSet.Scan);
+            //this.scanTableAdapter.Fill(this.accessDemoDataSet.Scan);
 
         }
 
@@ -63,12 +64,12 @@ namespace CsWfDb
         {
             //编写数据库连接串
             //string connStr = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source=" + "c:\\WK\\UVSS.mdb;User Id=admin;Password=;";
-            string connStr = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source=" + "c:\\WK\\AccessDemo.mdb;";
-
+            string connStr = "Data Source = c:\\WK\\Demo.sqlite; Version = 3";
+           
             //创建SqlConnection的实例
             try
             {
-                using (OleDbConnection conn = new OleDbConnection(connStr))
+                using (SQLiteConnection conn = new SQLiteConnection(connStr))
                 {
                     //打开数据库连接
                     conn.Open();
