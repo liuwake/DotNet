@@ -37,6 +37,9 @@
     <Reference Include="halcondotnet">
       <HintPath>..\..\..\..\..\..\..\..\Program Files\MVTec\HALCON-18.11-Steady\bin\dotnet35\halcondotnet.dll</HintPath>
     </Reference>
+    <Reference Include="hdevenginedotnet">
+      <HintPath>..\..\..\..\..\..\..\..\Program Files\MVTec\HALCON-18.11-Steady\bin\dotnet35\hdevenginedotnet.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
@@ -65,8 +68,6 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="HalLive.cs" />
-    <Compile Include="InvLiveMain.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -97,6 +98,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\HalCsMod\HalCsMod\HalCsMod.csproj">
+      <Project>{5512ac69-a61c-4c69-acae-f788f8781a9c}</Project>
+      <Name>HalCsMod</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

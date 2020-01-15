@@ -15,7 +15,7 @@ using System;
 //using System.Windows.Forms;
 using HalconDotNet;
 
-public partial class HDevelopExport
+public partial class HalScan
 {
   public HTuple hv_ExpDefaultWinHandle;
     HTuple hv_AcqHandle = new HTuple();

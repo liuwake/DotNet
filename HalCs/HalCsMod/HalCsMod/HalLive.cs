@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using HalconDotNet;
 
+
 namespace HalCsWpf
 {
     public partial class HalLive

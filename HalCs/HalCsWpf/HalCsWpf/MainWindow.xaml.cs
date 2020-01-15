@@ -25,7 +25,7 @@ namespace HalCsWpf
     {
 
         //HTuple hd = null;
-        HDevelopExport HalInv = new HDevelopExport();
+        HalScan HalInv = new HalScan();
         HalLive HalLive = new HalLive();
         public MainWindow()
         {
