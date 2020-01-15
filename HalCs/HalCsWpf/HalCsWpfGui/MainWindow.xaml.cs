@@ -25,19 +25,12 @@ namespace HalCsWpfGui
     /// </summary>
     public partial class MainWindow : Window
     {
+        Thread showThread;
+        HalLive halLive = new HalLive();
         public MainWindow()
         {
             InitializeComponent();
-            try
-            {
-                Thread showThread;
-                showThread = new Thread(Start);
-                showThread.Start();
-            }
-            catch(HalconException ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+            
         }
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
@@ -54,15 +47,30 @@ namespace HalCsWpfGui
             //this.Height = System.Windows.SystemParameters.PrimaryScreenHeight;
         }
 
-        private void Start()
+        private void HalLiveShow()
         {
-            HalCsMod.HalCam halCam = new HalCsMod.HalCam();
+
+            halLive.RunHalcon(hWindowControl1.HalconWindow);
             //window = hWindowControl1.HalconWindow;
-            halCam.showFrame(hWindowControl1.HalconWindow);
+            
             //HOperatorSet.DispObj(halCam.ho_Image, hWindowControl1.HalconWindow);
             System.Diagnostics.Debug.WriteLine("Start()");
 
 
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+
+                showThread = new Thread(HalLiveShow);
+                showThread.Start();
+            }
+            catch (HalconException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }

@@ -26,12 +26,12 @@ namespace HalCsMod
         }
         static void HalMain()
         {
-            HalCam halCam = new HalCam();
-            halCam.Cam();
-            halCam.Vision(out HTuple hv_Mean, out HTuple hv_Deviation);
-            Console.WriteLine("halEn = " + halCam.halEn);
-            Console.WriteLine("Image mean= " + hv_Mean.D);
-            Console.WriteLine(halCam.ho_Image.GetType());
+            HalLive halLive = new HalLive();
+            halLive.Info();
+
+            //Console.WriteLine("halEn = " + halCam.halEn);
+            Console.WriteLine("Image mean= " + halLive.hv_Mean.D);
+            Console.WriteLine(halLive.ho_Image.GetType());
         }
     }
 }

@@ -12,6 +12,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
+using HalCsMod;
 using HalconDotNet;//引入halcon
 using System.Threading;//引入线程
 
@@ -30,12 +31,6 @@ namespace HalCsWpf
         public MainWindow()
         {
             InitializeComponent();
-            //Init ??? 
-            //没有初始化new HDevelopExport();也能正常运行
-
-            //HDevelopExport hd = new HDevelopExport();
-            //HDevelopExportApp.
-
 
         }
 

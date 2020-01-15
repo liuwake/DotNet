@@ -11,6 +11,7 @@
         <HalconDotNet:HSmartWindowControlWPF x:Name="hWindowControl1" HorizontalAlignment="Left" Height="1004" Margin="24,10,0,0" VerticalAlignment="Top" Width="728" HImagePart="0,0,3000,4000"/>
 
         <Grid HorizontalAlignment="Left" Height="62" Margin="24,1253,-1097,-349" VerticalAlignment="Top" Width="1918"/>
+        <Button Content="Button" HorizontalAlignment="Left" Height="66" Margin="863,66,-165,0" VerticalAlignment="Top" Width="129" Click="Button_Click"/>
     </Grid>
 
 
