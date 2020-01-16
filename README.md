@@ -8,13 +8,7 @@
 - [.NET框](https://zh.wikipedia.org/wiki/.NET%E6%A1%86%E6%9E%B6)架
 ## Doc
 - [.NET documentation](https://docs.microsoft.com/en-us/dotnet/?view=netframework-4.8)
-## Tutuail
-### Microsoft official tutorial
-[C# Tutorials](https://docs.microsoft.com/en-us/dotnet/csharp/tutorials/)
 
-- [Manipulate integral and floating point numbers in C#](https://docs.microsoft.com/en-us/dotnet/csharp/tutorials/intro-to-csharp/numbers-in-csharp)
-- [C# programming guide](https://docs.microsoft.com/zh-cn/dotnet/csharp/programming-guide/)
-- 
 ### Plat
 https://www.codecademy.com/learn/learn-c-sharp
 #### [C#教程：C#入门经典教程，值得收藏](http://c.biancheng.net/csharp/)
