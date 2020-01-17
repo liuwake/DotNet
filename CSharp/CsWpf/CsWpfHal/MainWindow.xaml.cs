@@ -15,7 +15,7 @@ using System.Windows.Shapes;
 using HalconDotNet;//引入halcon
 using System.Threading;//引入线程
 
-namespace CsWpf
+namespace CsWpfHal
 {
     /// <summary>
     /// MainWindow.xaml 的交互逻辑

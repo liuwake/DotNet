@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace CsWpf.Properties
+namespace CsWpfHal.Properties
 {
 
 
