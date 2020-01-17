@@ -18,6 +18,7 @@ namespace WcfConsole
             Console.WriteLine(client.TestMethodStr(1));
             Console.WriteLine(client.TestMethodDou(1, 2));
 
+
             Console.ReadLine();
             client.Close();
         }
