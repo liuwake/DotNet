@@ -1,0 +1,20 @@
+﻿<Window x:Class="DbWpf.OdbcForm"
+
+
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DbWpf"
+        mc:Ignorable="d"
+        Title="OdbcForm" Height="1080" Width="1920">
+    <Grid Margin="940,0,2,14">
+        <DataGrid x:Name="dataGridResult" HorizontalAlignment="Left" Height="575" Margin="10,10,0,0" VerticalAlignment="Top" Width="950" RenderTransformOrigin="0.506,0.526"/>
+        <Button x:Name="buttonUsedUpdate" Content="UsedUpdate" HorizontalAlignment="Left" Height="52" Margin="10,973,0,0" VerticalAlignment="Top" Width="158" Click="ButtonUsedUpdate_Click"/>
+        <Button x:Name="buttonUsedSave" Content="UsedSave" HorizontalAlignment="Left" Height="52" Margin="173,973,0,0" VerticalAlignment="Top" Width="158" Click="ButtonUsedUpdate_Click"/>
+        <DataGrid x:Name="dataGridResultOne" HorizontalAlignment="Left" Height="245" Margin="10,590,0,0" VerticalAlignment="Top" Width="950" RenderTransformOrigin="0.506,0.526"/>
+        <Label x:Name="labelUsedCode" Content="Label" HorizontalAlignment="Left" Margin="10,863,0,0" VerticalAlignment="Top" Height="19" Width="950"/>
+    </Grid>
+</Window>
+
+

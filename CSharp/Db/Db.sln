@@ -5,16 +5,32 @@ VisualStudioVersion = 15.0.28307.1000
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Db", "Db\Db.csproj", "{3CD5AE01-F3FA-4B0B-BC39-EF17150AD007}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DbWpf", "DbWpf\DbWpf.csproj", "{BE2A1127-5056-48A0-AA02-4130B6DEF927}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
+		Debug|x64 = Debug|x64
 		Release|Any CPU = Release|Any CPU
+		Release|x64 = Release|x64
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{3CD5AE01-F3FA-4B0B-BC39-EF17150AD007}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{3CD5AE01-F3FA-4B0B-BC39-EF17150AD007}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3CD5AE01-F3FA-4B0B-BC39-EF17150AD007}.Debug|x64.ActiveCfg = Debug|x64
+		{3CD5AE01-F3FA-4B0B-BC39-EF17150AD007}.Debug|x64.Build.0 = Debug|x64
 		{3CD5AE01-F3FA-4B0B-BC39-EF17150AD007}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3CD5AE01-F3FA-4B0B-BC39-EF17150AD007}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3CD5AE01-F3FA-4B0B-BC39-EF17150AD007}.Release|x64.ActiveCfg = Release|x64
+		{3CD5AE01-F3FA-4B0B-BC39-EF17150AD007}.Release|x64.Build.0 = Release|x64
+		{BE2A1127-5056-48A0-AA02-4130B6DEF927}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BE2A1127-5056-48A0-AA02-4130B6DEF927}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BE2A1127-5056-48A0-AA02-4130B6DEF927}.Debug|x64.ActiveCfg = Debug|x64
+		{BE2A1127-5056-48A0-AA02-4130B6DEF927}.Debug|x64.Build.0 = Debug|x64
+		{BE2A1127-5056-48A0-AA02-4130B6DEF927}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BE2A1127-5056-48A0-AA02-4130B6DEF927}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BE2A1127-5056-48A0-AA02-4130B6DEF927}.Release|x64.ActiveCfg = Release|x64
+		{BE2A1127-5056-48A0-AA02-4130B6DEF927}.Release|x64.Build.0 = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
