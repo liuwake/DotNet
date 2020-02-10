@@ -9,8 +9,4 @@
 ## Doc
 - [.NET documentation](https://docs.microsoft.com/en-us/dotnet/?view=netframework-4.8)
 
-### Plat
-https://www.codecademy.com/learn/learn-c-sharp
-#### [C#教程：C#入门经典教程，值得收藏](http://c.biancheng.net/csharp/)
-- 
-- [C#变量命名规则（命名规范）](http://c.biancheng.net/view/2795.html)
+## **Learn**
