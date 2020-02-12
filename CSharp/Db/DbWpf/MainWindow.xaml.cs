@@ -27,12 +27,13 @@ namespace DbWpf
             //Init
             InitializeComponent();            
             //Open window
-            Window odbcForm = new OdbcForm();//这是新窗口的类                                            
-            odbcForm.Show();//无模式，弹出！
-            Window oleDbForm = new OleDbForm();//这是新窗口的类                                            
-            oleDbForm.Show();//无模式，弹出！
+            ////Window odbcForm = new OdbcForm();//这是新窗口的类                                            
+            ////odbcForm.Show();//无模式，弹出！
+            ////Window oleDbForm = new OleDbForm();//这是新窗口的类                                            
+            ////oleDbForm.Show();//无模式，弹出！
             Window sqliteForm = new SqliteForm();//这是新窗口的类                                            
             sqliteForm.Show();//无模式，弹出！
+            sqliteForm.Topmost = true;
 
         }
 

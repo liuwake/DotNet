@@ -6,8 +6,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DbWpf"
         mc:Ignorable="d"
-        Title="SqliteFormw" Height="1080" Width="1920">
-    <Grid Margin="940,0,2,14">
+        Title="SqliteForm" Height="1080" Width="960" Left="960" Top="0">
+    <Grid Margin="0,0,2,14">
         <DataGrid x:Name="dataGridResult" HorizontalAlignment="Left" Height="575" Margin="10,10,0,0" VerticalAlignment="Top" Width="950" RenderTransformOrigin="0.506,0.526"/>
         <Button x:Name="buttonUsedUpdate" Content="UsedUpdate" HorizontalAlignment="Left" Height="52" Margin="10,973,0,0" VerticalAlignment="Top" Width="158" Click="ButtonUsedUpdate_Click"/>
         <Button x:Name="buttonUsedSave" Content="UsedSave" HorizontalAlignment="Left" Height="52" Margin="173,973,0,0" VerticalAlignment="Top" Width="158" Click="ButtonUsedUpdate_Click"/>
