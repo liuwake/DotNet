@@ -12,6 +12,8 @@
   - resource
     - http://www.wrox.com/WileyCDA/WroxTitle/productCd-1118833031.html
 
+## Blog
+- [孙凯旋个人主页](http://www.codeisbug.com/)讲了很多.net面试问题
 
 ### Plat
 https://www.codecademy.com/learn/learn-c-sharp
