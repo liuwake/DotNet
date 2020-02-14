@@ -30,7 +30,8 @@ namespace CsWebRef
 
             if (  URL.Length < 10)
             {
-                URL = "http://192.168.3.47:8000/WebService1.asmx?WSDL";
+                //URL = "http://192.168.3.47:8000/WebService1.asmx?WSDL";
+                URL = "http://localhost:53640/WebService1.asmx?WSDL";
             }
             string CsImagePath = "C:\\Users\\iwake\\OneDrive - wake\\Desktop\\Dog.jpg";
             //if (CallWebService(URL, CsImagePath, CheckDateTime) == 1)
