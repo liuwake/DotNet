@@ -14,7 +14,7 @@ namespace WebApplication3
         protected void Page_Load(object sender, EventArgs e)
         {
 
-            Service1Client client = new Service1Client.Service1Client();
+            //Service1Client client = new Service1Client.Service1Client();
            
 
         }
@@ -26,7 +26,8 @@ namespace WebApplication3
 
         protected void Button2_Click(object sender, EventArgs e)
         {
-            //this.Label1.Text = WebRef1.Service1.GetHello();              
+            WeatherWebService.WeatherWebService w = new WeatherWebService.WeatherWebService();
+            this.Label1.Text = w.getWeatherbyCityName("beijing")[5];
 
 
         }

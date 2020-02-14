@@ -86,20 +86,13 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
-    <Content Include="Web References\WebRef\Reference.map">
+    <Content Include="Web References\WeatherWebService\Reference.map">
       <Generator>MSDiscoCodeGenerator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </Content>
-    <None Include="Web References\WebRef\Service1.disco" />
+    <None Include="Web References\WeatherWebService\WeatherWebService.disco" />
     <Content Include="Web.config" />
     <Content Include="WebForm1.aspx" />
-    <None Include="Web References\WebRef\Service1.wsdl" />
-    <None Include="Web References\WebRef\Service1.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Web References\WebRef\Service10.xsd">
-      <SubType>Designer</SubType>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Connected Services\ServiceReference1\Reference.cs">
@@ -113,7 +106,7 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
-    <Compile Include="Web References\WebRef\Reference.cs">
+    <Compile Include="Web References\WeatherWebService\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.map</DependentUpon>
@@ -128,6 +121,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+    <None Include="Web References\WeatherWebService\WeatherWebService.wsdl" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -151,16 +145,16 @@
     <WCFMetadataStorage Include="Connected Services\ServiceReference1\" />
   </ItemGroup>
   <ItemGroup>
-    <WebReferenceUrl Include="http://localhost:50434/Service1.svc">
+    <WebReferenceUrl Include="http://www.webxml.com.cn/WebServices/WeatherWebService.asmx">
       <UrlBehavior>Dynamic</UrlBehavior>
-      <RelPath>Web References\WebRef\</RelPath>
-      <UpdateFromURL>http://localhost:50434/Service1.svc</UpdateFromURL>
+      <RelPath>Web References\WeatherWebService\</RelPath>
+      <UpdateFromURL>http://www.webxml.com.cn/WebServices/WeatherWebService.asmx</UpdateFromURL>
       <ServiceLocationURL>
       </ServiceLocationURL>
       <CachedDynamicPropName>
       </CachedDynamicPropName>
       <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
-      <CachedSettingsPropName>WebApplication3_WebRef_Service1</CachedSettingsPropName>
+      <CachedSettingsPropName>WebApplication3_WeatherWebService_WeatherWebService</CachedSettingsPropName>
     </WebReferenceUrl>
   </ItemGroup>
   <PropertyGroup>

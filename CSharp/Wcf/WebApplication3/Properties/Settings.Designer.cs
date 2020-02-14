@@ -26,10 +26,10 @@ namespace WebApplication3.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.WebServiceUrl)]
-        [global::System.Configuration.DefaultSettingValueAttribute("http://localhost:50434/Service1.svc")]
-        public string WebApplication3_WebRef_Service1 {
+        [global::System.Configuration.DefaultSettingValueAttribute("http://www.webxml.com.cn/WebServices/WeatherWebService.asmx")]
+        public string WebApplication3_WeatherWebService_WeatherWebService {
             get {
-                return ((string)(this["WebApplication3_WebRef_Service1"]));
+                return ((string)(this["WebApplication3_WeatherWebService_WeatherWebService"]));
             }
         }
     }
