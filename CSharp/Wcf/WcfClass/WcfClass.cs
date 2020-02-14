@@ -7,7 +7,7 @@ using System.IO;//AI System File IO
 
 namespace WcfClass
 {
-    class WcfClass
+    public class WcfClass
     {
                
         private int InvokeWebservice(string url, string @namespace, string classname, string methodname, object[] args)
@@ -61,7 +61,7 @@ namespace WcfClass
             return 1;
         }
 
-        private string ImageToBase64String(string ImagePath)
+        public static string ImageToBase64String(string ImagePath)//需要public stitic方便外部调用
         {
             if (ImagePath == "")
                 return "";

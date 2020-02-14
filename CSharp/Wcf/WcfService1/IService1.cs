@@ -54,12 +54,28 @@ namespace WcfService1
     public interface IService1
     {
         [OperationContract]
+        String GetHello();
+
+        [OperationContract]
         String TestMethodStr(int i);
 
         [OperationContract]
-        Int32 TestMethodInt(int i);
+        int GetAdd(int a, int b);
 
         [OperationContract]
-        Double TestMethodDou(int i, int j);
+        string GetJson();
+
+        [OperationContract]
+        string GetImage();
+
+        [OperationContract]
+        string GetScan();
+
+        //[OperationContract]
+        //Int32 TestMethodInt(int i);
+
+        //[OperationContract]
+        //Double TestMethodDou(int i, int j);
+        
     }
 }
