@@ -17,6 +17,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WcflessConsole", "WcflessCo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WcfClass", "WcfClass\WcfClass.csproj", "{1D3FBAF3-D14B-4C23-B28B-E52550622E54}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApplication3", "WebApplication3\WebApplication3.csproj", "{D4C3ACBA-0A80-493B-AE17-58AD28E16C1B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -79,6 +81,14 @@ Global
 		{1D3FBAF3-D14B-4C23-B28B-E52550622E54}.Release|Any CPU.Build.0 = Release|Any CPU
 		{1D3FBAF3-D14B-4C23-B28B-E52550622E54}.Release|x64.ActiveCfg = Release|Any CPU
 		{1D3FBAF3-D14B-4C23-B28B-E52550622E54}.Release|x64.Build.0 = Release|Any CPU
+		{D4C3ACBA-0A80-493B-AE17-58AD28E16C1B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D4C3ACBA-0A80-493B-AE17-58AD28E16C1B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D4C3ACBA-0A80-493B-AE17-58AD28E16C1B}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{D4C3ACBA-0A80-493B-AE17-58AD28E16C1B}.Debug|x64.Build.0 = Debug|Any CPU
+		{D4C3ACBA-0A80-493B-AE17-58AD28E16C1B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D4C3ACBA-0A80-493B-AE17-58AD28E16C1B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D4C3ACBA-0A80-493B-AE17-58AD28E16C1B}.Release|x64.ActiveCfg = Release|Any CPU
+		{D4C3ACBA-0A80-493B-AE17-58AD28E16C1B}.Release|x64.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
