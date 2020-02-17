@@ -45,7 +45,11 @@ System.NullReferenceException: 未将对象引用设置到对象的实例。
     - [由于扩展配置问题而无法提供您请求的页面。如果该页面是脚本,请添加处理程序。](https://blog.csdn.net/y13156556538/article/details/73920771)
     - [由于扩展配置问题而无法提供您请求的页面。如果该页面是脚本,请添加处理程序。如](https://wenku.baidu.com/view/22197728482fb4daa58d4b4a.html)
     - [由于扩展配置问题而无法提供您请求的页面。如果该页面是脚本，请添加处理程序。](https://bbs.csdn.net/topics/330269295)
-
+## WebService
+### 公共api
+- http://www.webxml.com.cn/WebServices/WeatherWebService.asmx 天气预报
+  - Ref
+    - [ASP.NET 调用 webservice](https://blog.csdn.net/oqqKen12345/article/details/79064698)
 ## 4. Ref
 - [【WCF系列一】WCF入门教程(图文) VS2012](https://www.cnblogs.com/merlinhome/p/3542451.html)注意修改服务名```WcfServiceLibrary1.Service1```到```WcfServiceLibrary1.PersonService```("编辑```app.config```配置和手动修改```app.config```皆可)
 - [【WCF系列二：如何调用WCF服务】WCF入门教程（图文）VS2012](https://www.cnblogs.com/merlinhome/p/3615745.html)
