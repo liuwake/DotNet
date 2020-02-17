@@ -17,17 +17,12 @@ namespace WebApplication3
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-            this.Label1.Text = "No Web Test OK";
+            this.TextBox2.Text += "No Web Test OK" + "\n";
         }
 
         protected void Button2_Click(object sender, EventArgs e)
         {
-            
-
-            // 使用 "client" 变量在服务上调用操作。
-
-            // 始终关闭客户端。
-            this.Label1.Text = clientWcf.GetHello();
+            this.TextBox2.Text += clientWcf.GetHello() + "\n";
 
         }
 
