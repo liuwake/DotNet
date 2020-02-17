@@ -37,7 +37,9 @@ namespace WebApplication3.WebRef {
         
         private System.Threading.SendOrPostCallback GetJsonOperationCompleted;
         
-        private System.Threading.SendOrPostCallback GetImageOperationCompleted;
+        private System.Threading.SendOrPostCallback GetImageScanResultOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback GetImageScanRawOperationCompleted;
         
         private System.Threading.SendOrPostCallback GetScanOperationCompleted;
         
@@ -92,7 +94,10 @@ namespace WebApplication3.WebRef {
         public event GetJsonCompletedEventHandler GetJsonCompleted;
         
         /// <remarks/>
-        public event GetImageCompletedEventHandler GetImageCompleted;
+        public event GetImageScanResultCompletedEventHandler GetImageScanResultCompleted;
+        
+        /// <remarks/>
+        public event GetImageScanRawCompletedEventHandler GetImageScanRawCompleted;
         
         /// <remarks/>
         public event GetScanCompletedEventHandler GetScanCompleted;
@@ -222,30 +227,58 @@ namespace WebApplication3.WebRef {
         }
         
         /// <remarks/>
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IService1/GetImage", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IService1/GetImageScanResult", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
         [return: System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
-        public string GetImage() {
-            object[] results = this.Invoke("GetImage", new object[0]);
+        public string GetImageScanResult() {
+            object[] results = this.Invoke("GetImageScanResult", new object[0]);
             return ((string)(results[0]));
         }
         
         /// <remarks/>
-        public void GetImageAsync() {
-            this.GetImageAsync(null);
+        public void GetImageScanResultAsync() {
+            this.GetImageScanResultAsync(null);
         }
         
         /// <remarks/>
-        public void GetImageAsync(object userState) {
-            if ((this.GetImageOperationCompleted == null)) {
-                this.GetImageOperationCompleted = new System.Threading.SendOrPostCallback(this.OnGetImageOperationCompleted);
+        public void GetImageScanResultAsync(object userState) {
+            if ((this.GetImageScanResultOperationCompleted == null)) {
+                this.GetImageScanResultOperationCompleted = new System.Threading.SendOrPostCallback(this.OnGetImageScanResultOperationCompleted);
             }
-            this.InvokeAsync("GetImage", new object[0], this.GetImageOperationCompleted, userState);
+            this.InvokeAsync("GetImageScanResult", new object[0], this.GetImageScanResultOperationCompleted, userState);
         }
         
-        private void OnGetImageOperationCompleted(object arg) {
-            if ((this.GetImageCompleted != null)) {
+        private void OnGetImageScanResultOperationCompleted(object arg) {
+            if ((this.GetImageScanResultCompleted != null)) {
                 System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.GetImageCompleted(this, new GetImageCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+                this.GetImageScanResultCompleted(this, new GetImageScanResultCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IService1/GetImageScanRaw", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        [return: System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        public string GetImageScanRaw() {
+            object[] results = this.Invoke("GetImageScanRaw", new object[0]);
+            return ((string)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void GetImageScanRawAsync() {
+            this.GetImageScanRawAsync(null);
+        }
+        
+        /// <remarks/>
+        public void GetImageScanRawAsync(object userState) {
+            if ((this.GetImageScanRawOperationCompleted == null)) {
+                this.GetImageScanRawOperationCompleted = new System.Threading.SendOrPostCallback(this.OnGetImageScanRawOperationCompleted);
+            }
+            this.InvokeAsync("GetImageScanRaw", new object[0], this.GetImageScanRawOperationCompleted, userState);
+        }
+        
+        private void OnGetImageScanRawOperationCompleted(object arg) {
+            if ((this.GetImageScanRawCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.GetImageScanRawCompleted(this, new GetImageScanRawCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
             }
         }
         
@@ -410,17 +443,43 @@ namespace WebApplication3.WebRef {
     
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3752.0")]
-    public delegate void GetImageCompletedEventHandler(object sender, GetImageCompletedEventArgs e);
+    public delegate void GetImageScanResultCompletedEventHandler(object sender, GetImageScanResultCompletedEventArgs e);
     
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3752.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class GetImageCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+    public partial class GetImageScanResultCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
         
         private object[] results;
         
-        internal GetImageCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+        internal GetImageScanResultCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public string Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3752.0")]
+    public delegate void GetImageScanRawCompletedEventHandler(object sender, GetImageScanRawCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3752.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class GetImageScanRawCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal GetImageScanRawCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
                 base(exception, cancelled, userState) {
             this.results = results;
         }

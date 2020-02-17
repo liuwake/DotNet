@@ -55,15 +55,27 @@
           </xs:sequence>
         </xs:complexType>
       </xs:element>
-      <xs:element name="GetImage">
+      <xs:element name="GetImageScanResult">
         <xs:complexType>
           <xs:sequence />
         </xs:complexType>
       </xs:element>
-      <xs:element name="GetImageResponse">
+      <xs:element name="GetImageScanResultResponse">
         <xs:complexType>
           <xs:sequence>
-            <xs:element minOccurs="0" name="GetImageResult" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="GetImageScanResultResult" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetImageScanRaw">
+        <xs:complexType>
+          <xs:sequence />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetImageScanRawResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="GetImageScanRawResult" nillable="true" type="xs:string" />
           </xs:sequence>
         </xs:complexType>
       </xs:element>
@@ -146,11 +158,17 @@
   <wsdl:message name="IService1_GetJson_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetJsonResponse" />
   </wsdl:message>
-  <wsdl:message name="IService1_GetImage_InputMessage">
-    <wsdl:part name="parameters" element="tns:GetImage" />
+  <wsdl:message name="IService1_GetImageScanResult_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetImageScanResult" />
   </wsdl:message>
-  <wsdl:message name="IService1_GetImage_OutputMessage">
-    <wsdl:part name="parameters" element="tns:GetImageResponse" />
+  <wsdl:message name="IService1_GetImageScanResult_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetImageScanResultResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetImageScanRaw_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetImageScanRaw" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetImageScanRaw_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetImageScanRawResponse" />
   </wsdl:message>
   <wsdl:message name="IService1_GetScan_InputMessage">
     <wsdl:part name="parameters" element="tns:GetScan" />
@@ -175,9 +193,13 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetJson" message="tns:IService1_GetJson_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetJsonResponse" message="tns:IService1_GetJson_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="GetImage">
-      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetImage" message="tns:IService1_GetImage_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetImageResponse" message="tns:IService1_GetImage_OutputMessage" />
+    <wsdl:operation name="GetImageScanResult">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetImageScanResult" message="tns:IService1_GetImageScanResult_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetImageScanResultResponse" message="tns:IService1_GetImageScanResult_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetImageScanRaw">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetImageScanRaw" message="tns:IService1_GetImageScanRaw_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetImageScanRawResponse" message="tns:IService1_GetImageScanRaw_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="GetScan">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetScan" message="tns:IService1_GetScan_InputMessage" />
@@ -222,8 +244,17 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="GetImage">
-      <soap:operation soapAction="http://tempuri.org/IService1/GetImage" style="document" />
+    <wsdl:operation name="GetImageScanResult">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetImageScanResult" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetImageScanRaw">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetImageScanRaw" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

@@ -92,7 +92,9 @@
       <LastGenOutput>Reference.cs</LastGenOutput>
     </Content>
     <None Include="Web References\WeatherWebService\WeatherWebService.disco" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="WebForm1.aspx" />
   </ItemGroup>
   <ItemGroup>
@@ -135,10 +137,10 @@
   <ItemGroup>
     <None Include="packages.config" />
     <None Include="Web References\WeatherWebService\WeatherWebService.wsdl" />
-    <Content Include="Web References\WebRef\Reference.map">
+    <None Include="Web References\WebRef\Reference.map">
       <Generator>MSDiscoCodeGenerator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
-    </Content>
+    </None>
     <None Include="Web References\WebRef\Service1.wsdl" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
