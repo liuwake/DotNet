@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.IO;//AI System File IO
+using System.Drawing.Imaging;
+using System.Drawing;
 
 namespace WcfClass
 {
@@ -85,6 +87,26 @@ namespace WcfClass
                 {
                     ms.WriteTo(fs);
                 }
+            }
+        }
+
+        public Bitmap Base64StringToImage(string strbase64)
+        {
+            try
+            {
+                byte[] arr = Convert.FromBase64String(strbase64);
+                MemoryStream ms = new MemoryStream(arr);
+                Bitmap bmp = new Bitmap(ms);
+                //bmp.Save("test.jpg", System.Drawing.Imaging.ImageFormat.Jpeg);
+                //bmp.Save("test.bmp", ImageFormat.Bmp);
+                //bmp.Save("test.gif", ImageFormat.Gif);
+                //bmp.Save("test.png", ImageFormat.Png);
+                ms.Close();
+                return bmp;
+            }
+            catch (Exception ex)
+            {
+                return null;
             }
         }
 
