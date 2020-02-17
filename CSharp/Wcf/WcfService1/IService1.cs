@@ -66,7 +66,10 @@ namespace WcfService1
         string GetJson();
 
         [OperationContract]
-        string GetImage();
+        string GetImageScanResult();
+
+        [OperationContract]
+        string GetImageScanRaw();
 
         [OperationContract]
         string GetScan();

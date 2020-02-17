@@ -77,9 +77,14 @@ namespace WcfService1
             return infoJson;
         }
 
-        public string GetImage()
+        public string GetImageScanResult()
         {
-            string imagePath = "C:\\WK\\Demo.jpg";
+            string imagePath = @"C:\Users\iwake\OneDrive - wake\Desktop\Inventory\Images\ScanResult.jpg";
+            return WcfClass.WcfClass.ImageToBase64String(imagePath);
+        }
+        public string GetImageScanRaw()
+        {
+            string imagePath = @"C:\Users\iwake\OneDrive - wake\Desktop\Inventory\Images\ScanRaw.jpg";
             return WcfClass.WcfClass.ImageToBase64String(imagePath);
         }
 
