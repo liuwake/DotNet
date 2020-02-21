@@ -1,0 +1,100 @@
+﻿<Activity mc:Ignorable="sap sap2010 sads" x:Class="WorkflowProj.Activity1"
+ xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities"
+ xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+ xmlns:mca="clr-namespace:Microsoft.CSharp.Activities;assembly=System.Activities"
+ xmlns:p="http://schemas.microsoft.com/netfx/2009/xaml/servicemodel"
+ xmlns:sads="http://schemas.microsoft.com/netfx/2010/xaml/activities/debugger"
+ xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation"
+ xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation"
+ xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib"
+ xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib"
+ xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="returnValue" Type="OutArgument(x:String)" />
+  </x:Members>
+  <sap2010:ExpressionActivityEditor.ExpressionActivityEditor>C#</sap2010:ExpressionActivityEditor.ExpressionActivityEditor>
+  <sap2010:WorkflowViewState.IdRef>WorkflowProj.Activity1_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Text</x:String>
+      <x:String>System.ServiceModel.Activities</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.CSharp</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.ServiceModel.Activities</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>WorkflowProj</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:String" Name="variable1" />
+      <x:Reference>__ReferenceID1</x:Reference>
+    </Sequence.Variables>
+    <p:Send x:Name="__ReferenceID0" sap2010:WorkflowViewState.IdRef="Send_1" OperationName="GetStringFromWCF" ServiceContractName="IAppServer">
+      <p:Send.CorrelationInitializers>
+        <p:RequestReplyCorrelationInitializer>
+          <p:RequestReplyCorrelationInitializer.CorrelationHandle>
+            <InArgument x:TypeArguments="p:CorrelationHandle">
+              <VariableValue x:TypeArguments="p:CorrelationHandle">
+                <VariableValue.Variable>
+                  <Variable x:TypeArguments="p:CorrelationHandle" x:Name="__ReferenceID1" Name="__handle1" />
+                </VariableValue.Variable>
+              </VariableValue>
+            </InArgument>
+          </p:RequestReplyCorrelationInitializer.CorrelationHandle>
+        </p:RequestReplyCorrelationInitializer>
+      </p:Send.CorrelationInitializers>
+      <p:Send.Endpoint>
+        <p:Endpoint>
+          <p:Endpoint.Binding>
+            <p:BasicHttpBinding Name="basicHttpBinding" />
+          </p:Endpoint.Binding>
+        </p:Endpoint>
+      </p:Send.Endpoint>
+      <p:Send.EndpointAddress>
+        <InArgument x:TypeArguments="x:Uri">
+          <mca:CSharpValue x:TypeArguments="x:Uri">new Uri ("http://localhost:8080/AppServer")</mca:CSharpValue>
+        </InArgument>
+      </p:Send.EndpointAddress>
+      <p:SendParametersContent />
+    </p:Send>
+    <p:ReceiveReply Request="{x:Reference __ReferenceID0}" DisplayName="ReceiveReplyForSend" sap2010:WorkflowViewState.IdRef="ReceiveReply_1">
+      <p:ReceiveParametersContent>
+        <OutArgument x:TypeArguments="x:String" x:Key="GetStringFromWCFResult">
+          <mca:CSharpReference x:TypeArguments="x:String">returnValue</mca:CSharpReference>
+        </OutArgument>
+      </p:ReceiveParametersContent>
+    </p:ReceiveReply>
+    <sads:DebugSymbol.Symbol>d2pDOlxVc2Vyc1xpd2FrZVxPbmVEcml2ZSAtIHdha2VcRGVza3RvcFxDU2hhcnBQcmFjdGljZVxDU2hhcnBcV29ya2Zsb3dcV29ya2Zsb3dcV29ya2Zsb3dQcm9qXEFjdGl2aXR5MS54YW1sBiwDVQ4CAQExBUwOAgEITQVTFgIBAkgLSHECAQo2DzofAgEJUAtQXAIBBA==</sads:DebugSymbol.Symbol>
+  </Sequence>
+  <sap2010:WorkflowViewState.ViewStateManager>
+    <sap2010:ViewStateManager>
+      <sap2010:ViewStateData Id="Send_1" sap:VirtualizedContainerService.HintSize="255,86" />
+      <sap2010:ViewStateData Id="ReceiveReply_1" sap:VirtualizedContainerService.HintSize="255,86" />
+      <sap2010:ViewStateData Id="Sequence_1" sap:VirtualizedContainerService.HintSize="277,336">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="WorkflowProj.Activity1_1" sap:VirtualizedContainerService.HintSize="240,179" />
+    </sap2010:ViewStateManager>
+  </sap2010:WorkflowViewState.ViewStateManager>
+</Activity>
