@@ -64,7 +64,7 @@ namespace CsWfDb
         {
             //编写数据库连接串
             //string connStr = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source=" + "c:\\WK\\UVSS.mdb;User Id=admin;Password=;";
-            string connStr = "Data Source = c:\\WK\\Demo.sqlite; Version = 3";
+            string connStr = "Data Source = c:\\WK\\Db\\Demo.sqlite; Version = 3";
            
             //创建SqlConnection的实例
             try
