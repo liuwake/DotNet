@@ -22,6 +22,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApplication3", "WebAppli
 		{396DDEF5-4D69-43C0-83E3-2ECA192D20A7} = {396DDEF5-4D69-43C0-83E3-2ECA192D20A7}
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WcfServiceDb", "WcfServiceDb\WcfServiceDb.csproj", "{EC51E4E3-9B0D-456F-8DEF-DB7514BE95D5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebAppDb2", "WebAppDb2\WebAppDb2.csproj", "{F8BC4DA1-9E23-4E31-86D4-077411306DEF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -92,6 +96,22 @@ Global
 		{D4C3ACBA-0A80-493B-AE17-58AD28E16C1B}.Release|Any CPU.Build.0 = Release|Any CPU
 		{D4C3ACBA-0A80-493B-AE17-58AD28E16C1B}.Release|x64.ActiveCfg = Release|Any CPU
 		{D4C3ACBA-0A80-493B-AE17-58AD28E16C1B}.Release|x64.Build.0 = Release|Any CPU
+		{EC51E4E3-9B0D-456F-8DEF-DB7514BE95D5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EC51E4E3-9B0D-456F-8DEF-DB7514BE95D5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EC51E4E3-9B0D-456F-8DEF-DB7514BE95D5}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{EC51E4E3-9B0D-456F-8DEF-DB7514BE95D5}.Debug|x64.Build.0 = Debug|Any CPU
+		{EC51E4E3-9B0D-456F-8DEF-DB7514BE95D5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EC51E4E3-9B0D-456F-8DEF-DB7514BE95D5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EC51E4E3-9B0D-456F-8DEF-DB7514BE95D5}.Release|x64.ActiveCfg = Release|Any CPU
+		{EC51E4E3-9B0D-456F-8DEF-DB7514BE95D5}.Release|x64.Build.0 = Release|Any CPU
+		{F8BC4DA1-9E23-4E31-86D4-077411306DEF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F8BC4DA1-9E23-4E31-86D4-077411306DEF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F8BC4DA1-9E23-4E31-86D4-077411306DEF}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{F8BC4DA1-9E23-4E31-86D4-077411306DEF}.Debug|x64.Build.0 = Debug|Any CPU
+		{F8BC4DA1-9E23-4E31-86D4-077411306DEF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F8BC4DA1-9E23-4E31-86D4-077411306DEF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F8BC4DA1-9E23-4E31-86D4-077411306DEF}.Release|x64.ActiveCfg = Release|Any CPU
+		{F8BC4DA1-9E23-4E31-86D4-077411306DEF}.Release|x64.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
