@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // 如果此项目向 COM 公开，则下列 GUID 用于类型库的 ID
-[assembly: Guid("ec51e4e3-9b0d-456f-8def-db7514be95d5")]
+[assembly: Guid("bbc1d7b3-8b08-4a96-8d35-068d7459661b")]
 
 // 程序集的版本信息由下列四个值组成: 
 //
@@ -29,7 +29,7 @@ using System.Runtime.InteropServices;
 //      生成号
 //      修订号
 //
-// 您可以指定所有值，也可以通过使用“*”来使用
+//可以指定所有这些值，也可以使用“生成号”和“修订号”的默认值，
 // 方法是按如下所示使用“*”: :
 // [assembly: AssemblyVersion("1.0.*")]
 [assembly: AssemblyVersion("1.0.0.0")]

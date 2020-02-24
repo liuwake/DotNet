@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.Serialization;
 using System.ServiceModel;
-using System.ServiceModel.Web;
 using System.Text;
 
 using System.Data;
@@ -14,18 +13,13 @@ namespace WcfServiceDb
     [ServiceContract]
     public interface IService1
     {
+        //[OperationContract]
+        //string GetData(int value);
 
-        [OperationContract]
-        string GetData(int value);
-
-        [OperationContract]
-        CompositeType GetDataUsingDataContract(CompositeType composite);
+        //[OperationContract]
+        //CompositeType GetDataUsingDataContract(CompositeType composite);
 
         // TODO: 在此添加您的服务操作
-    }
-    [ServiceContract]
-    public interface IServiceDb
-    {
         //打开数据库
         [OperationContract]
         void openSql();
@@ -35,27 +29,29 @@ namespace WcfServiceDb
         //查询数据
         [OperationContract]
         DataSet querySql();
+
     }
 
     // 使用下面示例中说明的数据约定将复合类型添加到服务操作。
-    [DataContract]
-    public class CompositeType
-    {
-        bool boolValue = true;
-        string stringValue = "Hello ";
+    // 可以将 XSD 文件添加到项目中。在生成项目后，可以通过命名空间“WcfServiceDb.ContractType”直接使用其中定义的数据类型。
+    //[DataContract]
+    //public class CompositeType
+    //{
+    //    bool boolValue = true;
+    //    string stringValue = "Hello ";
 
-        [DataMember]
-        public bool BoolValue
-        {
-            get { return boolValue; }
-            set { boolValue = value; }
-        }
+    //    [DataMember]
+    //    public bool BoolValue
+    //    {
+    //        get { return boolValue; }
+    //        set { boolValue = value; }
+    //    }
 
-        [DataMember]
-        public string StringValue
-        {
-            get { return stringValue; }
-            set { stringValue = value; }
-        }
-    }
+    //    [DataMember]
+    //    public string StringValue
+    //    {
+    //        get { return stringValue; }
+    //        set { stringValue = value; }
+    //    }
+    //}
 }
