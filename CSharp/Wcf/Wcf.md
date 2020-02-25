@@ -8,17 +8,38 @@
 - [The Windows Communication Foundation (WCF), previously known as Indigo, is a runtime and a set of APIs in the .NET Framework for building connected, service-oriented applications.[1][2]](https://en.wikipedia.org/wiki/Windows_Communication_Foundation)
 - [zhihu wcf](https://www.zhihu.com/search?type=content&q=wcf)
 
-## Tutorial
+## 2.Tutorial
 ### MS OFFICIAL
 - [Develop Service-Oriented Applications with WCF](https://docs.microsoft.com/en-us/dotnet/framework/wcf/index)
 - [利用 WCF 开发面向服务的应用程序](https://docs.microsoft.com/zh-cn/dotnet/standard/tour)
 - [WCF 数据服务 4.5](https://docs.microsoft.com/zh-cn/dotnet/framework/data/wcf/index)
-## Config
+## 3.Config
 ### local PC config
+#### VS
+- C#有一些函数如GetHashCode和x86,X64版本有关系，为了和服务器保持一致，本地iis Express也需要设置64位。
+  - ref
+    - [IISExpress使用64位](https://www.cnblogs.com/zhaogaojian/p/10433696.html)
+  - error
+    - 否则选定X64生成后会报```未能加载文件或程序集```;```BadImageFormatException debugging web site running in x64 mode```等
 
-## 2. Flow
+## 4. Flow
 
-
+### Project
+#### WcfServiceLib
+##### Tips
+- 可以直接引用```mex```
+- 也可以用console启动
+##### Files
+- 里面是```Iservice1.cs,Service1.cs,app.config```
+- 托管在wcf管理器
+- 地址:```localhost:8080/xxxxtdesigne-time/xxx/mex```
+#### WcfServiceApp
+##### Files
+- 里面是```Iservice1.cs,Service1.svc,app.config```
+- 托管在IIS管理器
+- 地址:```localhost:8080/Service.svc```
+##### Tips
+- 可以直接引用```svc```
 #### Error
 ##### 发布错误
 - [asp.net发布网站的时候出现， "发布遇到错误，未将对象引用设置到对象的实例。](https://bbs.csdn.net/topics/393598263?list=16718956)
@@ -50,9 +71,12 @@ System.NullReferenceException: 未将对象引用设置到对象的实例。
 - http://www.webxml.com.cn/WebServices/WeatherWebService.asmx 天气预报
   - Ref
     - [ASP.NET 调用 webservice](https://blog.csdn.net/oqqKen12345/article/details/79064698)
-## 4. Ref
+## 9. Ref
 - [【WCF系列一】WCF入门教程(图文) VS2012](https://www.cnblogs.com/merlinhome/p/3542451.html)注意修改服务名```WcfServiceLibrary1.Service1```到```WcfServiceLibrary1.PersonService```("编辑```app.config```配置和手动修改```app.config```皆可)
 - [【WCF系列二：如何调用WCF服务】WCF入门教程（图文）VS2012](https://www.cnblogs.com/merlinhome/p/3615745.html)
 - [WIN8+VS2013编写发布WCF之二（部署）](https://www.cnblogs.com/tntboom/p/4348510.html)
 ## 5. GitProj
 - https://github.com/dotnet/wcf s1.3k
+
+## 10. TODO
+- [ ] xxx
