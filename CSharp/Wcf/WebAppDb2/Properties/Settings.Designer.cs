@@ -36,7 +36,7 @@ namespace WebAppDb2.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.WebServiceUrl)]
-        [global::System.Configuration.DefaultSettingValueAttribute("http://localhost:52348/Service1.svc")]
+        [global::System.Configuration.DefaultSettingValueAttribute("http://localhost:54632/Service1.svc")]
         public string WebAppDb2_WebRefDb_Service1 {
             get {
                 return ((string)(this["WebAppDb2_WebRefDb_Service1"]));

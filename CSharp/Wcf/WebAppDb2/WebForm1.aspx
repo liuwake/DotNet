@@ -10,8 +10,8 @@
 <body>
     <form id="form1" runat="server">
         <div>
-            <asp:TextBox ID="TextBox1" runat="server" Height="360px" TextMode="MultiLine" Width="298px"></asp:TextBox>
-            <asp:GridView ID="GridView1" runat="server" Height="150px" Width="303px">
+            <asp:TextBox ID="TextBox1" runat="server" Height="229px" TextMode="MultiLine" Width="744px"></asp:TextBox>
+            <asp:GridView ID="GridView1" runat="server" Height="155px" Width="749px">
             </asp:GridView>
         </div>
         <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>

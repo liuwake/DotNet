@@ -21,7 +21,7 @@ namespace WebAppDb2
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-            this.Label1.Text = "No Web Test OK";
+            this.TextBox1.Text = "No Web Test OK";
         }
 
         protected void Button2_Click(object sender, EventArgs e)
@@ -42,7 +42,8 @@ namespace WebAppDb2
 
         protected void Button3_Click(object sender, EventArgs e)
         {
-            this.TextBox1.Text = clientDb.GetHello();
+            //this.TextBox1.Text = clientDb.GetHello();
+
         }
 
         protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)

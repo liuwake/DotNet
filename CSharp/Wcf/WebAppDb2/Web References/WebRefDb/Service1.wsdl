@@ -1,96 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="Service1" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="Service1" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
   <wsdl:types>
     <xs:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-      <xs:element name="GetHello">
-        <xs:complexType>
-          <xs:sequence />
-        </xs:complexType>
-      </xs:element>
-      <xs:element name="GetHelloResponse">
-        <xs:complexType>
-          <xs:sequence>
-            <xs:element minOccurs="0" name="GetHelloResult" nillable="true" type="xs:string" />
-          </xs:sequence>
-        </xs:complexType>
-      </xs:element>
-      <xs:element name="TestMethodStr">
-        <xs:complexType>
-          <xs:sequence>
-            <xs:element minOccurs="0" name="i" type="xs:int" />
-          </xs:sequence>
-        </xs:complexType>
-      </xs:element>
-      <xs:element name="TestMethodStrResponse">
-        <xs:complexType>
-          <xs:sequence>
-            <xs:element minOccurs="0" name="TestMethodStrResult" nillable="true" type="xs:string" />
-          </xs:sequence>
-        </xs:complexType>
-      </xs:element>
-      <xs:element name="GetAdd">
-        <xs:complexType>
-          <xs:sequence>
-            <xs:element minOccurs="0" name="a" type="xs:int" />
-            <xs:element minOccurs="0" name="b" type="xs:int" />
-          </xs:sequence>
-        </xs:complexType>
-      </xs:element>
-      <xs:element name="GetAddResponse">
-        <xs:complexType>
-          <xs:sequence>
-            <xs:element minOccurs="0" name="GetAddResult" type="xs:int" />
-          </xs:sequence>
-        </xs:complexType>
-      </xs:element>
-      <xs:element name="GetJson">
-        <xs:complexType>
-          <xs:sequence />
-        </xs:complexType>
-      </xs:element>
-      <xs:element name="GetJsonResponse">
-        <xs:complexType>
-          <xs:sequence>
-            <xs:element minOccurs="0" name="GetJsonResult" nillable="true" type="xs:string" />
-          </xs:sequence>
-        </xs:complexType>
-      </xs:element>
-      <xs:element name="GetImageScanResult">
-        <xs:complexType>
-          <xs:sequence />
-        </xs:complexType>
-      </xs:element>
-      <xs:element name="GetImageScanResultResponse">
-        <xs:complexType>
-          <xs:sequence>
-            <xs:element minOccurs="0" name="GetImageScanResultResult" nillable="true" type="xs:string" />
-          </xs:sequence>
-        </xs:complexType>
-      </xs:element>
-      <xs:element name="GetImageScanRaw">
-        <xs:complexType>
-          <xs:sequence />
-        </xs:complexType>
-      </xs:element>
-      <xs:element name="GetImageScanRawResponse">
-        <xs:complexType>
-          <xs:sequence>
-            <xs:element minOccurs="0" name="GetImageScanRawResult" nillable="true" type="xs:string" />
-          </xs:sequence>
-        </xs:complexType>
-      </xs:element>
-      <xs:element name="GetScan">
-        <xs:complexType>
-          <xs:sequence />
-        </xs:complexType>
-      </xs:element>
-      <xs:element name="GetScanResponse">
-        <xs:complexType>
-          <xs:sequence>
-            <xs:element minOccurs="0" name="GetScanResult" nillable="true" type="xs:string" />
-          </xs:sequence>
-        </xs:complexType>
-      </xs:element>
       <xs:element name="openSql">
         <xs:complexType>
           <xs:sequence />
@@ -193,48 +104,6 @@
       </xs:element>
     </xs:schema>
   </wsdl:types>
-  <wsdl:message name="IService1_GetHello_InputMessage">
-    <wsdl:part name="parameters" element="tns:GetHello" />
-  </wsdl:message>
-  <wsdl:message name="IService1_GetHello_OutputMessage">
-    <wsdl:part name="parameters" element="tns:GetHelloResponse" />
-  </wsdl:message>
-  <wsdl:message name="IService1_TestMethodStr_InputMessage">
-    <wsdl:part name="parameters" element="tns:TestMethodStr" />
-  </wsdl:message>
-  <wsdl:message name="IService1_TestMethodStr_OutputMessage">
-    <wsdl:part name="parameters" element="tns:TestMethodStrResponse" />
-  </wsdl:message>
-  <wsdl:message name="IService1_GetAdd_InputMessage">
-    <wsdl:part name="parameters" element="tns:GetAdd" />
-  </wsdl:message>
-  <wsdl:message name="IService1_GetAdd_OutputMessage">
-    <wsdl:part name="parameters" element="tns:GetAddResponse" />
-  </wsdl:message>
-  <wsdl:message name="IService1_GetJson_InputMessage">
-    <wsdl:part name="parameters" element="tns:GetJson" />
-  </wsdl:message>
-  <wsdl:message name="IService1_GetJson_OutputMessage">
-    <wsdl:part name="parameters" element="tns:GetJsonResponse" />
-  </wsdl:message>
-  <wsdl:message name="IService1_GetImageScanResult_InputMessage">
-    <wsdl:part name="parameters" element="tns:GetImageScanResult" />
-  </wsdl:message>
-  <wsdl:message name="IService1_GetImageScanResult_OutputMessage">
-    <wsdl:part name="parameters" element="tns:GetImageScanResultResponse" />
-  </wsdl:message>
-  <wsdl:message name="IService1_GetImageScanRaw_InputMessage">
-    <wsdl:part name="parameters" element="tns:GetImageScanRaw" />
-  </wsdl:message>
-  <wsdl:message name="IService1_GetImageScanRaw_OutputMessage">
-    <wsdl:part name="parameters" element="tns:GetImageScanRawResponse" />
-  </wsdl:message>
-  <wsdl:message name="IService1_GetScan_InputMessage">
-    <wsdl:part name="parameters" element="tns:GetScan" />
-  </wsdl:message>
-  <wsdl:message name="IService1_GetScan_OutputMessage">
-    <wsdl:part name="parameters" element="tns:GetScanResponse" />
-  </wsdl:message>
   <wsdl:message name="IService1_openSql_InputMessage">
     <wsdl:part name="parameters" element="tns:openSql" />
   </wsdl:message>
@@ -254,34 +123,6 @@
     <wsdl:part name="parameters" element="tns:querySqlResponse" />
   </wsdl:message>
   <wsdl:portType name="IService1">
-    <wsdl:operation name="GetHello">
-      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetHello" message="tns:IService1_GetHello_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetHelloResponse" message="tns:IService1_GetHello_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="TestMethodStr">
-      <wsdl:input wsaw:Action="http://tempuri.org/IService1/TestMethodStr" message="tns:IService1_TestMethodStr_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IService1/TestMethodStrResponse" message="tns:IService1_TestMethodStr_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="GetAdd">
-      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetAdd" message="tns:IService1_GetAdd_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetAddResponse" message="tns:IService1_GetAdd_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="GetJson">
-      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetJson" message="tns:IService1_GetJson_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetJsonResponse" message="tns:IService1_GetJson_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="GetImageScanResult">
-      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetImageScanResult" message="tns:IService1_GetImageScanResult_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetImageScanResultResponse" message="tns:IService1_GetImageScanResult_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="GetImageScanRaw">
-      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetImageScanRaw" message="tns:IService1_GetImageScanRaw_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetImageScanRawResponse" message="tns:IService1_GetImageScanRaw_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="GetScan">
-      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetScan" message="tns:IService1_GetScan_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetScanResponse" message="tns:IService1_GetScan_OutputMessage" />
-    </wsdl:operation>
     <wsdl:operation name="openSql">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/openSql" message="tns:IService1_openSql_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/openSqlResponse" message="tns:IService1_openSql_OutputMessage" />
@@ -297,69 +138,6 @@
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IService1" type="tns:IService1">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
-    <wsdl:operation name="GetHello">
-      <soap:operation soapAction="http://tempuri.org/IService1/GetHello" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="TestMethodStr">
-      <soap:operation soapAction="http://tempuri.org/IService1/TestMethodStr" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="GetAdd">
-      <soap:operation soapAction="http://tempuri.org/IService1/GetAdd" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="GetJson">
-      <soap:operation soapAction="http://tempuri.org/IService1/GetJson" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="GetImageScanResult">
-      <soap:operation soapAction="http://tempuri.org/IService1/GetImageScanResult" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="GetImageScanRaw">
-      <soap:operation soapAction="http://tempuri.org/IService1/GetImageScanRaw" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="GetScan">
-      <soap:operation soapAction="http://tempuri.org/IService1/GetScan" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
     <wsdl:operation name="openSql">
       <soap:operation soapAction="http://tempuri.org/IService1/openSql" style="document" />
       <wsdl:input>
@@ -390,7 +168,7 @@
   </wsdl:binding>
   <wsdl:service name="Service1">
     <wsdl:port name="BasicHttpBinding_IService1" binding="tns:BasicHttpBinding_IService1">
-      <soap:address location="http://localhost:52348/Service1.svc" />
+      <soap:address location="http://localhost:54632/Service1.svc" />
     </wsdl:port>
   </wsdl:service>
 </wsdl:definitions>
