@@ -42,5 +42,15 @@ namespace WebApplication3.Properties {
                 return ((string)(this["WebApplication3_WebRef_Service1"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.WebServiceUrl)]
+        [global::System.Configuration.DefaultSettingValueAttribute("http://localhost:54632/Service1.svc")]
+        public string WebApplication3_WebRefDb_Service1 {
+            get {
+                return ((string)(this["WebApplication3_WebRefDb_Service1"]));
+            }
+        }
     }
 }

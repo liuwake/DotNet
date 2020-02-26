@@ -10,6 +10,7 @@ namespace WebApplication3
     public partial class WebForm2 : System.Web.UI.Page
     {
         WebRef.Service1 clientWcf = new WebRef.Service1();
+        WebRefDb.Service1 clientDb = new WebRefDb.Service1();
         protected void Page_Load(object sender, EventArgs e)
         {
             
@@ -41,6 +42,18 @@ namespace WebApplication3
         {
             string base64 = clientWcf.GetImageScanResult();
             this.Image2.ImageUrl = "data:image/jpg;base64," + base64;
+        }
+
+        protected void Button6_Click(object sender, EventArgs e)
+        {
+            clientDb.openSql();
+            GridView1.DataSource = clientDb.dbNew();
+            GridView1.DataBind();
+        }
+
+        protected void TextBox1_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

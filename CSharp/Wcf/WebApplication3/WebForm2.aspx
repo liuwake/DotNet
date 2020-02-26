@@ -23,13 +23,19 @@
             </div>
 
             <div style="height: 800px; background: #ccc; width: 600px; float: right">
-                <div style="height: 500px; background: #ccc; width: 600px; float: left">
+                <div style="height: 392px; background: #ccc; width: 600px; float: left">
 
-                    <asp:TextBox ID="TextBox1" runat="server" Height="500px" Style="margin-top: 8px" TextMode="MultiLine" Width="600px" Wrap="False"></asp:TextBox>
+                    <asp:TextBox ID="TextBox1" runat="server" Height="364px" Style="margin-top: 8px" TextMode="MultiLine" Width="582px" Wrap="False" OnTextChanged="TextBox1_TextChanged"></asp:TextBox>
                     
                 </div>
-                 <div style="height: 100px; background: #ccc; width: 600px; float: left">
-                     <asp:TextBox ID="TextBox2" runat="server" Height="100px" Width="600px" TextMode="MultiLine"></asp:TextBox>
+                <div style="height: 154px; background: #ccc; width: 600px; float: right">
+
+                    <asp:GridView ID="GridView1" runat="server" Height="102px" Width="586px">
+                    </asp:GridView>
+
+                </div>
+                 <div style="height: 112px; background: #ccc; width: 600px; float: left">
+                     <asp:TextBox ID="TextBox2" runat="server" Height="97px" Width="585px" TextMode="MultiLine" Wrap="False"></asp:TextBox>
                      </div>
                      <div style="height: 100px; background: #ccc; width: 600px; float: left">
                      <p>
@@ -38,6 +44,7 @@
                         <asp:Button ID="Button3" runat="server" OnClick="Button3_Click" Text="GetJson" />
                         <asp:Button ID="Button4" runat="server" OnClick="Button4_Click" Text="GetImageScanRaw" />
                         <asp:Button ID="Button5" runat="server" Text="GetImageScanResult" OnClick="Button5_Click" />
+                         <asp:Button ID="Button6" runat="server" OnClick="Button6_Click" Text="dbNew" />
                     </p>
                     </div>
             </div>
