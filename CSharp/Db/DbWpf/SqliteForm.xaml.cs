@@ -30,16 +30,20 @@ namespace DbWpf
         {
             //Init
             InitializeComponent();
-            UsedInit();          
+            //DbAll();
         }
         // Wpf
-        private void ButtonUsedUpdate_Click(object sender, RoutedEventArgs e)
+        private void Button1_Click(object sender, RoutedEventArgs e)
         {
-            UsedInit();
+            DbAll();
+        }
+        private void Button2_Click(object sender, RoutedEventArgs e)
+        {
+            DbNow();
         }
 
         //Func Sql
-        public void UsedInit()
+        public void DbAll()
         {
             string connString = "Data Source=C:\\WK\\Db\\Used.sqlite;Version=3";
             SQLiteConnection sqlConnection = new SQLiteConnection(connString);
@@ -56,23 +60,47 @@ namespace DbWpf
                 DataSet dataSet = new DataSet();
                 SQLiteDataAdapter.Fill(dataSet, "Used");
                 DataTable dt = dataSet.Tables["Used"];
-                this.dataGridResult.ItemsSource = dt.DefaultView;
+                this.dataGrid1.ItemsSource = dt.DefaultView;
             }
             catch(SQLiteException ex)
             {
                 MessageBox.Show(ex.ToString());
             }
         }
-        public void UsedSaveChange()//save 功能bug
+        public void DbNow()
         {
-            SQLiteDataAdapter da = new SQLiteDataAdapter();
-            da.SelectCommand = new SQLiteCommand(sql, connection);
-            SQLiteCommandBuilder cb = new SQLiteCommandBuilder(da);
-            DataTable dt = new DataTable();
-            dt = ((DataView)dataGridResult.ItemsSource).Table;
-            da.Update(ds.Tables["Used"]);  //DataGrid和ds的table绑定之后，DataGrid的更改会自动更新到Dataset
+            string connString = "Data Source=C:\\WK\\Db\\Used.sqlite;Version=3";
+            SQLiteConnection sqlConnection = new SQLiteConnection(connString);
+            SQLiteCommand sqlCommand = new SQLiteCommand
+            {
+                CommandText = "select * from Used WHERE DbId ORDER BY DbId DESC LIMIT 1",
+                Connection = sqlConnection,
+                CommandType = CommandType.Text
+            };
+            try
+            {
+                sqlConnection.Open();
+                SQLiteDataAdapter SQLiteDataAdapter = new SQLiteDataAdapter(sqlCommand);
+                DataSet dataSet = new DataSet();
+                SQLiteDataAdapter.Fill(dataSet, "Used");
+                DataTable dt = dataSet.Tables["Used"];
+                this.dataGrid2.ItemsSource = dt.DefaultView;
+            }
+            catch (SQLiteException ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
         }
-       
+        //public void UsedSaveChange()//save 功能bug
+        //{
+        //    SQLiteDataAdapter da = new SQLiteDataAdapter();
+        //    da.SelectCommand = new SQLiteCommand(sql, connection);
+        //    SQLiteCommandBuilder cb = new SQLiteCommandBuilder(da);
+        //    DataTable dt = new DataTable();
+        //    dt = ((DataView)dataGrid1.ItemsSource).Table;
+        //    da.Update(ds.Tables["Used"]);  //DataGrid和ds的table绑定之后，DataGrid的更改会自动更新到Dataset
+        //}
+
         //public void UsedUpdateData()
         //{
         //    SQLiteDataAdapter da = new SQLiteDataAdapter(sql, connection);  //创建SqlDataAdapter实例da，并指定SQL查询string和SqlConnection
