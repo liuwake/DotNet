@@ -29,7 +29,8 @@ namespace WcfServiceDb2
         //查询数据
         [OperationContract]
         DataSet querySql();
-
+        [OperationContract]
+        DataSet dbNew();
     }
 
     // 使用下面示例中说明的数据约定将复合类型添加到服务操作。

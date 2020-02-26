@@ -13,11 +13,13 @@
             <asp:TextBox ID="TextBox1" runat="server" Height="229px" TextMode="MultiLine" Width="744px"></asp:TextBox>
             <asp:GridView ID="GridView1" runat="server" Height="155px" Width="749px">
             </asp:GridView>
+            <asp:GridView ID="GridView2" runat="server" Height="71px" Width="747px">
+            </asp:GridView>
         </div>
         <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
         <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Button" />
-        <asp:Button ID="Button2" runat="server" OnClick="Button2_Click" Text="Button" />
-        <asp:Button ID="Button3" runat="server" OnClick="Button3_Click" style="height: 21px" Text="Button" />
+        <asp:Button ID="Button2" runat="server" OnClick="Button2_Click" Text="dbAll" />
+        <asp:Button ID="Button3" runat="server" OnClick="Button3_Click" style="height: 21px" Text="dbNew" />
     </form>
 </body>
 </html>

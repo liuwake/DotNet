@@ -36,6 +36,8 @@ namespace WebAppDb2.WebRefDb {
         
         private System.Threading.SendOrPostCallback querySqlOperationCompleted;
         
+        private System.Threading.SendOrPostCallback dbNewOperationCompleted;
+        
         private bool useDefaultCredentialsSetExplicitly;
         
         /// <remarks/>
@@ -82,6 +84,9 @@ namespace WebAppDb2.WebRefDb {
         
         /// <remarks/>
         public event querySqlCompletedEventHandler querySqlCompleted;
+        
+        /// <remarks/>
+        public event dbNewCompletedEventHandler dbNewCompleted;
         
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IService1/openSql", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
@@ -164,6 +169,34 @@ namespace WebAppDb2.WebRefDb {
         }
         
         /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IService1/dbNew", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        [return: System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        public System.Data.DataSet dbNew() {
+            object[] results = this.Invoke("dbNew", new object[0]);
+            return ((System.Data.DataSet)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void dbNewAsync() {
+            this.dbNewAsync(null);
+        }
+        
+        /// <remarks/>
+        public void dbNewAsync(object userState) {
+            if ((this.dbNewOperationCompleted == null)) {
+                this.dbNewOperationCompleted = new System.Threading.SendOrPostCallback(this.OndbNewOperationCompleted);
+            }
+            this.InvokeAsync("dbNew", new object[0], this.dbNewOperationCompleted, userState);
+        }
+        
+        private void OndbNewOperationCompleted(object arg) {
+            if ((this.dbNewCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.dbNewCompleted(this, new dbNewCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
         public new void CancelAsync(object userState) {
             base.CancelAsync(userState);
         }
@@ -203,6 +236,32 @@ namespace WebAppDb2.WebRefDb {
         private object[] results;
         
         internal querySqlCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public System.Data.DataSet Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((System.Data.DataSet)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3752.0")]
+    public delegate void dbNewCompletedEventHandler(object sender, dbNewCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3752.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class dbNewCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal dbNewCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
                 base(exception, cancelled, userState) {
             this.results = results;
         }

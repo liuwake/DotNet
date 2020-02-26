@@ -46,6 +46,30 @@
           </xs:sequence>
         </xs:complexType>
       </xs:element>
+      <xs:element name="dbNew">
+        <xs:complexType>
+          <xs:sequence />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="dbNewResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="dbNewResult" nillable="true">
+              <xs:complexType>
+                <xs:annotation>
+                  <xs:appinfo>
+                    <ActualType Name="DataSet" Namespace="http://schemas.datacontract.org/2004/07/System.Data" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+                  </xs:appinfo>
+                </xs:annotation>
+                <xs:sequence>
+                  <xs:element ref="xs:schema" />
+                  <xs:any />
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
     </xs:schema>
     <xs:schema xmlns:tns="http://schemas.microsoft.com/2003/10/Serialization/" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
       <xs:element name="anyType" nillable="true" type="xs:anyType" />
@@ -122,6 +146,12 @@
   <wsdl:message name="IService1_querySql_OutputMessage">
     <wsdl:part name="parameters" element="tns:querySqlResponse" />
   </wsdl:message>
+  <wsdl:message name="IService1_dbNew_InputMessage">
+    <wsdl:part name="parameters" element="tns:dbNew" />
+  </wsdl:message>
+  <wsdl:message name="IService1_dbNew_OutputMessage">
+    <wsdl:part name="parameters" element="tns:dbNewResponse" />
+  </wsdl:message>
   <wsdl:portType name="IService1">
     <wsdl:operation name="openSql">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/openSql" message="tns:IService1_openSql_InputMessage" />
@@ -134,6 +164,10 @@
     <wsdl:operation name="querySql">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/querySql" message="tns:IService1_querySql_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/querySqlResponse" message="tns:IService1_querySql_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="dbNew">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/dbNew" message="tns:IService1_dbNew_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/dbNewResponse" message="tns:IService1_dbNew_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IService1" type="tns:IService1">
@@ -158,6 +192,15 @@
     </wsdl:operation>
     <wsdl:operation name="querySql">
       <soap:operation soapAction="http://tempuri.org/IService1/querySql" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="dbNew">
+      <soap:operation soapAction="http://tempuri.org/IService1/dbNew" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

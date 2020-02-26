@@ -74,5 +74,26 @@ namespace WcfServiceDb2
             }
 
         }
+        public DataSet dbNew()
+        {
+            try
+            {
+                openSql();
+                string strSql = "select * from Used WHERE DbId ORDER BY DbId DESC LIMIT 1";
+                DataSet ds = new DataSet();
+                SQLiteDataAdapter s = new SQLiteDataAdapter(strSql, strCon);
+                s.Fill(ds);
+                return ds;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                closeSql();
+            }
+
+        }
     }
 }

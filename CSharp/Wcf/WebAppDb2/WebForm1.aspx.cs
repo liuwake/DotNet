@@ -43,7 +43,9 @@ namespace WebAppDb2
         protected void Button3_Click(object sender, EventArgs e)
         {
             //this.TextBox1.Text = clientDb.GetHello();
-
+            clientDb.openSql();
+            GridView2.DataSource = clientDb.dbNew();
+            GridView2.DataBind();
         }
 
         protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
