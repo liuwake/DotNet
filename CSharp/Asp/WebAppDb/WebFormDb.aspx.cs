@@ -7,7 +7,8 @@ using System.Web.UI.WebControls;
 
 using System.Data;
 using System.Data.SQLite;
-
+//非独占sqlite
+//sqlite更改后,刷新页面即可更新
 
 namespace WebAppDb
 {
