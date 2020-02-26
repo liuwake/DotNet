@@ -9,7 +9,7 @@
         Title="SqliteForm" Height="1080" Width="960" Left="960" Top="0">
     <Grid Margin="0,0,2,14">
         <DataGrid x:Name="dataGridResult" HorizontalAlignment="Left" Height="575" Margin="10,10,0,0" VerticalAlignment="Top" Width="950" RenderTransformOrigin="0.506,0.526"/>
-        <Button x:Name="buttonUsedUpdate" Content="UsedUpdate" HorizontalAlignment="Left" Height="52" Margin="10,973,0,0" VerticalAlignment="Top" Width="158" Click="ButtonUsedUpdate_Click"/>
+        <Button x:Name="buttonUsedUpdate" Content="Display" HorizontalAlignment="Left" Height="52" Margin="10,973,0,0" VerticalAlignment="Top" Width="158" Click="ButtonUsedUpdate_Click"/>
         <Button x:Name="buttonUsedSave" Content="UsedSave" HorizontalAlignment="Left" Height="52" Margin="173,973,0,0" VerticalAlignment="Top" Width="158" Click="ButtonUsedUpdate_Click"/>
         <DataGrid x:Name="dataGridResultOne" HorizontalAlignment="Left" Height="245" Margin="10,590,0,0" VerticalAlignment="Top" Width="950" RenderTransformOrigin="0.506,0.526"/>
         <Label x:Name="labelUsedCode" Content="Label" HorizontalAlignment="Left" Margin="10,863,0,0" VerticalAlignment="Top" Height="19" Width="950"/>

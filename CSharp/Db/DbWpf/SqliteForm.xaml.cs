@@ -35,14 +35,33 @@ namespace DbWpf
         // Wpf
         private void ButtonUsedUpdate_Click(object sender, RoutedEventArgs e)
         {
-            UsedUpdateData();
+            UsedInit();
         }
 
         //Func Sql
         public void UsedInit()
         {
             string connString = "Data Source=C:\\WK\\Db\\Used.sqlite;Version=3";
-            this.connection = new SQLiteConnection(connString);//THIS!
+            SQLiteConnection sqlConnection = new SQLiteConnection(connString);
+            SQLiteCommand sqlCommand = new SQLiteCommand
+            {
+                CommandText = "select * from Used",
+                Connection = sqlConnection,
+                CommandType = CommandType.Text
+            };
+            try
+            {
+                sqlConnection.Open();
+                SQLiteDataAdapter SQLiteDataAdapter = new SQLiteDataAdapter(sqlCommand);
+                DataSet dataSet = new DataSet();
+                SQLiteDataAdapter.Fill(dataSet, "Used");
+                DataTable dt = dataSet.Tables["Used"];
+                this.dataGridResult.ItemsSource = dt.DefaultView;
+            }
+            catch(SQLiteException ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
         }
         public void UsedSaveChange()//save 功能bug
         {
@@ -53,13 +72,14 @@ namespace DbWpf
             dt = ((DataView)dataGridResult.ItemsSource).Table;
             da.Update(ds.Tables["Used"]);  //DataGrid和ds的table绑定之后，DataGrid的更改会自动更新到Dataset
         }
-        public void UsedUpdateData()
-        {
-            SQLiteDataAdapter da = new SQLiteDataAdapter(sql, connection);  //创建SqlDataAdapter实例da，并指定SQL查询string和SqlConnection
-            da.Fill(ds, "Used");  //从数据库中读取数据，并填充ds
-            DataView dv = new DataView(ds.Tables["Used"]); //创建DataView实例dv，并指定其DataTable
-            dataGridResult.ItemsSource = dv;  //设置DataGrid的ItemsSource属性
-        }
+       
+        //public void UsedUpdateData()
+        //{
+        //    SQLiteDataAdapter da = new SQLiteDataAdapter(sql, connection);  //创建SqlDataAdapter实例da，并指定SQL查询string和SqlConnection
+        //    da.Fill(ds, "Used");  //从数据库中读取数据，并填充ds
+        //    DataView dv = new DataView(ds.Tables["Used"]); //创建DataView实例dv，并指定其DataTable
+        //    dataGridResult.ItemsSource = dv;  //设置DataGrid的ItemsSource属性
+        //}
         public void UsedUpdateCode()
         {
             //
@@ -73,6 +93,7 @@ namespace DbWpf
             //dataGridResult.ItemsSource = dv;  //设置DataGrid的ItemsSource属性
 
         }
+
 
     }
 }
