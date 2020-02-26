@@ -21,26 +21,70 @@ namespace WebAppDb
         protected void Page_Load(object sender, EventArgs e)
         {
             System.Diagnostics.Debug.WriteLine("Page_Load");
-            UsedInit();
-            UsedUpdateData();
+
         }
 
-        public void UsedInit()
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            DbAll();
+        }
+        protected void Button2_Click(object sender, EventArgs e)
+        {
+            DbNow();
+        }
+
+        //Func Sql
+        public void DbAll()
         {
             string connString = "Data Source=C:\\WK\\Db\\Used.sqlite;Version=3";
-            this.connection = new SQLiteConnection(connString);//THIS!
-            System.Diagnostics.Debug.WriteLine("UsedInite");
+            SQLiteConnection sqlConnection = new SQLiteConnection(connString);
+            SQLiteCommand sqlCommand = new SQLiteCommand
+            {
+                CommandText = "select * from Used",
+                Connection = sqlConnection,
+                CommandType = CommandType.Text
+            };
+            try
+            {
+                sqlConnection.Open();
+                SQLiteDataAdapter SQLiteDataAdapter = new SQLiteDataAdapter(sqlCommand);
+                DataSet dataSet = new DataSet();
+                SQLiteDataAdapter.Fill(dataSet, "Used");
+                DataTable dt = dataSet.Tables["Used"];
+                this.GridView1.DataSource = dt.DefaultView;
+                GridView1.DataBind();
+            }
+            catch (SQLiteException ex)
+            {
+                this.Label1.Text = ex.ToString();
+            }
+        }
+        public void DbNow()
+        {
+            string connString = "Data Source=C:\\WK\\Db\\Used.sqlite;Version=3";
+            SQLiteConnection sqlConnection = new SQLiteConnection(connString);
+            SQLiteCommand sqlCommand = new SQLiteCommand
+            {
+                CommandText = "select * from Used WHERE DbId ORDER BY DbId DESC LIMIT 1",
+                Connection = sqlConnection,
+                CommandType = CommandType.Text
+            };
+            try
+            {
+                sqlConnection.Open();
+                SQLiteDataAdapter SQLiteDataAdapter = new SQLiteDataAdapter(sqlCommand);
+                DataSet dataSet = new DataSet();
+                SQLiteDataAdapter.Fill(dataSet, "Used");
+                DataTable dt = dataSet.Tables["Used"];
+                this.GridView2.DataSource = dt.DefaultView;
+                GridView2.DataBind();
+            }
+            catch (SQLiteException ex)
+            {
+                this.Label1.Text = ex.ToString();
+            }
         }
 
-        public void UsedUpdateData()
-        {
-            SQLiteDataAdapter da = new SQLiteDataAdapter(sql, connection);  //创建SqlDataAdapter实例da，并指定SQL查询string和SqlConnection
-            da.Fill(ds, "Used");  //从数据库中读取数据，并填充ds
-            DataView dv = new DataView(ds.Tables["Used"]); //创建DataView实例dv，并指定其DataTable
-            GridView1.DataSource = dv;  //设置DataGrid的ItemsSource属性
-            GridView1.DataBind();
-            System.Diagnostics.Debug.WriteLine("UsedUpdateData");
-        }
 
     }
 }

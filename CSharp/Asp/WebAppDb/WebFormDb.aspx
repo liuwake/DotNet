@@ -9,13 +9,21 @@
 </head>
 <body>
     <form id="form1" runat="server">
-        <asp:Label ID="Label1" runat="server" Text="Label" Width="200px"></asp:Label>
         <div>
 
-            <asp:GridView ID="GridView1" runat="server">
+            <asp:GridView ID="GridView1" runat="server" Height="244px" Width="474px">
+            </asp:GridView>
+
+            <br />
+            <asp:GridView ID="GridView2" runat="server" Height="73px" Width="472px">
             </asp:GridView>
 
         </div>
+        <p>
+        <asp:Label ID="Label1" runat="server" Text="Label" Width="200px"></asp:Label>
+            <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Button" />
+            <asp:Button ID="Button2" runat="server" OnClick="Button2_Click" Text="Button" />
+        </p>
     </form>
 </body>
 </html>
