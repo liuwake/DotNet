@@ -24,22 +24,6 @@
 
 ## 4. Flow
 
-### Project
-#### WcfServiceLib
-##### Tips
-- 可以直接引用```mex```
-- 也可以用console启动
-##### Files
-- 里面是```Iservice1.cs,Service1.cs,app.config```
-- 托管在wcf管理器
-- 地址:```localhost:8080/xxxxtdesigne-time/xxx/mex```
-#### WcfServiceApp
-##### Files
-- 里面是```Iservice1.cs,Service1.svc,app.config```
-- 托管在IIS管理器
-- 地址:```localhost:8080/Service.svc```
-##### Tips
-- 可以直接引用```svc```
 #### Error
 ##### 发布错误
 - [asp.net发布网站的时候出现， "发布遇到错误，未将对象引用设置到对象的实例。](https://bbs.csdn.net/topics/393598263?list=16718956)
@@ -71,6 +55,28 @@ System.NullReferenceException: 未将对象引用设置到对象的实例。
 - http://www.webxml.com.cn/WebServices/WeatherWebService.asmx 天气预报
   - Ref
     - [ASP.NET 调用 webservice](https://blog.csdn.net/oqqKen12345/article/details/79064698)
+
+## 5.Proj
+### VS Project
+#### WcfServiceLib
+##### Tips
+- 可以直接引用```mex```
+- 也可以用console启动
+##### Files
+- 里面是```Iservice1.cs,Service1.cs,app.config```
+- 托管在wcf管理器
+- 地址:```localhost:8080/xxxxtdesigne-time/xxx/mex```
+#### WcfServiceApp
+##### Files
+- 里面是```Iservice1.cs,Service1.svc,app.config```
+- 托管在IIS管理器
+- 地址:```localhost:8080/Service.svc```
+##### Tips
+- 可以直接引用```svc```
+
+### Wcf + SQL
+#### Ref
+- [WCF初见之SQL数据库的连接和查询](https://www.cnblogs.com/yc-755909659/archive/2012/06/12/2546279.html)
 ## 9. Ref
 - [【WCF系列一】WCF入门教程(图文) VS2012](https://www.cnblogs.com/merlinhome/p/3542451.html)注意修改服务名```WcfServiceLibrary1.Service1```到```WcfServiceLibrary1.PersonService```("编辑```app.config```配置和手动修改```app.config```皆可)
 - [【WCF系列二：如何调用WCF服务】WCF入门教程（图文）VS2012](https://www.cnblogs.com/merlinhome/p/3615745.html)
