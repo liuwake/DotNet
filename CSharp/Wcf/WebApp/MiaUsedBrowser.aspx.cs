@@ -9,8 +9,8 @@ namespace WebApp
 {
     public partial class MiaUsedBrowser : System.Web.UI.Page
     {
-        WebRef.Service1 clientWcf = new WebRef.Service1();
-        WebRefDb.Service1 clientDb = new WebRefDb.Service1();
+        WebRef.SvcMiaUsed clientWcf = new WebRef.SvcMiaUsed();
+        WebRefDb.SvcDb clientDb = new WebRefDb.SvcDb();
         protected void Page_Load(object sender, EventArgs e)
         {
             

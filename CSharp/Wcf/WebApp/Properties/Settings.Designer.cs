@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace WebApplication3.Properties {
+namespace WebApp.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
@@ -36,7 +36,7 @@ namespace WebApplication3.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.WebServiceUrl)]
-        [global::System.Configuration.DefaultSettingValueAttribute("http://localhost:50434/Service1.svc")]
+        [global::System.Configuration.DefaultSettingValueAttribute("http://localhost:52087/SvcMiaUsed.svc")]
         public string WebApplication3_WebRef_Service1 {
             get {
                 return ((string)(this["WebApplication3_WebRef_Service1"]));
@@ -46,10 +46,10 @@ namespace WebApplication3.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.WebServiceUrl)]
-        [global::System.Configuration.DefaultSettingValueAttribute("http://localhost:54632/Service1.svc")]
-        public string WebApplication3_WebRefDb_Service1 {
+        [global::System.Configuration.DefaultSettingValueAttribute("http://localhost:52087/SvcDb.svc")]
+        public string WebApp_WebRefDb_SvcDb {
             get {
-                return ((string)(this["WebApplication3_WebRefDb_Service1"]));
+                return ((string)(this["WebApp_WebRefDb_SvcDb"]));
             }
         }
     }

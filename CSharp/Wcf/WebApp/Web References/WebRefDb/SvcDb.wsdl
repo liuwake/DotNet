@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="Service1" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="SvcDb" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
   <wsdl:types>
     <xs:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
       <xs:element name="openSql">
@@ -128,52 +128,52 @@
       </xs:element>
     </xs:schema>
   </wsdl:types>
-  <wsdl:message name="IService1_openSql_InputMessage">
+  <wsdl:message name="ISvcDb_openSql_InputMessage">
     <wsdl:part name="parameters" element="tns:openSql" />
   </wsdl:message>
-  <wsdl:message name="IService1_openSql_OutputMessage">
+  <wsdl:message name="ISvcDb_openSql_OutputMessage">
     <wsdl:part name="parameters" element="tns:openSqlResponse" />
   </wsdl:message>
-  <wsdl:message name="IService1_closeSql_InputMessage">
+  <wsdl:message name="ISvcDb_closeSql_InputMessage">
     <wsdl:part name="parameters" element="tns:closeSql" />
   </wsdl:message>
-  <wsdl:message name="IService1_closeSql_OutputMessage">
+  <wsdl:message name="ISvcDb_closeSql_OutputMessage">
     <wsdl:part name="parameters" element="tns:closeSqlResponse" />
   </wsdl:message>
-  <wsdl:message name="IService1_querySql_InputMessage">
+  <wsdl:message name="ISvcDb_querySql_InputMessage">
     <wsdl:part name="parameters" element="tns:querySql" />
   </wsdl:message>
-  <wsdl:message name="IService1_querySql_OutputMessage">
+  <wsdl:message name="ISvcDb_querySql_OutputMessage">
     <wsdl:part name="parameters" element="tns:querySqlResponse" />
   </wsdl:message>
-  <wsdl:message name="IService1_dbNew_InputMessage">
+  <wsdl:message name="ISvcDb_dbNew_InputMessage">
     <wsdl:part name="parameters" element="tns:dbNew" />
   </wsdl:message>
-  <wsdl:message name="IService1_dbNew_OutputMessage">
+  <wsdl:message name="ISvcDb_dbNew_OutputMessage">
     <wsdl:part name="parameters" element="tns:dbNewResponse" />
   </wsdl:message>
-  <wsdl:portType name="IService1">
+  <wsdl:portType name="ISvcDb">
     <wsdl:operation name="openSql">
-      <wsdl:input wsaw:Action="http://tempuri.org/IService1/openSql" message="tns:IService1_openSql_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IService1/openSqlResponse" message="tns:IService1_openSql_OutputMessage" />
+      <wsdl:input wsaw:Action="http://tempuri.org/ISvcDb/openSql" message="tns:ISvcDb_openSql_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISvcDb/openSqlResponse" message="tns:ISvcDb_openSql_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="closeSql">
-      <wsdl:input wsaw:Action="http://tempuri.org/IService1/closeSql" message="tns:IService1_closeSql_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IService1/closeSqlResponse" message="tns:IService1_closeSql_OutputMessage" />
+      <wsdl:input wsaw:Action="http://tempuri.org/ISvcDb/closeSql" message="tns:ISvcDb_closeSql_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISvcDb/closeSqlResponse" message="tns:ISvcDb_closeSql_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="querySql">
-      <wsdl:input wsaw:Action="http://tempuri.org/IService1/querySql" message="tns:IService1_querySql_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IService1/querySqlResponse" message="tns:IService1_querySql_OutputMessage" />
+      <wsdl:input wsaw:Action="http://tempuri.org/ISvcDb/querySql" message="tns:ISvcDb_querySql_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISvcDb/querySqlResponse" message="tns:ISvcDb_querySql_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="dbNew">
-      <wsdl:input wsaw:Action="http://tempuri.org/IService1/dbNew" message="tns:IService1_dbNew_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IService1/dbNewResponse" message="tns:IService1_dbNew_OutputMessage" />
+      <wsdl:input wsaw:Action="http://tempuri.org/ISvcDb/dbNew" message="tns:ISvcDb_dbNew_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISvcDb/dbNewResponse" message="tns:ISvcDb_dbNew_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
-  <wsdl:binding name="BasicHttpBinding_IService1" type="tns:IService1">
+  <wsdl:binding name="BasicHttpBinding_ISvcDb" type="tns:ISvcDb">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
     <wsdl:operation name="openSql">
-      <soap:operation soapAction="http://tempuri.org/IService1/openSql" style="document" />
+      <soap:operation soapAction="http://tempuri.org/ISvcDb/openSql" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -182,7 +182,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="closeSql">
-      <soap:operation soapAction="http://tempuri.org/IService1/closeSql" style="document" />
+      <soap:operation soapAction="http://tempuri.org/ISvcDb/closeSql" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -191,7 +191,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="querySql">
-      <soap:operation soapAction="http://tempuri.org/IService1/querySql" style="document" />
+      <soap:operation soapAction="http://tempuri.org/ISvcDb/querySql" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -200,7 +200,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="dbNew">
-      <soap:operation soapAction="http://tempuri.org/IService1/dbNew" style="document" />
+      <soap:operation soapAction="http://tempuri.org/ISvcDb/dbNew" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -209,9 +209,9 @@
       </wsdl:output>
     </wsdl:operation>
   </wsdl:binding>
-  <wsdl:service name="Service1">
-    <wsdl:port name="BasicHttpBinding_IService1" binding="tns:BasicHttpBinding_IService1">
-      <soap:address location="http://localhost:54632/Service1.svc" />
+  <wsdl:service name="SvcDb">
+    <wsdl:port name="BasicHttpBinding_ISvcDb" binding="tns:BasicHttpBinding_ISvcDb">
+      <soap:address location="http://localhost:52087/SvcDb.svc" />
     </wsdl:port>
   </wsdl:service>
 </wsdl:definitions>

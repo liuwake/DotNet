@@ -13,8 +13,7 @@
 // 
 #pragma warning disable 1591
 
-namespace WebApp.WebRefDb
-{
+namespace WebApp.WebRefDb {
     using System;
     using System.Web.Services;
     using System.Diagnostics;
@@ -22,301 +21,254 @@ namespace WebApp.WebRefDb
     using System.Xml.Serialization;
     using System.ComponentModel;
     using System.Data;
-
-
+    
+    
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3752.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Web.Services.WebServiceBindingAttribute(Name = "BasicHttpBinding_IService1", Namespace = "http://tempuri.org/")]
-    public partial class Service1 : System.Web.Services.Protocols.SoapHttpClientProtocol
-    {
-
+    [System.Web.Services.WebServiceBindingAttribute(Name="BasicHttpBinding_ISvcDb", Namespace="http://tempuri.org/")]
+    public partial class SvcDb : System.Web.Services.Protocols.SoapHttpClientProtocol {
+        
         private System.Threading.SendOrPostCallback openSqlOperationCompleted;
-
+        
         private System.Threading.SendOrPostCallback closeSqlOperationCompleted;
-
+        
         private System.Threading.SendOrPostCallback querySqlOperationCompleted;
-
+        
         private System.Threading.SendOrPostCallback dbNewOperationCompleted;
-
+        
         private bool useDefaultCredentialsSetExplicitly;
-
+        
         /// <remarks/>
-        public Service1()
-        {
-            this.Url = global::WebApplication3.Properties.Settings.Default.WebApplication3_WebRefDb_Service1;
-            if ((this.IsLocalFileSystemWebService(this.Url) == true))
-            {
+        public SvcDb() {
+            this.Url = global::WebApp.Properties.Settings.Default.WebApp_WebRefDb_SvcDb;
+            if ((this.IsLocalFileSystemWebService(this.Url) == true)) {
                 this.UseDefaultCredentials = true;
                 this.useDefaultCredentialsSetExplicitly = false;
             }
-            else
-            {
+            else {
                 this.useDefaultCredentialsSetExplicitly = true;
             }
         }
-
-        public new string Url
-        {
-            get
-            {
+        
+        public new string Url {
+            get {
                 return base.Url;
             }
-            set
-            {
-                if ((((this.IsLocalFileSystemWebService(base.Url) == true)
-                            && (this.useDefaultCredentialsSetExplicitly == false))
-                            && (this.IsLocalFileSystemWebService(value) == false)))
-                {
+            set {
+                if ((((this.IsLocalFileSystemWebService(base.Url) == true) 
+                            && (this.useDefaultCredentialsSetExplicitly == false)) 
+                            && (this.IsLocalFileSystemWebService(value) == false))) {
                     base.UseDefaultCredentials = false;
                 }
                 base.Url = value;
             }
         }
-
-        public new bool UseDefaultCredentials
-        {
-            get
-            {
+        
+        public new bool UseDefaultCredentials {
+            get {
                 return base.UseDefaultCredentials;
             }
-            set
-            {
+            set {
                 base.UseDefaultCredentials = value;
                 this.useDefaultCredentialsSetExplicitly = true;
             }
         }
-
+        
         /// <remarks/>
         public event openSqlCompletedEventHandler openSqlCompleted;
-
+        
         /// <remarks/>
         public event closeSqlCompletedEventHandler closeSqlCompleted;
-
+        
         /// <remarks/>
         public event querySqlCompletedEventHandler querySqlCompleted;
-
+        
         /// <remarks/>
         public event dbNewCompletedEventHandler dbNewCompleted;
-
+        
         /// <remarks/>
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IService1/openSql", RequestNamespace = "http://tempuri.org/", ResponseNamespace = "http://tempuri.org/", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public void openSql()
-        {
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/ISvcDb/openSql", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public void openSql() {
             this.Invoke("openSql", new object[0]);
         }
-
+        
         /// <remarks/>
-        public void openSqlAsync()
-        {
+        public void openSqlAsync() {
             this.openSqlAsync(null);
         }
-
+        
         /// <remarks/>
-        public void openSqlAsync(object userState)
-        {
-            if ((this.openSqlOperationCompleted == null))
-            {
+        public void openSqlAsync(object userState) {
+            if ((this.openSqlOperationCompleted == null)) {
                 this.openSqlOperationCompleted = new System.Threading.SendOrPostCallback(this.OnopenSqlOperationCompleted);
             }
             this.InvokeAsync("openSql", new object[0], this.openSqlOperationCompleted, userState);
         }
-
-        private void OnopenSqlOperationCompleted(object arg)
-        {
-            if ((this.openSqlCompleted != null))
-            {
+        
+        private void OnopenSqlOperationCompleted(object arg) {
+            if ((this.openSqlCompleted != null)) {
                 System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
                 this.openSqlCompleted(this, new System.ComponentModel.AsyncCompletedEventArgs(invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
             }
         }
-
+        
         /// <remarks/>
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IService1/closeSql", RequestNamespace = "http://tempuri.org/", ResponseNamespace = "http://tempuri.org/", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public void closeSql()
-        {
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/ISvcDb/closeSql", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public void closeSql() {
             this.Invoke("closeSql", new object[0]);
         }
-
+        
         /// <remarks/>
-        public void closeSqlAsync()
-        {
+        public void closeSqlAsync() {
             this.closeSqlAsync(null);
         }
-
+        
         /// <remarks/>
-        public void closeSqlAsync(object userState)
-        {
-            if ((this.closeSqlOperationCompleted == null))
-            {
+        public void closeSqlAsync(object userState) {
+            if ((this.closeSqlOperationCompleted == null)) {
                 this.closeSqlOperationCompleted = new System.Threading.SendOrPostCallback(this.OncloseSqlOperationCompleted);
             }
             this.InvokeAsync("closeSql", new object[0], this.closeSqlOperationCompleted, userState);
         }
-
-        private void OncloseSqlOperationCompleted(object arg)
-        {
-            if ((this.closeSqlCompleted != null))
-            {
+        
+        private void OncloseSqlOperationCompleted(object arg) {
+            if ((this.closeSqlCompleted != null)) {
                 System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
                 this.closeSqlCompleted(this, new System.ComponentModel.AsyncCompletedEventArgs(invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
             }
         }
-
+        
         /// <remarks/>
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IService1/querySql", RequestNamespace = "http://tempuri.org/", ResponseNamespace = "http://tempuri.org/", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        [return: System.Xml.Serialization.XmlElementAttribute(IsNullable = true)]
-        public System.Data.DataSet querySql()
-        {
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/ISvcDb/querySql", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        [return: System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        public System.Data.DataSet querySql() {
             object[] results = this.Invoke("querySql", new object[0]);
             return ((System.Data.DataSet)(results[0]));
         }
-
+        
         /// <remarks/>
-        public void querySqlAsync()
-        {
+        public void querySqlAsync() {
             this.querySqlAsync(null);
         }
-
+        
         /// <remarks/>
-        public void querySqlAsync(object userState)
-        {
-            if ((this.querySqlOperationCompleted == null))
-            {
+        public void querySqlAsync(object userState) {
+            if ((this.querySqlOperationCompleted == null)) {
                 this.querySqlOperationCompleted = new System.Threading.SendOrPostCallback(this.OnquerySqlOperationCompleted);
             }
             this.InvokeAsync("querySql", new object[0], this.querySqlOperationCompleted, userState);
         }
-
-        private void OnquerySqlOperationCompleted(object arg)
-        {
-            if ((this.querySqlCompleted != null))
-            {
+        
+        private void OnquerySqlOperationCompleted(object arg) {
+            if ((this.querySqlCompleted != null)) {
                 System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
                 this.querySqlCompleted(this, new querySqlCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
             }
         }
-
+        
         /// <remarks/>
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/IService1/dbNew", RequestNamespace = "http://tempuri.org/", ResponseNamespace = "http://tempuri.org/", Use = System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle = System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        [return: System.Xml.Serialization.XmlElementAttribute(IsNullable = true)]
-        public System.Data.DataSet dbNew()
-        {
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/ISvcDb/dbNew", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        [return: System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        public System.Data.DataSet dbNew() {
             object[] results = this.Invoke("dbNew", new object[0]);
             return ((System.Data.DataSet)(results[0]));
         }
-
+        
         /// <remarks/>
-        public void dbNewAsync()
-        {
+        public void dbNewAsync() {
             this.dbNewAsync(null);
         }
-
+        
         /// <remarks/>
-        public void dbNewAsync(object userState)
-        {
-            if ((this.dbNewOperationCompleted == null))
-            {
+        public void dbNewAsync(object userState) {
+            if ((this.dbNewOperationCompleted == null)) {
                 this.dbNewOperationCompleted = new System.Threading.SendOrPostCallback(this.OndbNewOperationCompleted);
             }
             this.InvokeAsync("dbNew", new object[0], this.dbNewOperationCompleted, userState);
         }
-
-        private void OndbNewOperationCompleted(object arg)
-        {
-            if ((this.dbNewCompleted != null))
-            {
+        
+        private void OndbNewOperationCompleted(object arg) {
+            if ((this.dbNewCompleted != null)) {
                 System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
                 this.dbNewCompleted(this, new dbNewCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
             }
         }
-
+        
         /// <remarks/>
-        public new void CancelAsync(object userState)
-        {
+        public new void CancelAsync(object userState) {
             base.CancelAsync(userState);
         }
-
-        private bool IsLocalFileSystemWebService(string url)
-        {
-            if (((url == null)
-                        || (url == string.Empty)))
-            {
+        
+        private bool IsLocalFileSystemWebService(string url) {
+            if (((url == null) 
+                        || (url == string.Empty))) {
                 return false;
             }
             System.Uri wsUri = new System.Uri(url);
-            if (((wsUri.Port >= 1024)
-                        && (string.Compare(wsUri.Host, "localHost", System.StringComparison.OrdinalIgnoreCase) == 0)))
-            {
+            if (((wsUri.Port >= 1024) 
+                        && (string.Compare(wsUri.Host, "localHost", System.StringComparison.OrdinalIgnoreCase) == 0))) {
                 return true;
             }
             return false;
         }
     }
-
+    
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3752.0")]
     public delegate void openSqlCompletedEventHandler(object sender, System.ComponentModel.AsyncCompletedEventArgs e);
-
+    
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3752.0")]
     public delegate void closeSqlCompletedEventHandler(object sender, System.ComponentModel.AsyncCompletedEventArgs e);
-
+    
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3752.0")]
     public delegate void querySqlCompletedEventHandler(object sender, querySqlCompletedEventArgs e);
-
+    
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3752.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class querySqlCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs
-    {
-
+    public partial class querySqlCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
         private object[] results;
-
-        internal querySqlCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) :
-                base(exception, cancelled, userState)
-        {
+        
+        internal querySqlCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
             this.results = results;
         }
-
+        
         /// <remarks/>
-        public System.Data.DataSet Result
-        {
-            get
-            {
+        public System.Data.DataSet Result {
+            get {
                 this.RaiseExceptionIfNecessary();
                 return ((System.Data.DataSet)(this.results[0]));
             }
         }
     }
-
+    
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3752.0")]
     public delegate void dbNewCompletedEventHandler(object sender, dbNewCompletedEventArgs e);
-
+    
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3752.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class dbNewCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs
-    {
-
+    public partial class dbNewCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
         private object[] results;
-
-        internal dbNewCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) :
-                base(exception, cancelled, userState)
-        {
+        
+        internal dbNewCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
             this.results = results;
         }
-
+        
         /// <remarks/>
-        public System.Data.DataSet Result
-        {
-            get
-            {
+        public System.Data.DataSet Result {
+            get {
                 this.RaiseExceptionIfNecessary();
                 return ((System.Data.DataSet)(this.results[0]));
             }

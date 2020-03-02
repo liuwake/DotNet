@@ -11,8 +11,8 @@
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>WebApplication3</RootNamespace>
-    <AssemblyName>WebApplication3</AssemblyName>
+    <RootNamespace>WebApp</RootNamespace>
+    <AssemblyName>WebApp</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <UseIISExpress>true</UseIISExpress>
     <Use64BitIISExpress />
@@ -74,22 +74,9 @@
   <ItemGroup>
     <Content Include="Db.aspx" />
     <Content Include="MiaUsedBrowser.aspx" />
-    <None Include="Connected Services\ServiceReference1\Service1.wsdl" />
-    <None Include="Connected Services\ServiceReference1\Service1.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Connected Services\ServiceReference1\Service11.xsd">
-      <SubType>Designer</SubType>
-    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
-    </None>
-    <None Include="Connected Services\ServiceReference1\configuration91.svcinfo" />
-    <None Include="Connected Services\ServiceReference1\configuration.svcinfo" />
-    <None Include="Connected Services\ServiceReference1\Reference.svcmap">
-      <Generator>WCF Proxy Generator</Generator>
-      <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
     <Content Include="Web References\WeatherWebService\Reference.map">
       <Generator>MSDiscoCodeGenerator</Generator>
@@ -102,11 +89,6 @@
     <Content Include="Demo.aspx" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Connected Services\ServiceReference1\Reference.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Compile>
     <Compile Include="Db.aspx.cs">
       <DependentUpon>Db.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -157,12 +139,12 @@
       <Generator>MSDiscoCodeGenerator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </Content>
-    <None Include="Web References\WebRefDb\Service1.wsdl" />
+    <None Include="Web References\WebRefDb\SvcDb.wsdl" />
     <None Include="Web References\WebRef\Reference.map">
       <Generator>MSDiscoCodeGenerator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
-    <None Include="Web References\WebRef\Service1.wsdl" />
+    <None Include="Web References\WebRef\SvcMiaUsed.wsdl" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -183,13 +165,10 @@
     <WebReferences Include="Web References\" />
   </ItemGroup>
   <ItemGroup>
-    <WCFMetadataStorage Include="Connected Services\ServiceReference1\" />
-  </ItemGroup>
-  <ItemGroup>
-    <WebReferenceUrl Include="http://localhost:50434/Service1.svc%3fsingleWsdl">
+    <WebReferenceUrl Include="http://localhost:52087/SvcMiaUsed.svc%3fsingleWsdl">
       <UrlBehavior>Dynamic</UrlBehavior>
       <RelPath>Web References\WebRef\</RelPath>
-      <UpdateFromURL>http://localhost:50434/Service1.svc%3fsingleWsdl</UpdateFromURL>
+      <UpdateFromURL>http://localhost:52087/SvcMiaUsed.svc%3fsingleWsdl</UpdateFromURL>
       <ServiceLocationURL>
       </ServiceLocationURL>
       <CachedDynamicPropName>
@@ -197,16 +176,16 @@
       <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
       <CachedSettingsPropName>WebApplication3_WebRef_Service1</CachedSettingsPropName>
     </WebReferenceUrl>
-    <WebReferenceUrl Include="http://localhost:54632/Service1.svc%3fsingleWsdl">
+    <WebReferenceUrl Include="http://localhost:52087/SvcDb.svc%3fsingleWsdl">
       <UrlBehavior>Dynamic</UrlBehavior>
       <RelPath>Web References\WebRefDb\</RelPath>
-      <UpdateFromURL>http://localhost:54632/Service1.svc%3fsingleWsdl</UpdateFromURL>
+      <UpdateFromURL>http://localhost:52087/SvcDb.svc%3fsingleWsdl</UpdateFromURL>
       <ServiceLocationURL>
       </ServiceLocationURL>
       <CachedDynamicPropName>
       </CachedDynamicPropName>
       <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
-      <CachedSettingsPropName>WebApplication3_WebRefDb_Service1</CachedSettingsPropName>
+      <CachedSettingsPropName>WebApp_WebRefDb_SvcDb</CachedSettingsPropName>
     </WebReferenceUrl>
     <WebReferenceUrl Include="http://www.webxml.com.cn/WebServices/WeatherWebService.asmx">
       <UrlBehavior>Dynamic</UrlBehavior>

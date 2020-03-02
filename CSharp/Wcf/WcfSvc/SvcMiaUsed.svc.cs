@@ -79,12 +79,12 @@ namespace WcfSvc
 
         public string GetImageScanResult()
         {
-            string imagePath = @"C:\Users\iwake\OneDrive - wake\Desktop\Inventory\Images\ScanResult.jpg";
+            string imagePath = @"C:\Users\iwake\OneDrive - wake\Desktop\Mia\Images\ScanResult.jpg";
             return WcfClass.WcfClass.ImageToBase64String(imagePath);
         }
         public string GetImageScanRaw()
         {
-            string imagePath = @"C:\Users\iwake\OneDrive - wake\Desktop\Inventory\Images\ScanRaw.jpg";
+            string imagePath = @"C:\Users\iwake\OneDrive - wake\Desktop\Mia\Images\ScanRaw.jpg";
             return WcfClass.WcfClass.ImageToBase64String(imagePath);
         }
 

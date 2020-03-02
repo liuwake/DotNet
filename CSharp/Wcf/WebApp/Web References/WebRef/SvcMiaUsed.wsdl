@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="Service1" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="SvcMiaUsed" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
   <wsdl:types>
     <xs:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
       <xs:element name="GetHello">
@@ -134,82 +134,82 @@
       <xs:attribute name="Ref" type="xs:IDREF" />
     </xs:schema>
   </wsdl:types>
-  <wsdl:message name="IService1_GetHello_InputMessage">
+  <wsdl:message name="ISvcMiaUsed_GetHello_InputMessage">
     <wsdl:part name="parameters" element="tns:GetHello" />
   </wsdl:message>
-  <wsdl:message name="IService1_GetHello_OutputMessage">
+  <wsdl:message name="ISvcMiaUsed_GetHello_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetHelloResponse" />
   </wsdl:message>
-  <wsdl:message name="IService1_TestMethodStr_InputMessage">
+  <wsdl:message name="ISvcMiaUsed_TestMethodStr_InputMessage">
     <wsdl:part name="parameters" element="tns:TestMethodStr" />
   </wsdl:message>
-  <wsdl:message name="IService1_TestMethodStr_OutputMessage">
+  <wsdl:message name="ISvcMiaUsed_TestMethodStr_OutputMessage">
     <wsdl:part name="parameters" element="tns:TestMethodStrResponse" />
   </wsdl:message>
-  <wsdl:message name="IService1_GetAdd_InputMessage">
+  <wsdl:message name="ISvcMiaUsed_GetAdd_InputMessage">
     <wsdl:part name="parameters" element="tns:GetAdd" />
   </wsdl:message>
-  <wsdl:message name="IService1_GetAdd_OutputMessage">
+  <wsdl:message name="ISvcMiaUsed_GetAdd_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetAddResponse" />
   </wsdl:message>
-  <wsdl:message name="IService1_GetJson_InputMessage">
+  <wsdl:message name="ISvcMiaUsed_GetJson_InputMessage">
     <wsdl:part name="parameters" element="tns:GetJson" />
   </wsdl:message>
-  <wsdl:message name="IService1_GetJson_OutputMessage">
+  <wsdl:message name="ISvcMiaUsed_GetJson_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetJsonResponse" />
   </wsdl:message>
-  <wsdl:message name="IService1_GetImageScanResult_InputMessage">
+  <wsdl:message name="ISvcMiaUsed_GetImageScanResult_InputMessage">
     <wsdl:part name="parameters" element="tns:GetImageScanResult" />
   </wsdl:message>
-  <wsdl:message name="IService1_GetImageScanResult_OutputMessage">
+  <wsdl:message name="ISvcMiaUsed_GetImageScanResult_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetImageScanResultResponse" />
   </wsdl:message>
-  <wsdl:message name="IService1_GetImageScanRaw_InputMessage">
+  <wsdl:message name="ISvcMiaUsed_GetImageScanRaw_InputMessage">
     <wsdl:part name="parameters" element="tns:GetImageScanRaw" />
   </wsdl:message>
-  <wsdl:message name="IService1_GetImageScanRaw_OutputMessage">
+  <wsdl:message name="ISvcMiaUsed_GetImageScanRaw_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetImageScanRawResponse" />
   </wsdl:message>
-  <wsdl:message name="IService1_GetScan_InputMessage">
+  <wsdl:message name="ISvcMiaUsed_GetScan_InputMessage">
     <wsdl:part name="parameters" element="tns:GetScan" />
   </wsdl:message>
-  <wsdl:message name="IService1_GetScan_OutputMessage">
+  <wsdl:message name="ISvcMiaUsed_GetScan_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetScanResponse" />
   </wsdl:message>
-  <wsdl:portType name="IService1">
+  <wsdl:portType name="ISvcMiaUsed">
     <wsdl:operation name="GetHello">
-      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetHello" message="tns:IService1_GetHello_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetHelloResponse" message="tns:IService1_GetHello_OutputMessage" />
+      <wsdl:input wsaw:Action="http://tempuri.org/ISvcMiaUsed/GetHello" message="tns:ISvcMiaUsed_GetHello_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISvcMiaUsed/GetHelloResponse" message="tns:ISvcMiaUsed_GetHello_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="TestMethodStr">
-      <wsdl:input wsaw:Action="http://tempuri.org/IService1/TestMethodStr" message="tns:IService1_TestMethodStr_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IService1/TestMethodStrResponse" message="tns:IService1_TestMethodStr_OutputMessage" />
+      <wsdl:input wsaw:Action="http://tempuri.org/ISvcMiaUsed/TestMethodStr" message="tns:ISvcMiaUsed_TestMethodStr_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISvcMiaUsed/TestMethodStrResponse" message="tns:ISvcMiaUsed_TestMethodStr_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="GetAdd">
-      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetAdd" message="tns:IService1_GetAdd_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetAddResponse" message="tns:IService1_GetAdd_OutputMessage" />
+      <wsdl:input wsaw:Action="http://tempuri.org/ISvcMiaUsed/GetAdd" message="tns:ISvcMiaUsed_GetAdd_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISvcMiaUsed/GetAddResponse" message="tns:ISvcMiaUsed_GetAdd_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="GetJson">
-      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetJson" message="tns:IService1_GetJson_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetJsonResponse" message="tns:IService1_GetJson_OutputMessage" />
+      <wsdl:input wsaw:Action="http://tempuri.org/ISvcMiaUsed/GetJson" message="tns:ISvcMiaUsed_GetJson_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISvcMiaUsed/GetJsonResponse" message="tns:ISvcMiaUsed_GetJson_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="GetImageScanResult">
-      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetImageScanResult" message="tns:IService1_GetImageScanResult_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetImageScanResultResponse" message="tns:IService1_GetImageScanResult_OutputMessage" />
+      <wsdl:input wsaw:Action="http://tempuri.org/ISvcMiaUsed/GetImageScanResult" message="tns:ISvcMiaUsed_GetImageScanResult_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISvcMiaUsed/GetImageScanResultResponse" message="tns:ISvcMiaUsed_GetImageScanResult_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="GetImageScanRaw">
-      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetImageScanRaw" message="tns:IService1_GetImageScanRaw_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetImageScanRawResponse" message="tns:IService1_GetImageScanRaw_OutputMessage" />
+      <wsdl:input wsaw:Action="http://tempuri.org/ISvcMiaUsed/GetImageScanRaw" message="tns:ISvcMiaUsed_GetImageScanRaw_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISvcMiaUsed/GetImageScanRawResponse" message="tns:ISvcMiaUsed_GetImageScanRaw_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="GetScan">
-      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetScan" message="tns:IService1_GetScan_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetScanResponse" message="tns:IService1_GetScan_OutputMessage" />
+      <wsdl:input wsaw:Action="http://tempuri.org/ISvcMiaUsed/GetScan" message="tns:ISvcMiaUsed_GetScan_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISvcMiaUsed/GetScanResponse" message="tns:ISvcMiaUsed_GetScan_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
-  <wsdl:binding name="BasicHttpBinding_IService1" type="tns:IService1">
+  <wsdl:binding name="BasicHttpBinding_ISvcMiaUsed" type="tns:ISvcMiaUsed">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
     <wsdl:operation name="GetHello">
-      <soap:operation soapAction="http://tempuri.org/IService1/GetHello" style="document" />
+      <soap:operation soapAction="http://tempuri.org/ISvcMiaUsed/GetHello" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -218,7 +218,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="TestMethodStr">
-      <soap:operation soapAction="http://tempuri.org/IService1/TestMethodStr" style="document" />
+      <soap:operation soapAction="http://tempuri.org/ISvcMiaUsed/TestMethodStr" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -227,7 +227,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="GetAdd">
-      <soap:operation soapAction="http://tempuri.org/IService1/GetAdd" style="document" />
+      <soap:operation soapAction="http://tempuri.org/ISvcMiaUsed/GetAdd" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -236,7 +236,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="GetJson">
-      <soap:operation soapAction="http://tempuri.org/IService1/GetJson" style="document" />
+      <soap:operation soapAction="http://tempuri.org/ISvcMiaUsed/GetJson" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -245,7 +245,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="GetImageScanResult">
-      <soap:operation soapAction="http://tempuri.org/IService1/GetImageScanResult" style="document" />
+      <soap:operation soapAction="http://tempuri.org/ISvcMiaUsed/GetImageScanResult" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -254,7 +254,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="GetImageScanRaw">
-      <soap:operation soapAction="http://tempuri.org/IService1/GetImageScanRaw" style="document" />
+      <soap:operation soapAction="http://tempuri.org/ISvcMiaUsed/GetImageScanRaw" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -263,7 +263,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="GetScan">
-      <soap:operation soapAction="http://tempuri.org/IService1/GetScan" style="document" />
+      <soap:operation soapAction="http://tempuri.org/ISvcMiaUsed/GetScan" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -272,9 +272,9 @@
       </wsdl:output>
     </wsdl:operation>
   </wsdl:binding>
-  <wsdl:service name="Service1">
-    <wsdl:port name="BasicHttpBinding_IService1" binding="tns:BasicHttpBinding_IService1">
-      <soap:address location="http://localhost:50434/Service1.svc" />
+  <wsdl:service name="SvcMiaUsed">
+    <wsdl:port name="BasicHttpBinding_ISvcMiaUsed" binding="tns:BasicHttpBinding_ISvcMiaUsed">
+      <soap:address location="http://localhost:52087/SvcMiaUsed.svc" />
     </wsdl:port>
   </wsdl:service>
 </wsdl:definitions>
