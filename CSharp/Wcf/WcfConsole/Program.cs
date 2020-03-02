@@ -14,6 +14,7 @@ namespace WcfConsole
     {
         static void Main(string[] args)
         {
+            Demo.TestOffline();
             ProgHostMiaUsed();
 
             //Service1Client client = new Service1Client();
