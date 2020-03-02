@@ -30,6 +30,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x64</PlatformTarget>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -41,6 +42,9 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data.SQLite">
+      <HintPath>..\..\..\..\..\..\..\..\Program Files\System.Data.SQLite\2012\bin\System.Data.SQLite.dll</HintPath>
+    </Reference>
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -61,15 +65,20 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Service1.svc" />
+    <Content Include="SvcDb.svc" />
     <Content Include="SvcMiaUsed.svc" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="IService1.cs" />
+    <Compile Include="ISvcDb.cs" />
     <Compile Include="ISvcMiaUsed.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Service1.svc.cs">
       <DependentUpon>Service1.svc</DependentUpon>
+    </Compile>
+    <Compile Include="SvcDb.svc.cs">
+      <DependentUpon>SvcDb.svc</DependentUpon>
     </Compile>
     <Compile Include="SvcMiaUsed.svc.cs">
       <DependentUpon>SvcMiaUsed.svc</DependentUpon>
@@ -91,6 +100,9 @@
       <Project>{1d3fbaf3-d14b-4c23-b28b-e52550622e54}</Project>
       <Name>WcfClass</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
