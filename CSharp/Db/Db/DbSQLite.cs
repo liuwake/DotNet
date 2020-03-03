@@ -16,6 +16,8 @@ namespace Db
         private int DbType = 2; // 0: Access, 1: SQL Server, 2: SQLite
         private string sqlCommand;
 
+        
+
         public DbSQLite()
         {
 
@@ -65,8 +67,33 @@ namespace Db
         {
 
             DbOperation dbOperation = new DbOperation(connectionString, DbType);
-            sqlCommand = "INSERT INTO Used(DbId,Name) VALUES(11,'Tom')";
+
+            UsedInfo usedInfo = new UsedInfo();
+            Random rd = new Random();
+            
+            usedInfo.DbId = DateTime.Now.ToString("yyyyMMddHHmmssfff");
+            usedInfo.HospitalNo = (rd.Next(1000) + 64500).ToString();
+            usedInfo.BedNo = rd.Next(100).ToString();
+            usedInfo.Name = "Patient";
+            usedInfo.Age = rd.Next(80).ToString();
+
+            //usedInfo.TagCode = (rd.Next(10000) + 0110111441288).ToString();
+            long TagCodeTemp = rd.Next(10000) + 0110111441288;
+            for (int TagCodeNum = 0; TagCodeNum <= rd.Next(13); TagCodeNum++)
+            {
+                usedInfo.TagCode += (TagCodeTemp + TagCodeNum).ToString()+',';
+            }
+
+
+            //sqlCommand = string.Format("INSERT INTO Used(DbId,HospitalNo,BedNo,Name,Age,TagCode ) VALUES({0},{1},{2},{3},{4},{5})", usedInfo.DbId, usedInfo.HospitalNo, usedInfo.BedNo, usedInfo.Name, usedInfo.Age, usedInfo.TagCode);
+            sqlCommand = "INSERT INTO Used(DbId,HospitalNo,BedNo,Name,Age,TagCode ) VALUES("
+            + usedInfo.DbId + ", '" + usedInfo.HospitalNo + "', '" + usedInfo.BedNo + "', '"
+            + usedInfo.Name + "', '" + usedInfo.Age + "', '" + usedInfo.TagCode + "')"; 
+
+            Console.WriteLine(sqlCommand);
+            //sqlCommand = string.Format("INSERT INTO Used(DbId) VALUES({0})", usedInfo.DbId);
             dbOperation.ExecuteNonQuery(sqlCommand);
+            
 
         }
         public void SQLiteQuery()

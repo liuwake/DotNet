@@ -32,9 +32,13 @@ namespace Db
             //    //dbSQLite.SQLiteTestAll();
             //dbSQLite.SQLiteTestConn();
             //dbSQLite.SQLiteConn();
-            dbSQLite.SQLiteInsert();
-            Console.WriteLine("OK");
-            Console.ReadKey();
+            while(true)
+            {
+                dbSQLite.SQLiteInsert();
+                Console.WriteLine("OK");
+                Console.ReadKey();
+            }
+          
         }
     }
 }

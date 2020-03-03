@@ -67,6 +67,7 @@
   <ItemGroup>
     <Compile Include="DbOperation.cs" />
     <Compile Include="DbSQLite.cs" />
+    <Compile Include="DbUsed.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
