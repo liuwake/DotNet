@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Db", "Db\Db.csproj", "{3CD5
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DbWpf", "DbWpf\DbWpf.csproj", "{BE2A1127-5056-48A0-AA02-4130B6DEF927}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DatabaseTest", "DatabaseTest\DatabaseTest.csproj", "{76B99159-7446-44E9-8AC2-552D5085C3FB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -31,6 +33,14 @@ Global
 		{BE2A1127-5056-48A0-AA02-4130B6DEF927}.Release|Any CPU.Build.0 = Release|Any CPU
 		{BE2A1127-5056-48A0-AA02-4130B6DEF927}.Release|x64.ActiveCfg = Release|x64
 		{BE2A1127-5056-48A0-AA02-4130B6DEF927}.Release|x64.Build.0 = Release|x64
+		{76B99159-7446-44E9-8AC2-552D5085C3FB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{76B99159-7446-44E9-8AC2-552D5085C3FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{76B99159-7446-44E9-8AC2-552D5085C3FB}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{76B99159-7446-44E9-8AC2-552D5085C3FB}.Debug|x64.Build.0 = Debug|Any CPU
+		{76B99159-7446-44E9-8AC2-552D5085C3FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{76B99159-7446-44E9-8AC2-552D5085C3FB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{76B99159-7446-44E9-8AC2-552D5085C3FB}.Release|x64.ActiveCfg = Release|Any CPU
+		{76B99159-7446-44E9-8AC2-552D5085C3FB}.Release|x64.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
