@@ -12,7 +12,7 @@ namespace Db
     class DbSQLite
     {
         //string fileDirection { get; set }
-        private string connectionString = "Data Source=C:\\WK\\Db\\Used.sqlite;Version=3";
+        private string connectionString = @"Data Source=C:\Users\iwake\OneDrive - wake\Desktop\Mia\Db\miaUsed.sqlite;" + "Version=3";
         private int DbType = 2; // 0: Access, 1: SQL Server, 2: SQLite
         private string sqlCommand;
 

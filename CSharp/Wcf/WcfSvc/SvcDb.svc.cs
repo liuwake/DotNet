@@ -31,7 +31,7 @@ namespace WcfSvc
         //    return composite;
         //}
         //连接数据库
-        SQLiteConnection strCon = new SQLiteConnection("Data Source=C:\\WK\\Db\\Used.sqlite;Version=3");
+        SQLiteConnection strCon = new SQLiteConnection(@"Data Source=C:\Users\iwake\OneDrive - wake\Desktop\Mia\Db\miaUsed.sqlite;" + "Version=3");
         /// <summary>
         /// 打开数据库
         /// </summary>
