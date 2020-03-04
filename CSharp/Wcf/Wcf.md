@@ -3,7 +3,9 @@
 ## CSharp
 ### Wcf
 ----
-# Wcf
+# Wcf\
+
+
 ## 1. Intro
 - [The Windows Communication Foundation (WCF), previously known as Indigo, is a runtime and a set of APIs in the .NET Framework for building connected, service-oriented applications.[1][2]](https://en.wikipedia.org/wiki/Windows_Communication_Foundation)
 - [zhihu wcf](https://www.zhihu.com/search?type=content&q=wcf)
@@ -13,6 +15,7 @@
 - [Develop Service-Oriented Applications with WCF](https://docs.microsoft.com/en-us/dotnet/framework/wcf/index)
 - [利用 WCF 开发面向服务的应用程序](https://docs.microsoft.com/zh-cn/dotnet/standard/tour)
 - [WCF 数据服务 4.5](https://docs.microsoft.com/zh-cn/dotnet/framework/data/wcf/index)
+- [ Visual Studio  Windows  IDE  数据工具  操作指南  Windows Communication Foundation 服务和 WCF 数据服务  在 Windows 窗体中创建 WCF 服务 演练：在 Windows 窗体中创建简单 WCF 服务](https://docs.microsoft.com/zh-cn/visualstudio/data-tools/walkthrough-creating-a-simple-wcf-service-in-windows-forms?view=vs-2017)
 ## 3.Config
 ### local PC config
 #### VS
