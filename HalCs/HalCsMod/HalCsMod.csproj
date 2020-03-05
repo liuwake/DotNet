@@ -60,6 +60,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -69,7 +70,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="HalLive.cs" />
-    <Compile Include="HalScan.cs" />
+    <Compile Include="HalMiaUsed\HalScan.cs" />
+    <Compile Include="HDevelopExport\dev_update_off.cs" />
+    <Compile Include="HDevelopExport\image_cali_map.cs" />
+    <Compile Include="HDevelopExport\image_get_bar.cs" />
+    <Compile Include="HalMiaUsed\HalMiaUsed.cs" />
+    <Compile Include="HDevelopExport\ocr_split.cs" />
+    <Compile Include="HDevelopExport\region_judge_sign.cs" />
+    <Compile Include="HDevelopExport\region_ocr_num_svm.cs" />
+    <Compile Include="HDevelopExport\set_display_font.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
