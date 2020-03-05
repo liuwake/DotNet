@@ -1,8 +1,10 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.28307.960
+VisualStudioVersion = 15.0.28307.1000
 MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HalCs", "HalCs\HalCs.csproj", "{4C735B3D-2199-4397-8084-0C85F1B8BBF2}"
+EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HalCsMod", "HalCsMod\HalCsMod.csproj", "{5512AC69-A61C-4C69-ACAE-F788F8781A9C}"
 EndProject
 Global
@@ -13,6 +15,14 @@ Global
 		Release|x64 = Release|x64
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4C735B3D-2199-4397-8084-0C85F1B8BBF2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4C735B3D-2199-4397-8084-0C85F1B8BBF2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4C735B3D-2199-4397-8084-0C85F1B8BBF2}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{4C735B3D-2199-4397-8084-0C85F1B8BBF2}.Debug|x64.Build.0 = Debug|Any CPU
+		{4C735B3D-2199-4397-8084-0C85F1B8BBF2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4C735B3D-2199-4397-8084-0C85F1B8BBF2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4C735B3D-2199-4397-8084-0C85F1B8BBF2}.Release|x64.ActiveCfg = Release|Any CPU
+		{4C735B3D-2199-4397-8084-0C85F1B8BBF2}.Release|x64.Build.0 = Release|Any CPU
 		{5512AC69-A61C-4C69-ACAE-F788F8781A9C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{5512AC69-A61C-4C69-ACAE-F788F8781A9C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5512AC69-A61C-4C69-ACAE-F788F8781A9C}.Debug|x64.ActiveCfg = Debug|x64
@@ -26,6 +36,6 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {8F1EC170-DBD5-45B7-ABC5-633946C77B11}
+		SolutionGuid = {1960383F-1047-491F-A9A9-6FACDA6FE41B}
 	EndGlobalSection
 EndGlobal
