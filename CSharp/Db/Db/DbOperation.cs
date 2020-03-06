@@ -7,9 +7,7 @@ using System.Windows;
 
 namespace Db
 {
-
-
-    class DbOperation
+    public class DbOperation
     {
         private OleDbConnection OleDbConnection;
         private SqlConnection SqlConnection;
