@@ -280,6 +280,16 @@ public partial class HDevelopExport
                     HOperatorSet.DispObj(ho_EDGE, hv_ExpDefaultWinHandle);
                     //dump_window_image (ImageResult, WindowHandle)
 
+                    {
+                        
+                        Back.UsedData usedData = new Back.UsedData();
+
+                        Back.UsedData.UsedInfo usedInfo;
+                        usedInfo  = usedData.ConvertStruct(hv_Ocr_Split, hv_DecodedDataStrings, hv_sign);
+                        usedData.SaveTemp(usedInfo);
+                        
+                    };
+
                     //stop ()
                 }
                 // catch (Exception) 
@@ -404,7 +414,8 @@ public partial class HDevelopExport
     }
 
 
-    public void InitHalconMiaUsed()
+    //public void InitHalconMiaUsed()
+    public void InitHalcon()
     {
         // Default settings used in HDevelop
         HOperatorSet.SetSystem("width", 512);
