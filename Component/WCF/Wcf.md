@@ -20,6 +20,9 @@
 ### local PC config
 #### VS
 - C#有一些函数如GetHashCode和x86,X64版本有关系，为了和服务器保持一致，本地iis Express也需要设置64位。
+  - Error
+    - 可能会出现metadata error等问题```Failed to add a service. Service metadata may not be accessible. Make sure your service is running and exposing metadata.``` [WCF First Sample 遇到问题](https://blog.csdn.net/peter200694013/article/details/6448632)
+    - 
   - ref
     - [IISExpress使用64位](https://www.cnblogs.com/zhaogaojian/p/10433696.html)
   - error
