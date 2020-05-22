@@ -26,7 +26,7 @@ public partial class HDevelopExport
 
   // Procedures 
   // Main procedure 
-  private void action()
+  private void actionMiaV3()
   {
 
 
@@ -81,27 +81,27 @@ public partial class HDevelopExport
           image_class_mia(ho_Image, hv_WindowHandle, out hv_DecodedDataStrings);
 
 
-                    MiaResult miaResult = new MiaResult();
+                    //UsedInfo usedInfo  = new    UsedInfo();
 
           //*** Progress
           //** 1SHIL
           if ((int)(new HTuple(hv_DecodedDataStrings.TupleEqual("1SHIL"))) != 0)
           {
-                        image_prog_1SHIL(ho_Image, hv_WindowHandle, out string miaClass, out string KeyID, out string Barcode, out bool sign, out HObject miaReult);
+             image_prog_1SHIL(ho_Image, hv_WindowHandle, out UsedInfo usedInfo);
 
             //** 2HNCL
                     }
           else if ((int)(new HTuple(hv_DecodedDataStrings.TupleEqual(
               "2HNCL"))) != 0)
           {
-            image_prog_2HNCL(ho_Image, hv_WindowHandle);
-            //** 3CWDL
-          }
+            image_prog_2HNCL(ho_Image, hv_WindowHandle, out UsedInfo usedInfo);
+                        //** 3CWDL
+                    }
           else
           {
-            image_prog_3CWDL(ho_Image, hv_WindowHandle);
+            image_prog_3CWDL(ho_Image, hv_WindowHandle, out UsedInfo usedInfo,out hv_DataCodeHandle);
 
-          }
+                    }
 
           //stop ()
         }
@@ -138,6 +138,7 @@ public partial class HDevelopExport
 
   }
 
+    //private void 
   //public void InitHalcon()
   //{
   //  // Default settings used in HDevelop

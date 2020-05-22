@@ -15,8 +15,8 @@ using HalconDotNet;
 
 public partial class HDevelopExport
 {
-  public void image_prog_2HNCL (HObject ho_Image, HTuple hv_WindowHandle)
-  {
+  public void image_prog_2HNCL (HObject ho_Image, HTuple hv_WindowHandle, out UsedInfo usedInfo)
+    {
 
 
 
@@ -122,29 +122,43 @@ public partial class HDevelopExport
     }
     //* DISPLAY LOC
     HOperatorSet.SetLineWidth(hv_ExpDefaultWinHandle, 1);
-    //* Info:
-    //hom_mat2d_identity (InfoHomMat2D)
-    //hom_mat2d_rotate (InfoHomMat2D, InfoAngle, 0, 0, InfoHomMat2D)
-    //hom_mat2d_translate (InfoHomMat2D, InfoRow, InfoColumn, InfoHomMat2D)
-    //affine_trans_contour_xld (InfoModelContours, InfoTransContours, InfoHomMat2D)
-    //dev_set_color ('green')
-    //dev_display (InfoTransContours)
-    //* Ocr
-    //dev_disp_text (Ocr_Split, 'image', IDRow1 + IDHeight, IDColumn1, 'blue', [], [])
-    //* HeadSign
-    //hom_mat2d_identity (SignHomMat2D)
-    //hom_mat2d_rotate (SignHomMat2D, SignAngle, 0, 0, SignHomMat2D)
-    //hom_mat2d_translate (SignHomMat2D, SignRow, SignColumn, SignHomMat2D)
-    //affine_trans_contour_xld (SignModelContours, SignTransContours, SignHomMat2D)
-    //dev_set_color ('green')
-    //dev_display (SignTransContours)
-    //* Sign
-    //dev_set_colored (12)
-    //dev_display (EDGE)
-    //dump_window_image (ImageResult, WindowHandle)
+        //* Info:
+        //hom_mat2d_identity (InfoHomMat2D)
+        //hom_mat2d_rotate (InfoHomMat2D, InfoAngle, 0, 0, InfoHomMat2D)
+        //hom_mat2d_translate (InfoHomMat2D, InfoRow, InfoColumn, InfoHomMat2D)
+        //affine_trans_contour_xld (InfoModelContours, InfoTransContours, InfoHomMat2D)
+        //dev_set_color ('green')
+        //dev_display (InfoTransContours)
+        //* Ocr
+        //dev_disp_text (Ocr_Split, 'image', IDRow1 + IDHeight, IDColumn1, 'blue', [], [])
+        //* HeadSign
+        //hom_mat2d_identity (SignHomMat2D)
+        //hom_mat2d_rotate (SignHomMat2D, SignAngle, 0, 0, SignHomMat2D)
+        //hom_mat2d_translate (SignHomMat2D, SignRow, SignColumn, SignHomMat2D)
+        //affine_trans_contour_xld (SignModelContours, SignTransContours, SignHomMat2D)
+        //dev_set_color ('green')
+        //dev_display (SignTransContours)
+        //* Sign
+        //dev_set_colored (12)
+        //dev_display (EDGE)
+        //dump_window_image (ImageResult, WindowHandle)
 
-    //stop ()
-    ho_ImageOut.Dispose();
+        //stop ()
+
+        {
+            HOperatorSet.DumpWindowImage(out HObject miaResult, hv_ExpDefaultWinHandle);
+            var result = new UsedInfo();
+            result.DbId = "2HNCL";
+            ////result.OtherID = "6527815";
+            //result.OtherID = hv_Ocr_Split;
+            result.Sign = "1";
+            //result.Sign = hv_sign;
+            //result.TagCode = "110112572371,110112572370,110112572373,110112572375,110112572374,110112572368,110112572369,110112572367,110112572372,";
+            result.TagCode = hv_DecodedDataStrings;
+            result.HImg = miaResult;
+            usedInfo = result;
+        }
+        ho_ImageOut.Dispose();
     ho_SymbolXLDs.Dispose();
     ho_SymbolRegions.Dispose();
     ho_ObjectSelected.Dispose();

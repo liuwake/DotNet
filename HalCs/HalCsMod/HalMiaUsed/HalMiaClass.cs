@@ -24,12 +24,13 @@ public partial class HDevelopExport
     public HTuple hv_ExpImageRawWinHandle;
     HTuple hv_AcqHandle = new HTuple();
 
-    class MiaResult
+    class UsedInfo
     {
-        public HObject ImageResult { get; set; }
-        public string KetId { get; set; }
-        public string Barcode { get; set; }
-        public bool Sign { get; set; }
+        public HObject HImg { get; set; }
+        public string DbId { get; set; }
+        public string OtherID { get; set; }
+        public string TagCode { get; set; }
+        public string Sign { get; set; }
     }
 
     public void HDevelopStop()

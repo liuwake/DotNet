@@ -15,8 +15,8 @@ using HalconDotNet;
 
 public partial class HDevelopExport
 {
-  public void image_prog_3CWDL (HObject ho_Image, HTuple hv_WindowHandle)
-  {
+  public void image_prog_3CWDL (HObject ho_Image, HTuple hv_WindowHandle, out UsedInfo usedInfo)
+    {
 
 
 
@@ -204,10 +204,24 @@ public partial class HDevelopExport
     //* Sign
     HOperatorSet.SetColored(hv_ExpDefaultWinHandle, 12);
     HOperatorSet.DispObj(ho_EDGE, hv_ExpDefaultWinHandle);
-    //dump_window_image (ImageResult, WindowHandle)
+        //dump_window_image (ImageResult, WindowHandle)
 
-    //stop ()
-    ho_ImageOut.Dispose();
+        //stop ()
+
+        {
+            HOperatorSet.DumpWindowImage(out HObject miaResult, hv_ExpDefaultWinHandle);
+            var result = new UsedInfo();
+            result.DbId = "3CWDL";
+            //result.OtherID = "6527815";
+            //result.OtherID = hv_Ocr_Split;
+            //result.Sign = "1";
+            result.Sign = hv_sign;
+            //result.TagCode = "110112572371,110112572370,110112572373,110112572375,110112572374,110112572368,110112572369,110112572367,110112572372,";
+            result.TagCode = hv_DecodedDataStrings;
+            result.HImg = miaResult;
+            usedInfo = result;
+        }
+        ho_ImageOut.Dispose();
     ho_SignModelContours.Dispose();
     ho_SymbolRegions.Dispose();
     ho_ROI_OCR_01_0.Dispose();
