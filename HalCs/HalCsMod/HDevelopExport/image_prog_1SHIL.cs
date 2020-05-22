@@ -15,7 +15,7 @@ using HalconDotNet;
 
 public partial class HDevelopExport
 {
-  public void image_prog_1SHIL (HObject ho_Image, HTuple hv_WindowHandle)
+  public void image_prog_1SHIL (HObject ho_Image, HTuple hv_WindowHandle, out string miaClass,out string KeyId, out string Barcode, out bool sign,out HObject imageReult)
   {
 
 
@@ -75,7 +75,7 @@ public partial class HDevelopExport
 
     //* INIT BARCODE
     hv_BarCodeHandle.Dispose();
-    HOperatorSet.CreateBarCodeModel(new HTuple(), new HTuple(), out hv_BarCodeHandle);
+    HOperatorSet.CreateBarCodeModel(new HTuple(), new HTuple(), ref hv_BarCodeHandle);
     HOperatorSet.SetBarCodeParam(hv_BarCodeHandle, "quiet_zone", "true");
     //* INIT LOC
     //* Info:
@@ -230,11 +230,23 @@ public partial class HDevelopExport
     //* Sign
     HOperatorSet.SetColored(hv_ExpDefaultWinHandle, 12);
     HOperatorSet.DispObj(ho_EDGE, hv_ExpDefaultWinHandle);
-    //dump_window_image (ImageResult, WindowHandle)
+    
+        //dump_window_image (ImageResult, WindowHandle)
 
-    //stop ()
+        //stop ()
 
-    ho_ImageOut.Dispose();
+        {
+            //MiaResult miaResult = new MiaResult();
+            miaClass = "1SHIL";
+           KeyId = "6527815";
+            Barcode = "";
+            sign = true;
+            imageReult = null;
+
+        }
+
+
+        ho_ImageOut.Dispose();
     ho_InfoModelContours.Dispose();
     ho_SignModelContours.Dispose();
     ho_SymbolRegions.Dispose();

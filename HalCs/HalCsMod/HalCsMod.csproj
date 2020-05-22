@@ -70,12 +70,18 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="HalLive.cs" />
-    <Compile Include="HalMiaUsed\HalMiaUsedHelper.cs" />
+    <Compile Include="HalMiaUsed\HalMiaClass.cs" />
     <Compile Include="HalMiaUsed\HalScan.cs" />
+    <Compile Include="HalMiaUsed\MiaV3.cs" />
     <Compile Include="HDevelopExport\dev_update_off.cs" />
     <Compile Include="HDevelopExport\image_cali_map.cs" />
+    <Compile Include="HDevelopExport\image_class_mia.cs" />
+    <Compile Include="HDevelopExport\image_display_datacode.cs" />
     <Compile Include="HDevelopExport\image_get_bar.cs" />
     <Compile Include="HalMiaUsed\HalMiaUsed.cs" />
+    <Compile Include="HDevelopExport\image_prog_1SHIL.cs" />
+    <Compile Include="HDevelopExport\image_prog_2HNCL.cs" />
+    <Compile Include="HDevelopExport\image_prog_3CWDL.cs" />
     <Compile Include="HDevelopExport\ocr_split.cs" />
     <Compile Include="HDevelopExport\region_judge_sign.cs" />
     <Compile Include="HDevelopExport\region_ocr_num_svm.cs" />

@@ -24,6 +24,14 @@ public partial class HDevelopExport
     public HTuple hv_ExpImageRawWinHandle;
     HTuple hv_AcqHandle = new HTuple();
 
+    class MiaResult
+    {
+        public HObject ImageResult { get; set; }
+        public string KetId { get; set; }
+        public string Barcode { get; set; }
+        public bool Sign { get; set; }
+    }
+
     public void HDevelopStop()
     {
         MessageBox.Show("Press button to continue", "Program stop");

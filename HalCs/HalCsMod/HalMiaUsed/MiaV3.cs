@@ -80,14 +80,17 @@ public partial class HDevelopExport
           hv_DecodedDataStrings.Dispose();
           image_class_mia(ho_Image, hv_WindowHandle, out hv_DecodedDataStrings);
 
+
+                    MiaResult miaResult = new MiaResult();
+
           //*** Progress
           //** 1SHIL
           if ((int)(new HTuple(hv_DecodedDataStrings.TupleEqual("1SHIL"))) != 0)
           {
-            image_prog_1SHIL(ho_Image, hv_WindowHandle);
+                        image_prog_1SHIL(ho_Image, hv_WindowHandle, out string miaClass, out string KeyID, out string Barcode, out bool sign, out HObject miaReult);
 
             //** 2HNCL
-          }
+                    }
           else if ((int)(new HTuple(hv_DecodedDataStrings.TupleEqual(
               "2HNCL"))) != 0)
           {
