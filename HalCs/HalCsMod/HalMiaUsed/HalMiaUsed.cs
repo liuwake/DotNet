@@ -20,14 +20,14 @@ public partial class HDevelopExport
 //public partial class HalMiaUsed
 {
 
-    public HTuple hv_ExpDefaultWinHandle;
-    public HTuple hv_ExpImageRawWinHandle;
-    HTuple hv_AcqHandle = new HTuple();
+    //public HTuple hv_ExpDefaultWinHandle;
+    //public HTuple hv_ExpImageRawWinHandle;
+    //HTuple hv_AcqHandle = new HTuple();
 
-    public void HDevelopStop()
-    {
-        MessageBox.Show("Press button to continue", "Program stop");
-    }
+    //public void HDevelopStop()
+    //{
+    //    MessageBox.Show("Press button to continue", "Program stop");
+    //}
 
     // Procedures 
     // Main procedure 
@@ -415,23 +415,23 @@ public partial class HDevelopExport
 
 
     //public void InitHalconMiaUsed()
-    public void InitHalcon()
-    {
-        // Default settings used in HDevelop
-        HOperatorSet.SetSystem("width", 512);
-        HOperatorSet.SetSystem("height", 512);
-    }
+    //public void InitHalcon()
+    //{
+    //    // Default settings used in HDevelop
+    //    HOperatorSet.SetSystem("width", 512);
+    //    HOperatorSet.SetSystem("height", 512);
+    //}
 
-    public void RunHalconMiaUsed(HTuple Window, HTuple ImageRawWin)
-    {
-        hv_ExpDefaultWinHandle = Window;
-        hv_ExpImageRawWinHandle = ImageRawWin;
-        actionMiaUsed();
-    }
-    public void StopHalcon()
-    {
-        HOperatorSet.CloseFramegrabber(hv_AcqHandle);
-    }
+    //public void RunHalconMiaUsed(HTuple Window, HTuple ImageRawWin)
+    //{
+    //    hv_ExpDefaultWinHandle = Window;
+    //    hv_ExpImageRawWinHandle = ImageRawWin;
+    //    actionMiaUsed();
+    //}
+    //public void StopHalcon()
+    //{
+    //    HOperatorSet.CloseFramegrabber(hv_AcqHandle);
+    //}
 
 }
 

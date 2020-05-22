@@ -86,27 +86,29 @@ public partial class HDevelopExport
     using (HDevDisposeHelper dh = new HDevDisposeHelper())
     {
     ho_RoiSign1.Dispose();
-    HOperatorSet.GenRectangle2(out ho_RoiSign1, hv_HeadSignRow+hv_HeadHeight, hv_HeadSignCol-(0.175*hv_HeadWidth), 
-        (new HTuple(0)).TupleRad(), hv_RoiSignWidth/2, hv_RoiSignHeight/2);
+    HOperatorSet.GenRectangle2(out ho_RoiSign1, (1*hv_HeadSignRow)+(1.75*hv_HeadHeight), 
+        hv_HeadSignCol-(0.375*hv_HeadWidth), (new HTuple(0)).TupleRad(), hv_RoiSignWidth/2, 
+        hv_RoiSignHeight/2);
     }
     using (HDevDisposeHelper dh = new HDevDisposeHelper())
     {
     ho_RoiSign2.Dispose();
-    HOperatorSet.GenRectangle2(out ho_RoiSign2, hv_HeadSignRow+(3*hv_HeadHeight), 
-        hv_HeadSignCol-(0.175*hv_HeadWidth), (new HTuple(0)).TupleRad(), hv_RoiSignWidth/2, 
+    HOperatorSet.GenRectangle2(out ho_RoiSign2, (1*hv_HeadSignRow)+(1.75*hv_HeadHeight), 
+        hv_HeadSignCol-(0.15*hv_HeadWidth), (new HTuple(0)).TupleRad(), hv_RoiSignWidth/2, 
         hv_RoiSignHeight/2);
     }
     using (HDevDisposeHelper dh = new HDevDisposeHelper())
     {
     ho_RoiSign3.Dispose();
-    HOperatorSet.GenRectangle2(out ho_RoiSign3, hv_HeadSignRow+hv_HeadHeight, hv_HeadSignCol+(0.355*hv_HeadWidth), 
-        (new HTuple(0)).TupleRad(), hv_RoiSignWidth/2, hv_RoiSignHeight/2);
+    HOperatorSet.GenRectangle2(out ho_RoiSign3, (1*hv_HeadSignRow)+(1.75*hv_HeadHeight), 
+        hv_HeadSignCol+(0.175*hv_HeadWidth), (new HTuple(0)).TupleRad(), hv_RoiSignWidth/2, 
+        hv_RoiSignHeight/2);
     }
     using (HDevDisposeHelper dh = new HDevDisposeHelper())
     {
     ho_RoiSign4.Dispose();
-    HOperatorSet.GenRectangle2(out ho_RoiSign4, hv_HeadSignRow+(3*hv_HeadHeight), 
-        hv_HeadSignCol+(0.355*hv_HeadWidth), (new HTuple(0)).TupleRad(), hv_RoiSignWidth/2, 
+    HOperatorSet.GenRectangle2(out ho_RoiSign4, (1*hv_HeadSignRow)+(1.75*hv_HeadHeight), 
+        hv_HeadSignCol+(0.375*hv_HeadWidth), (new HTuple(0)).TupleRad(), hv_RoiSignWidth/2, 
         hv_RoiSignHeight/2);
     }
     ho_RoiSign.Dispose();

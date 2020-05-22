@@ -39,7 +39,8 @@ public partial class HDevelopExport
     //
     hv_CodeTypes.Dispose();
     hv_CodeTypes = "Code 128";
-
+    hv_CodeTypes.Dispose();
+    hv_CodeTypes = "auto";
     //
     //Set display defaults
     hv_Width.Dispose();hv_Height.Dispose();
