@@ -15,8 +15,8 @@ using HalconDotNet;
 
 public partial class HDevelopExport
 {
-  public void image_get_bar (HObject ho_Image, out HObject ho_SymbolRegions, HTuple hv_BarCodeHandle, 
-      out HTuple hv_DecodedDataStrings, out HTuple hv_someitem)
+  public void image_get_barcode (HObject ho_Image, out HObject ho_SymbolRegions, 
+      HTuple hv_BarCodeHandle, out HTuple hv_DecodedDataStrings, out HTuple hv_someitem)
   {
 
 
@@ -39,8 +39,7 @@ public partial class HDevelopExport
     //
     hv_CodeTypes.Dispose();
     hv_CodeTypes = "Code 128";
-    hv_CodeTypes.Dispose();
-    hv_CodeTypes = "auto";
+
     //
     //Set display defaults
     hv_Width.Dispose();hv_Height.Dispose();
@@ -60,5 +59,6 @@ public partial class HDevelopExport
 
     return;
   }
+
 
 }
