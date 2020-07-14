@@ -60,6 +60,8 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -86,6 +88,7 @@
     <Compile Include="HDevelopExport\region_judge_sign.cs" />
     <Compile Include="HDevelopExport\region_ocr_num_svm.cs" />
     <Compile Include="HDevelopExport\set_display_font.cs" />
+    <Compile Include="Helper\ImageConvert.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
