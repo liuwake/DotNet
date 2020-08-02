@@ -8,15 +8,19 @@
 // 
 // Source files with different encoding should not be mixed in one project.
 //
-
+//  This file is intended to be used with the HDevelopTemplate or
+//  HDevelopTemplateWPF projects located under %HALCONEXAMPLES%\c#
 
 using System;
 using HalconDotNet;
 
 public partial class HDevelopExport
 {
+  public HTuple hv_ExpDefaultWinHandle;
+
+  // Procedures 
   public void image_get_bar (HObject ho_Image, out HObject ho_SymbolRegions, HTuple hv_BarCodeHandle, 
-      out HTuple hv_DecodedDataStrings, out HTuple hv_someitem)
+      HTuple hv_WindowHandle, out HTuple hv_DecodedDataStrings, out HTuple hv_someitem)
   {
 
 
@@ -24,13 +28,18 @@ public partial class HDevelopExport
 
     // Local iconic variables 
 
+    HObject ho_ObjectSelected=null;
+
     // Local control variables 
 
-    HTuple hv_CodeTypes = new HTuple();
+    HTuple hv_BarWidth = new HTuple(), hv_BarHeight = new HTuple();
+    HTuple hv_CodeTypes = new HTuple(), hv_BarIndex = new HTuple();
+    HTuple hv_Area = new HTuple(), hv_Row = new HTuple(), hv_Column = new HTuple();
     HTuple   hv_BarCodeHandle_COPY_INP_TMP = new HTuple(hv_BarCodeHandle);
 
     // Initialize local and output iconic variables 
     HOperatorSet.GenEmptyObj(out ho_SymbolRegions);
+    HOperatorSet.GenEmptyObj(out ho_ObjectSelected);
     hv_DecodedDataStrings = new HTuple();
     hv_someitem = new HTuple();
     //
@@ -38,6 +47,11 @@ public partial class HDevelopExport
     //supported by HALCON (except PharmaCode) or determine the bar
     //code type of unknown bar codes
     //
+    //* INIT CONST
+    hv_BarWidth.Dispose();
+    hv_BarWidth = 800;
+    hv_BarHeight.Dispose();
+    hv_BarHeight = 100;
     hv_CodeTypes.Dispose();
     hv_CodeTypes = "Code 128";
     hv_CodeTypes.Dispose();
@@ -59,11 +73,44 @@ public partial class HDevelopExport
         hv_CodeTypes, out hv_DecodedDataStrings);
     //get_bar_code_result (BarCodeHandle, 'all', 'someitem', someitem)
 
+
+    //* DISPLAY BARCODE
+    set_display_font(hv_ExpDefaultWinHandle, 14, "mono", "true", "false");
+    HOperatorSet.SetDraw(hv_ExpDefaultWinHandle, "margin");
+    HOperatorSet.SetLineWidth(hv_ExpDefaultWinHandle, 3);
+    HOperatorSet.SetColor(hv_ExpDefaultWinHandle, "forest green");
+    HOperatorSet.DispObj(ho_SymbolRegions, hv_ExpDefaultWinHandle);
+    for (hv_BarIndex=1; (int)hv_BarIndex<=(int)(new HTuple(hv_DecodedDataStrings.TupleLength()
+        )); hv_BarIndex = (int)hv_BarIndex + 1)
+    {
+      ho_ObjectSelected.Dispose();
+      HOperatorSet.SelectObj(ho_SymbolRegions, out ho_ObjectSelected, hv_BarIndex);
+      hv_Area.Dispose();hv_Row.Dispose();hv_Column.Dispose();
+      HOperatorSet.AreaCenter(ho_ObjectSelected, out hv_Area, out hv_Row, out hv_Column);
+      using (HDevDisposeHelper dh = new HDevDisposeHelper())
+      {
+      HOperatorSet.SetTposition(hv_ExpDefaultWinHandle, hv_Row-hv_BarHeight, hv_Column-(0.25*hv_BarWidth));
+      }
+      using (HDevDisposeHelper dh = new HDevDisposeHelper())
+      {
+      HOperatorSet.WriteString(hv_ExpDefaultWinHandle, hv_DecodedDataStrings.TupleSelect(
+          hv_BarIndex-1));
+      }
+    }
+    ho_ObjectSelected.Dispose();
+
     hv_BarCodeHandle_COPY_INP_TMP.Dispose();
+    hv_BarWidth.Dispose();
+    hv_BarHeight.Dispose();
     hv_CodeTypes.Dispose();
+    hv_BarIndex.Dispose();
+    hv_Area.Dispose();
+    hv_Row.Dispose();
+    hv_Column.Dispose();
 
     return;
   }
 
 
 }
+
