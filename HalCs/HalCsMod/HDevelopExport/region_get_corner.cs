@@ -8,18 +8,205 @@
 // 
 // Source files with different encoding should not be mixed in one project.
 //
-
+//  This file is intended to be used with the HDevelopTemplate or
+//  HDevelopTemplateWPF projects located under %HALCONEXAMPLES%\c#
 
 using System;
 using HalconDotNet;
 
 public partial class HDevelopExport
 {
+  public HTuple hv_ExpDefaultWinHandle;
+
+  // Procedures 
   public void region_get_corner (HObject ho_Image, HObject ho_Rectangle, HTuple hv_WindowHandle, 
       out HTuple hv_Rows, out HTuple hv_Cols)
   {
+
+
+
+
+    // Local iconic variables 
+
+    HObject ho_RegionsLine3=null, ho_RegionIntersection=null;
+
+    // Local control variables 
+
+    HTuple hv_Width = new HTuple(), hv_Height = new HTuple();
+    HTuple hv_LengthDiagonal = new HTuple(), hv_HalfDiagonal = new HTuple();
+    HTuple hv_Polarity = new HTuple(), hv_Index = new HTuple();
+    HTuple hv_RegionIntersectionArea = new HTuple(), hv_Row = new HTuple();
+    HTuple hv_Column = new HTuple();
+    // Initialize local and output iconic variables 
+    HOperatorSet.GenEmptyObj(out ho_RegionsLine3);
+    HOperatorSet.GenEmptyObj(out ho_RegionIntersection);
+    hv_Rows = new HTuple();
+    hv_Cols = new HTuple();
+    //* Gen Line In Loop and juage cross
+    hv_Width.Dispose();hv_Height.Dispose();
+    HOperatorSet.GetImageSize(ho_Image, out hv_Width, out hv_Height);
+    using (HDevDisposeHelper dh = new HDevDisposeHelper())
+    {
+    hv_LengthDiagonal.Dispose();
+    HOperatorSet.TupleSqrt((hv_Width*hv_Width)+(hv_Height*hv_Height), out hv_LengthDiagonal);
+    }
+    hv_HalfDiagonal.Dispose();
+    using (HDevDisposeHelper dh = new HDevDisposeHelper())
+    {
+    hv_HalfDiagonal = hv_LengthDiagonal/2;
+    }
+    //PolarityDegree := 1
+    //PolarityLength := 1
+    //Polarity := 3
+    hv_Rows.Dispose();
+    hv_Rows = new HTuple();
+    hv_Cols.Dispose();
+    hv_Cols = new HTuple();
+    for (hv_Polarity=1; (int)hv_Polarity<=4; hv_Polarity = (int)hv_Polarity + 1)
+    {
+      if ((int)(new HTuple(hv_Polarity.TupleEqual(1))) != 0)
+      {
+        HTuple end_val11 = hv_HalfDiagonal;
+        HTuple step_val11 = 1;
+        for (hv_Index=0; hv_Index.Continue(end_val11, step_val11); hv_Index = hv_Index.TupleAdd(step_val11))
+        {
+          using (HDevDisposeHelper dh = new HDevDisposeHelper())
+          {
+          ho_RegionsLine3.Dispose();
+          HOperatorSet.GenRegionHline(out ho_RegionsLine3, (new HTuple(-45)).TupleRad()
+              , 1*((1*hv_HalfDiagonal)-hv_Index));
+          }
+          ho_RegionIntersection.Dispose();
+          HOperatorSet.Intersection(ho_RegionsLine3, ho_Rectangle, out ho_RegionIntersection
+              );
+          hv_RegionIntersectionArea.Dispose();hv_Row.Dispose();hv_Column.Dispose();
+          HOperatorSet.AreaCenter(ho_RegionIntersection, out hv_RegionIntersectionArea, 
+              out hv_Row, out hv_Column);
+          if ((int)(new HTuple(hv_RegionIntersectionArea.TupleGreater(0))) != 0)
+          {
+            if (hv_Rows == null)
+              hv_Rows = new HTuple();
+            hv_Rows[hv_Polarity] = hv_Row;
+            if (hv_Cols == null)
+              hv_Cols = new HTuple();
+            hv_Cols[hv_Polarity] = hv_Column;
+            break;
+          }
+        }
+      }
+      if ((int)(new HTuple(hv_Polarity.TupleEqual(2))) != 0)
+      {
+        HTuple end_val23 = hv_HalfDiagonal;
+        HTuple step_val23 = 1;
+        for (hv_Index=0; hv_Index.Continue(end_val23, step_val23); hv_Index = hv_Index.TupleAdd(step_val23))
+        {
+          using (HDevDisposeHelper dh = new HDevDisposeHelper())
+          {
+          ho_RegionsLine3.Dispose();
+          HOperatorSet.GenRegionHline(out ho_RegionsLine3, (new HTuple(45)).TupleRad()
+              , 1*((0*hv_HalfDiagonal)+hv_Index));
+          }
+          ho_RegionIntersection.Dispose();
+          HOperatorSet.Intersection(ho_RegionsLine3, ho_Rectangle, out ho_RegionIntersection
+              );
+          hv_RegionIntersectionArea.Dispose();hv_Row.Dispose();hv_Column.Dispose();
+          HOperatorSet.AreaCenter(ho_RegionIntersection, out hv_RegionIntersectionArea, 
+              out hv_Row, out hv_Column);
+          if ((int)(new HTuple(hv_RegionIntersectionArea.TupleGreater(0))) != 0)
+          {
+            if (hv_Rows == null)
+              hv_Rows = new HTuple();
+            hv_Rows[hv_Polarity] = hv_Row;
+            if (hv_Cols == null)
+              hv_Cols = new HTuple();
+            hv_Cols[hv_Polarity] = hv_Column;
+            break;
+          }
+        }
+      }
+      if ((int)(new HTuple(hv_Polarity.TupleEqual(3))) != 0)
+      {
+        HTuple end_val35 = hv_HalfDiagonal;
+        HTuple step_val35 = 1;
+        for (hv_Index=0; hv_Index.Continue(end_val35, step_val35); hv_Index = hv_Index.TupleAdd(step_val35))
+        {
+          using (HDevDisposeHelper dh = new HDevDisposeHelper())
+          {
+          ho_RegionsLine3.Dispose();
+          HOperatorSet.GenRegionHline(out ho_RegionsLine3, (new HTuple(-45)).TupleRad()
+              , -1*((1*hv_HalfDiagonal)-hv_Index));
+          }
+          ho_RegionIntersection.Dispose();
+          HOperatorSet.Intersection(ho_RegionsLine3, ho_Rectangle, out ho_RegionIntersection
+              );
+          hv_RegionIntersectionArea.Dispose();hv_Row.Dispose();hv_Column.Dispose();
+          HOperatorSet.AreaCenter(ho_RegionIntersection, out hv_RegionIntersectionArea, 
+              out hv_Row, out hv_Column);
+          if ((int)(new HTuple(hv_RegionIntersectionArea.TupleGreater(0))) != 0)
+          {
+            if (hv_Rows == null)
+              hv_Rows = new HTuple();
+            hv_Rows[hv_Polarity] = hv_Row;
+            if (hv_Cols == null)
+              hv_Cols = new HTuple();
+            hv_Cols[hv_Polarity] = hv_Column;
+            break;
+          }
+        }
+      }
+      if ((int)(new HTuple(hv_Polarity.TupleEqual(4))) != 0)
+      {
+        HTuple end_val47 = hv_HalfDiagonal;
+        HTuple step_val47 = 1;
+        for (hv_Index=0; hv_Index.Continue(end_val47, step_val47); hv_Index = hv_Index.TupleAdd(step_val47))
+        {
+          using (HDevDisposeHelper dh = new HDevDisposeHelper())
+          {
+          ho_RegionsLine3.Dispose();
+          HOperatorSet.GenRegionHline(out ho_RegionsLine3, (new HTuple(45)).TupleRad()
+              , 1*((2*hv_HalfDiagonal)-hv_Index));
+          }
+          ho_RegionIntersection.Dispose();
+          HOperatorSet.Intersection(ho_RegionsLine3, ho_Rectangle, out ho_RegionIntersection
+              );
+          hv_RegionIntersectionArea.Dispose();hv_Row.Dispose();hv_Column.Dispose();
+          HOperatorSet.AreaCenter(ho_RegionIntersection, out hv_RegionIntersectionArea, 
+              out hv_Row, out hv_Column);
+          if ((int)(new HTuple(hv_RegionIntersectionArea.TupleGreater(0))) != 0)
+          {
+            if (hv_Rows == null)
+              hv_Rows = new HTuple();
+            hv_Rows[hv_Polarity] = hv_Row;
+            if (hv_Cols == null)
+              hv_Cols = new HTuple();
+            hv_Cols[hv_Polarity] = hv_Column;
+            break;
+          }
+        }
+      }
+      //get_region_points (RegionIntersection, Rows, Columns)
+      //disp_message (WindowHandle, 'Intesection Row:'+ Row +'Col'+ Column, 'window', Row, Column, 'black', 'true')
+    }
+    //dev_set_colored (12)
+    //for Index := 1 to 4 by 1
+      //disp_circle (WindowHandle, Rows[Index], Cols[Index], 64)
+    //endfor
+    ho_RegionsLine3.Dispose();
+    ho_RegionIntersection.Dispose();
+
+    hv_Width.Dispose();
+    hv_Height.Dispose();
+    hv_LengthDiagonal.Dispose();
+    hv_HalfDiagonal.Dispose();
+    hv_Polarity.Dispose();
+    hv_Index.Dispose();
+    hv_RegionIntersectionArea.Dispose();
+    hv_Row.Dispose();
+    hv_Column.Dispose();
+
+    return;
   }
 
 
-
 }
+
