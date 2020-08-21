@@ -33,12 +33,9 @@ public partial class HDevelopExport
     // Local control variables 
 
     HTuple hv_BarWidth = new HTuple(), hv_BarHeight = new HTuple();
-    HTuple hv_CodeTypes = new HTuple(), hv_BarcodeArea = new HTuple();
-    HTuple hv_BarcodeRow = new HTuple(), hv_BarcodeColumn = new HTuple();
-    HTuple hv_BarIndex = new HTuple(), hv_Area = new HTuple();
-    HTuple hv_Row = new HTuple(), hv_Column = new HTuple();
-    HTuple   hv_BarCodeHandle_COPY_INP_TMP = new HTuple(hv_BarCodeHandle);
-
+    HTuple hv_CodeTypes = new HTuple(), hv_BarIndex = new HTuple();
+    HTuple hv_BarcodeArea = new HTuple(), hv_BarcodeRow = new HTuple();
+    HTuple hv_BarcodeColumn = new HTuple(), hv_BarRatio = new HTuple();
     // Initialize local and output iconic variables 
     HOperatorSet.GenEmptyObj(out ho_SymbolRegions);
     HOperatorSet.GenEmptyObj(out ho_ObjectSelected);
@@ -50,18 +47,14 @@ public partial class HDevelopExport
     //code type of unknown bar codes
     //
     //* INIT CONST
-    hv_BarWidth.Dispose();
-    hv_BarWidth = 800;
-    hv_BarHeight.Dispose();
-    hv_BarHeight = 100;
+    //BarWidth := 800
+    //BarHeight := 100
     hv_CodeTypes.Dispose();
     hv_CodeTypes = "Code 128";
-    hv_CodeTypes.Dispose();
-    hv_CodeTypes = "auto";
+    //CodeTypes := ['auto']
 
     //read_bar_code_model ('C:/Users/iwake/OneDrive - wake/Desktop/HalconPractise/HalconProj/Barcode/BarCodeHandle.bcm', BarCodeHandle)
-    hv_BarCodeHandle_COPY_INP_TMP.Dispose();
-    HOperatorSet.ReadBarCodeModel("BarCodeHandle.bcm", out hv_BarCodeHandle_COPY_INP_TMP);
+    //read_bar_code_model ('BarCodeHandle.bcm', BarCodeHandle)
     //set_bar_code_param (BarCodeHandle, 'check_char', 'present')
     //
     //Set display defaults
@@ -71,17 +64,9 @@ public partial class HDevelopExport
     //
     //Find and decode bar codes. Measure the time needed.
     ho_SymbolRegions.Dispose();hv_DecodedDataStrings.Dispose();
-    HOperatorSet.FindBarCode(ho_Image, out ho_SymbolRegions, hv_BarCodeHandle_COPY_INP_TMP, 
-        hv_CodeTypes, out hv_DecodedDataStrings);
-    hv_BarcodeArea.Dispose();hv_BarcodeRow.Dispose();hv_BarcodeColumn.Dispose();
-    HOperatorSet.AreaCenter(ho_SymbolRegions, out hv_BarcodeArea, out hv_BarcodeRow, 
-        out hv_BarcodeColumn);
-    hv_someitem.Dispose();
-    using (HDevDisposeHelper dh = new HDevDisposeHelper())
-    {
-    hv_someitem = new HTuple();
-    hv_someitem = hv_someitem.TupleConcat(hv_BarcodeRow, hv_BarcodeColumn);
-    }
+    HOperatorSet.FindBarCode(ho_Image, out ho_SymbolRegions, hv_BarCodeHandle, hv_CodeTypes, 
+        out hv_DecodedDataStrings);
+
     //get_bar_code_result (BarCodeHandle, 'all', 'someitem', someitem)
 
 
@@ -96,11 +81,16 @@ public partial class HDevelopExport
     {
       ho_ObjectSelected.Dispose();
       HOperatorSet.SelectObj(ho_SymbolRegions, out ho_ObjectSelected, hv_BarIndex);
-      hv_Area.Dispose();hv_Row.Dispose();hv_Column.Dispose();
-      HOperatorSet.AreaCenter(ho_ObjectSelected, out hv_Area, out hv_Row, out hv_Column);
+      hv_BarcodeArea.Dispose();hv_BarcodeRow.Dispose();hv_BarcodeColumn.Dispose();
+      HOperatorSet.AreaCenter(ho_SymbolRegions, out hv_BarcodeArea, out hv_BarcodeRow, 
+          out hv_BarcodeColumn);
+      hv_BarHeight.Dispose();hv_BarWidth.Dispose();hv_BarRatio.Dispose();
+      HOperatorSet.HeightWidthRatio(ho_ObjectSelected, out hv_BarHeight, out hv_BarWidth, 
+          out hv_BarRatio);
       using (HDevDisposeHelper dh = new HDevDisposeHelper())
       {
-      HOperatorSet.SetTposition(hv_ExpDefaultWinHandle, hv_Row-hv_BarHeight, hv_Column-(0.25*hv_BarWidth));
+      HOperatorSet.SetTposition(hv_ExpDefaultWinHandle, hv_BarcodeRow-hv_BarHeight, 
+          hv_BarcodeColumn-(0.5*hv_BarWidth));
       }
       using (HDevDisposeHelper dh = new HDevDisposeHelper())
       {
@@ -108,19 +98,23 @@ public partial class HDevelopExport
           hv_BarIndex-1));
       }
     }
+
+    hv_someitem.Dispose();
+    using (HDevDisposeHelper dh = new HDevDisposeHelper())
+    {
+    hv_someitem = new HTuple();
+    hv_someitem = hv_someitem.TupleConcat(hv_BarcodeRow, hv_BarcodeColumn);
+    }
     ho_ObjectSelected.Dispose();
 
-    hv_BarCodeHandle_COPY_INP_TMP.Dispose();
     hv_BarWidth.Dispose();
     hv_BarHeight.Dispose();
     hv_CodeTypes.Dispose();
+    hv_BarIndex.Dispose();
     hv_BarcodeArea.Dispose();
     hv_BarcodeRow.Dispose();
     hv_BarcodeColumn.Dispose();
-    hv_BarIndex.Dispose();
-    hv_Area.Dispose();
-    hv_Row.Dispose();
-    hv_Column.Dispose();
+    hv_BarRatio.Dispose();
 
     return;
   }
